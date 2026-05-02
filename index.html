@@ -3,618 +3,309 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="IceTray Weed Club – Private cannabis social club in Barcelona's Eixample district. Free membership. 18+ only.">
+  <meta name="description" content="IceTray Weed Club – Private cannabis social club in Barcelona's Eixample. Free membership. 18+ only.">
   <meta property="og:title" content="IceTray Weed Club | Barcelona">
-  <meta property="og:description" content="Private Cannabis Social Club in Barcelona. Free membership. Located at Carrer d'Aragó, 209.">
   <meta property="og:image" content="assets/images/hero-bg.jpg">
-  <title>IceTray Weed Club | Barcelona Cannabis Social Club</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              green:  '#3d7a5c',
-              greenDark: '#2a5540',
-              gold:   '#c9a84c',
-              dark:   '#111111',
-              card:   '#1c1c1c',
-            }
-          },
-          fontFamily: {
-            display: ['"Playfair Display"', 'Georgia', 'serif'],
-            body:    ['"Inter"', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <title>IceTray Weed Club | Barcelona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 
-<body class="bg-brand-dark text-white font-body antialiased">
+<body>
 
-  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-20">
+  <!-- ════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════ -->
+  <header id="navbar">
+    <nav class="nav-inner">
+      <div class="nav-left">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Photo</a>
+      </div>
+      <a href="#hero" class="nav-logo">ICETRAY WEED CLUB</a>
+      <div class="nav-right">
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
+           target="_blank" rel="noopener" class="btn-member">Become a member</a>
+      </div>
+    </nav>
 
-        <!-- Logo -->
-        <a href="#home" class="flex-shrink-0">
-          <img src="assets/images/logo.png" alt="IceTray Weed Club" class="h-10 lg:h-12 w-auto object-contain">
-        </a>
+    <!-- Mobile nav -->
+    <div class="mobile-nav-top">
+      <a href="#hero" class="nav-logo">ICETRAY WEED CLUB</a>
+      <button id="menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Photo</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
+         target="_blank" rel="noopener" class="btn-member mobile-cta">Become a member</a>
+    </div>
+  </header>
 
-        <!-- Desktop nav -->
-        <div class="hidden lg:flex items-center gap-8">
-          <a href="#about"   class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">About</a>
-          <a href="#why-us"  class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Why Us</a>
-          <a href="#events"  class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Events</a>
-          <a href="#gallery" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
-          <a href="#reviews" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Reviews</a>
-          <a href="#faq"     class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">FAQ</a>
-          <a href="#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
-          <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-             target="_blank" rel="noopener"
-             class="ml-2 px-5 py-2 bg-brand-green hover:bg-brand-greenDark text-white text-sm font-semibold rounded-full transition-colors">
-            Become a Member
+  <!-- ════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="particles"></div>
+
+    <!-- Floating 3D objects -->
+    <img src="assets/images/char-bear.png"       class="hero-float hero-float--left"  alt="">
+    <img src="assets/images/crystal-mountain.png" class="hero-float hero-float--right" alt="">
+
+    <!-- Text -->
+    <div class="hero-content">
+      <h1 class="hero-title">ICETRAY WEED CLUB</h1>
+      <h2 class="hero-subtitle">
+        IN
+        <span class="hero-icon">🧊</span>
+        BARCELONA
+      </h2>
+    </div>
+
+    <!-- Timeline -->
+    <div class="hero-timeline">
+      <span>2021</span>
+      <div class="timeline-track"><div class="timeline-dot"></div></div>
+      <span>2025</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       ABOUT / PARALLAX
+  ════════════════════════════════════════ -->
+  <section id="about">
+    <!-- Parallax bg layer -->
+    <div class="about-parallax" data-parallax></div>
+
+    <!-- Bear character -->
+    <img src="assets/images/char-bear.png" class="about-bear" alt="">
+
+    <!-- Vintage title overlay -->
+    <div class="about-banner">
+      <div class="about-banner-text">ICE TRAY WEED CLUB</div>
+    </div>
+
+    <!-- Info boxes -->
+    <div class="about-boxes">
+      <a href="https://maps.google.com/?q=Carrer+d%27Aragó+209+Barcelona"
+         target="_blank" rel="noopener" class="about-box">
+        <div class="about-box__title">Find us on Google maps</div>
+        <div class="about-box__sub">Carrer d'Aragó, 209, L'Eixample, 08011 Barcelona</div>
+      </a>
+      <div class="about-box-divider"></div>
+      <a href="https://instagram.com/icetraycsc" target="_blank" rel="noopener" class="about-box">
+        <div class="about-box__title">Our Insta</div>
+        <div class="about-box__sub">@icetraycsc</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       EVENTS
+  ════════════════════════════════════════ -->
+  <section id="events">
+    <div class="events-header">
+      <div class="events-title-block">
+        <h2 class="events-title">ICE TRAY WEED<br>CLUB IN<br>BARCELONA</h2>
+      </div>
+      <div class="events-meta">
+        <div class="events-meta-row">
+          <img src="https://static.tildacdn.one/lib/icons/tilda/-/paint/ffffff--3-0-100/calendar_paper.svg" alt="">
+          <span>31.10 – 2.11</span>
+        </div>
+        <div class="events-meta-row">
+          <img src="https://static.tildacdn.one/lib/icons/tilda/-/paint/ffffff--3-0-100/watch_clock_time.svg" alt="">
+          <span>13.00 – 21.30</span>
+        </div>
+        <div class="events-meta-row">
+          <img src="https://static.tildacdn.one/lib/icons/tilda/-/paint/ffffff--3-0-100/marker_location_place_where.svg" alt="">
+          <span>Aragon 209</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event poster gallery -->
+    <div class="events-gallery">
+      <div class="events-gallery-item">
+        <img src="assets/images/gallery-11.jpg" alt="Halloween Party">
+      </div>
+      <div class="events-gallery-item">
+        <img src="assets/images/gallery-12.jpg" alt="Halloween Night">
+      </div>
+      <div class="events-gallery-item">
+        <img src="assets/images/gallery-13.jpg" alt="Ice Tray Event">
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       GALLERY / PHOTO
+  ════════════════════════════════════════ -->
+  <section id="gallery">
+    <h2 class="section-title">PHOTO</h2>
+    <div class="gallery-grid" id="gallery-grid">
+      <img src="assets/images/gallery-01.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-02.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-03.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-04.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-05.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-06.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-07.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-08.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-09.jpg" class="gallery-item" alt="">
+      <img src="assets/images/gallery-10.jpg" class="gallery-item" alt="">
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       REVIEWS
+  ════════════════════════════════════════ -->
+  <section id="reviews">
+    <h2 class="section-title">WHAT MEMBERS SAY</h2>
+    <div class="reviews-grid">
+      <blockquote class="review-card">
+        <p>"It was an amazing experience, thank you guys!"</p>
+        <footer>★★★★★ <cite>Emma</cite></footer>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>"It was my first time, and they made it unforgettable."</p>
+        <footer>★★★★★ <cite>Sophie</cite></footer>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>"Came for a vacation with my girl — this place must be visited when you are in Barcelona!"</p>
+        <footer>★★★★★ <cite>Nicholas</cite></footer>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>"Nice service, nice bongs, nice vapes!"</p>
+        <footer>★★★★★ <cite>Michael</cite></footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════ -->
+  <section id="faq">
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What are the rules in Barcelona regarding cannabis?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>Weed is decriminalized and you can smoke limited amounts of it in private properties and social clubs.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you carry weed in Barcelona?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>Officially, it's illegal to carry, show, or consume weed in public. If you are low-key about it, no one is going to pat you down for a gram or two.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can foreigners smoke weed in Barcelona?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>Regardless of whether you are a foreigner or a local, you can access cannabis by becoming a member of a cannabis social club.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get access to cannabis?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>Access to cannabis is available through private social clubs. Although direct sales are forbidden, loopholes in the law allow people to pay for a membership.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is membership free?
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>Yes, registration is totally free. You must be 18 or older and present a valid ID.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════ -->
+  <section id="contact">
+    <h2 class="section-title">CONTACT</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          <span>Carrer d'Aragó, 209, L'Eixample, 08011 Barcelona</span>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          <a href="tel:+34613477116">+34 613 47-71-16</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          <a href="mailto:info@icetrayweedclub.com">info@icetrayweedclub.com</a>
+        </div>
+        <div class="contact-socials">
+          <a href="https://instagram.com/icetraycsc" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/34613477116" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@icetraycsc" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
           </a>
         </div>
-
-        <!-- Mobile hamburger -->
-        <button id="menu-btn" aria-label="Open menu" class="lg:hidden p-2 rounded-md text-gray-300 hover:text-white">
-          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark border-t border-white/10">
-      <div class="px-4 py-4 flex flex-col gap-4">
-        <a href="#about"   class="mobile-link py-2 text-gray-300 hover:text-white transition-colors">About</a>
-        <a href="#why-us"  class="mobile-link py-2 text-gray-300 hover:text-white transition-colors">Why Us</a>
-        <a href="#events"  class="mobile-link py-2 text-gray-300 hover:text-white transition-colors">Events</a>
-        <a href="#gallery" class="mobile-link py-2 text-gray-300 hover:text-white transition-colors">Gallery</a>
-        <a href="#reviews" class="mobile-link py-2 text-gray-300 hover:text-white transition-colors">Reviews</a>
-        <a href="#faq"     class="mobile-link py-2 text-gray-300 hover:text-white transition-colors">FAQ</a>
-        <a href="#contact" class="mobile-link py-2 text-gray-300 hover:text-white transition-colors">Contact</a>
         <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-           target="_blank" rel="noopener"
-           class="mt-2 px-5 py-3 bg-brand-green hover:bg-brand-greenDark text-white text-sm font-semibold rounded-full text-center transition-colors">
-          Become a Member
+           target="_blank" rel="noopener" class="btn-member btn-member--large">
+          BECOME A MEMBER — FREE
         </a>
       </div>
-    </div>
-  </nav>
-
-  <!-- ── HERO ──────────────────────────────────────────────── -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-         style="background-image: url('assets/images/hero-bg.jpg')"></div>
-    <div class="absolute inset-0 bg-black/65"></div>
-    <div class="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto fade-in">
-      <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-4">Barcelona • Est. 2021</p>
-      <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
-        IceTray<br>Weed Club
-      </h1>
-      <p class="text-gray-200 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        Private Cannabis Social Club located at Carrer d'Aragó, 209, L'Eixample, 08011 Barcelona
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-           target="_blank" rel="noopener"
-           class="px-8 py-4 bg-brand-green hover:bg-brand-greenDark text-white font-semibold rounded-full text-base transition-all hover:scale-105">
-          Become a Member — Free
-        </a>
-        <a href="#about"
-           class="px-8 py-4 border border-white/40 hover:border-white text-white font-semibold rounded-full text-base transition-all hover:bg-white/10">
-          Learn More ↓
-        </a>
-      </div>
-    </div>
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-chevron">
-      <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- ── ABOUT ─────────────────────────────────────────────── -->
-  <section id="about" class="py-24 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">About Us</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">What We Offer</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Card 1 -->
-        <div class="about-card fade-in bg-brand-card rounded-2xl p-8 border border-white/5 hover:border-brand-green/40 transition-all hover:-translate-y-1">
-          <div class="w-12 h-12 bg-brand-green/20 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">Atmosphere</h3>
-          <p class="text-gray-400 leading-relaxed">
-            We focused on creating a calm and nice decor and ambiance to make sure all our members are always feeling safe and comfy.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="about-card fade-in bg-brand-card rounded-2xl p-8 border border-white/5 hover:border-brand-green/40 transition-all hover:-translate-y-1">
-          <div class="w-12 h-12 bg-brand-green/20 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">Quality Products</h3>
-          <p class="text-gray-400 leading-relaxed">
-            We source only the finest cannabis products for our members, ensuring a premium experience every visit.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="about-card fade-in bg-brand-card rounded-2xl p-8 border border-white/5 hover:border-brand-green/40 transition-all hover:-translate-y-1">
-          <div class="w-12 h-12 bg-brand-green/20 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold mb-3 text-white">Member Support</h3>
-          <p class="text-gray-400 leading-relaxed">
-            We are willing to help our members in whatever they may need, from professional advice all the way to being friendly companions.
-          </p>
-        </div>
-
+      <div class="contact-map">
+        <iframe
+          title="IceTray location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.4!2d2.1535!3d41.3906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f4cb7a9951%3A0x0!2sCarrer+d'Arag%C3%B3%2C+209%2C+08011+Barcelona!5e0!3m2!1sen!2ses!4v1"
+          width="100%" height="100%" style="border:0;filter:invert(90%) hue-rotate(180deg)"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </section>
 
-  <!-- ── WHY US ─────────────────────────────────────────────── -->
-  <section id="why-us" class="py-24 px-4 sm:px-6 lg:px-8 bg-brand-card">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-bg"></div>
+    <img src="assets/images/char-bear.png"        class="footer-float footer-float--left"  alt="">
+    <img src="assets/images/crystal-mountain.png" class="footer-float footer-float--right" alt="">
 
-        <!-- Image -->
-        <div class="w-full lg:w-1/2 fade-in">
-          <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
-            <img src="assets/images/gallery-08.jpg" alt="IceTray Weed Club interior"
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-          </div>
-        </div>
-
-        <!-- Content -->
-        <div class="w-full lg:w-1/2 fade-in">
-          <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Why Choose Us</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold mb-10">
-            The IceTray<br>Experience
-          </h2>
-
-          <div class="space-y-8">
-            <div class="flex gap-5">
-              <span class="text-brand-green font-display text-3xl font-bold leading-none mt-1 w-10 flex-shrink-0">01</span>
-              <div>
-                <h3 class="font-semibold text-lg mb-1">Private Spaces</h3>
-                <p class="text-gray-400 leading-relaxed">The club consists of an open space fitted for the most comfortable of chill sessions, and is equipped with everything you can need.</p>
-              </div>
-            </div>
-            <div class="flex gap-5">
-              <span class="text-brand-green font-display text-3xl font-bold leading-none mt-1 w-10 flex-shrink-0">02</span>
-              <div>
-                <h3 class="font-semibold text-lg mb-1">Exclusive Amenities</h3>
-                <p class="text-gray-400 leading-relaxed">We focused on creating a calm and nice decor and ambiance to make sure all our members are always feeling safe and comfy.</p>
-              </div>
-            </div>
-            <div class="flex gap-5">
-              <span class="text-brand-green font-display text-3xl font-bold leading-none mt-1 w-10 flex-shrink-0">03</span>
-              <div>
-                <h3 class="font-semibold text-lg mb-1">Professional Support</h3>
-                <p class="text-gray-400 leading-relaxed">We are willing to help our members in whatever they may need, from professional advice all the way to being friendly companions.</p>
-              </div>
-            </div>
-            <div class="flex gap-5">
-              <span class="text-brand-green font-display text-3xl font-bold leading-none mt-1 w-10 flex-shrink-0">04</span>
-              <div>
-                <h3 class="font-semibold text-lg mb-1">Pleasant Staff</h3>
-                <p class="text-gray-400 leading-relaxed">Our volunteers go the whole mile — friendly, knowledgeable, and always happy to make your visit special.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-logo">ICETRAY WEED CLUB</div>
+      <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
+         target="_blank" rel="noopener" class="btn-member">BECOME A MEMBER</a>
     </div>
-  </section>
-
-  <!-- ── EVENTS ─────────────────────────────────────────────── -->
-  <section id="events" class="py-24 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Events</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">What's On</h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
-
-        <!-- Event card -->
-        <article class="bg-brand-card rounded-2xl overflow-hidden border border-white/5 hover:border-brand-green/40 transition-all hover:-translate-y-1 group">
-          <div class="relative overflow-hidden aspect-video">
-            <img src="assets/images/gallery-11.jpg" alt="Club event"
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="absolute top-4 left-4 bg-brand-green text-white text-xs font-semibold px-3 py-1 rounded-full">
-              Upcoming
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-4 text-gray-400 text-sm mb-3">
-              <span class="flex items-center gap-1.5">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
-                </svg>
-                31.10 – 02.11
-              </span>
-              <span class="flex items-center gap-1.5">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                13:00 – 21:30
-              </span>
-            </div>
-            <h3 class="font-display text-xl font-bold mb-2">Club Gathering</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-5">Join us for our next members-only gathering at Aragon 209. Great vibes, great company.</p>
-            <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20RSVP%20for%20the%20upcoming%20event"
-               target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 text-brand-green hover:text-white text-sm font-semibold transition-colors">
-              RSVP via WhatsApp →
-            </a>
-          </div>
-        </article>
-
-        <!-- Placeholder card -->
-        <article class="bg-brand-card rounded-2xl overflow-hidden border border-white/5 border-dashed flex items-center justify-center min-h-64 p-8">
-          <div class="text-center">
-            <p class="text-gray-500 text-sm">More events coming soon</p>
-            <p class="text-gray-600 text-xs mt-2">Follow <a href="https://instagram.com/icetraycsc" target="_blank" class="text-brand-gold hover:underline">@icetraycsc</a> for updates</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── GALLERY ────────────────────────────────────────────── -->
-  <section id="gallery" class="py-24 px-4 sm:px-6 lg:px-8 bg-brand-card">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Gallery</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Inside IceTray</h2>
-      </div>
-      <div class="columns-2 md:columns-3 lg:columns-4 gap-3 fade-in" id="gallery-grid">
-        <img src="assets/images/gallery-01.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-02.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-03.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-04.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-05.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-06.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-07.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-08.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-09.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-10.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-11.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-12.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-        <img src="assets/images/gallery-13.jpg" alt="IceTray club" class="gallery-item w-full mb-3 rounded-xl cursor-pointer hover:opacity-90 transition-opacity object-cover block">
-      </div>
-    </div>
-  </section>
+    <p class="footer-legal">© 2025 IceTray Weed Club · Private members association · 18+ only</p>
+  </footer>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="lightbox hidden fixed inset-0 z-50 bg-black/95 flex items-center justify-center" role="dialog" aria-modal="true">
-    <button id="lb-prev" aria-label="Previous" class="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white hover:text-brand-gold transition-colors">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
-      </svg>
-    </button>
-    <img id="lb-img" src="" alt="Gallery image" class="max-h-[90vh] max-w-[90vw] rounded-xl object-contain">
-    <button id="lb-next" aria-label="Next" class="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white hover:text-brand-gold transition-colors">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
-      </svg>
-    </button>
-    <button id="lb-close" aria-label="Close" class="absolute top-4 right-4 p-3 text-white hover:text-brand-gold transition-colors">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-    <div id="lb-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-gray-400 text-sm"></div>
+  <div id="lightbox" class="lightbox-hidden" role="dialog" aria-modal="true">
+    <button id="lb-prev" aria-label="Prev">&#8592;</button>
+    <img id="lb-img" src="" alt="">
+    <button id="lb-next" aria-label="Next">&#8594;</button>
+    <button id="lb-close" aria-label="Close">&#x2715;</button>
+    <div id="lb-counter"></div>
   </div>
-
-  <!-- ── REVIEWS ────────────────────────────────────────────── -->
-  <section id="reviews" class="py-24 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Testimonials</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">What Members Say</h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-
-        <blockquote class="bg-brand-card rounded-2xl p-6 border border-white/5">
-          <div class="flex mb-4">
-            <span class="text-brand-gold text-lg">★★★★★</span>
-          </div>
-          <p class="text-gray-300 leading-relaxed mb-5">"It was an amazing experience, thank you guys!"</p>
-          <footer class="text-sm font-semibold text-white">Emma</footer>
-        </blockquote>
-
-        <blockquote class="bg-brand-card rounded-2xl p-6 border border-white/5">
-          <div class="flex mb-4">
-            <span class="text-brand-gold text-lg">★★★★★</span>
-          </div>
-          <p class="text-gray-300 leading-relaxed mb-5">"It was my first time, and they made it unforgettable."</p>
-          <footer class="text-sm font-semibold text-white">Sophie</footer>
-        </blockquote>
-
-        <blockquote class="bg-brand-card rounded-2xl p-6 border border-white/5">
-          <div class="flex mb-4">
-            <span class="text-brand-gold text-lg">★★★★★</span>
-          </div>
-          <p class="text-gray-300 leading-relaxed mb-5">"Came for a vacation with my girl — this place must be visited when you are in Barcelona!"</p>
-          <footer class="text-sm font-semibold text-white">Nicholas</footer>
-        </blockquote>
-
-        <blockquote class="bg-brand-card rounded-2xl p-6 border border-white/5">
-          <div class="flex mb-4">
-            <span class="text-brand-gold text-lg">★★★★★</span>
-          </div>
-          <p class="text-gray-300 leading-relaxed mb-5">"Nice service, nice bongs, nice vapes!"</p>
-          <footer class="text-sm font-semibold text-white">Michael</footer>
-        </blockquote>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FAQ ───────────────────────────────────────────────── -->
-  <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-brand-card">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">FAQ</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Common Questions</h2>
-      </div>
-      <div class="space-y-3 fade-in">
-
-        <details class="faq-item bg-brand-dark rounded-2xl border border-white/5 overflow-hidden">
-          <summary class="faq-summary px-6 py-5 flex items-center justify-between cursor-pointer">
-            <span class="font-semibold">What are the rules in Barcelona regarding cannabis?</span>
-            <span class="faq-icon text-brand-green flex-shrink-0 ml-4 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </span>
-          </summary>
-          <div class="faq-body px-6 pb-5 text-gray-400 leading-relaxed">
-            Weed is decriminalized and you can smoke limited amounts of it in private properties and social clubs.
-          </div>
-        </details>
-
-        <details class="faq-item bg-brand-dark rounded-2xl border border-white/5 overflow-hidden">
-          <summary class="faq-summary px-6 py-5 flex items-center justify-between cursor-pointer">
-            <span class="font-semibold">Can you carry weed in Barcelona?</span>
-            <span class="faq-icon text-brand-green flex-shrink-0 ml-4 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </span>
-          </summary>
-          <div class="faq-body px-6 pb-5 text-gray-400 leading-relaxed">
-            Officially, it's illegal to carry, show, or consume weed in public in Barcelona. If you are low-key about it, no one is going to pat you down for a gram or two.
-          </div>
-        </details>
-
-        <details class="faq-item bg-brand-dark rounded-2xl border border-white/5 overflow-hidden">
-          <summary class="faq-summary px-6 py-5 flex items-center justify-between cursor-pointer">
-            <span class="font-semibold">Can foreigners join and smoke weed in Barcelona?</span>
-            <span class="faq-icon text-brand-green flex-shrink-0 ml-4 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </span>
-          </summary>
-          <div class="faq-body px-6 pb-5 text-gray-400 leading-relaxed">
-            Regardless of whether you are a foreigner or a local, you can access cannabis by becoming a member of a cannabis social club.
-          </div>
-        </details>
-
-        <details class="faq-item bg-brand-dark rounded-2xl border border-white/5 overflow-hidden">
-          <summary class="faq-summary px-6 py-5 flex items-center justify-between cursor-pointer">
-            <span class="font-semibold">How do I get access to cannabis in Barcelona?</span>
-            <span class="faq-icon text-brand-green flex-shrink-0 ml-4 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </span>
-          </summary>
-          <div class="faq-body px-6 pb-5 text-gray-400 leading-relaxed">
-            Access to cannabis is available through private social clubs. Although direct sales are forbidden, loopholes in the law allow people to pay for a membership.
-          </div>
-        </details>
-
-        <details class="faq-item bg-brand-dark rounded-2xl border border-white/5 overflow-hidden">
-          <summary class="faq-summary px-6 py-5 flex items-center justify-between cursor-pointer">
-            <span class="font-semibold">Is membership free?</span>
-            <span class="faq-icon text-brand-green flex-shrink-0 ml-4 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </span>
-          </summary>
-          <div class="faq-body px-6 pb-5 text-gray-400 leading-relaxed">
-            Yes, registration is totally free. You must be 18 or older and present a valid ID.
-          </div>
-        </details>
-
-        <details class="faq-item bg-brand-dark rounded-2xl border border-white/5 overflow-hidden">
-          <summary class="faq-summary px-6 py-5 flex items-center justify-between cursor-pointer">
-            <span class="font-semibold">Where are you located and what are your opening hours?</span>
-            <span class="faq-icon text-brand-green flex-shrink-0 ml-4 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </span>
-          </summary>
-          <div class="faq-body px-6 pb-5 text-gray-400 leading-relaxed">
-            We are located at Carrer d'Aragó, 209, L'Eixample, 08011 Barcelona. For current opening hours, please contact us via WhatsApp or Instagram.
-          </div>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ────────────────────────────────────────────── -->
-  <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Contact</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Find Us</h2>
-      </div>
-
-      <div class="flex flex-col lg:flex-row gap-12 fade-in">
-
-        <!-- Info column -->
-        <div class="w-full lg:w-2/5 flex flex-col gap-8">
-          <div>
-            <h3 class="font-semibold text-lg mb-4 text-white">Get in Touch</h3>
-            <div class="space-y-4">
-              <a href="https://maps.google.com/?q=Carrer+d'Aragó+209+Barcelona"
-                 target="_blank" rel="noopener"
-                 class="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group">
-                <svg class="w-5 h-5 mt-0.5 text-brand-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-                </svg>
-                <span>Carrer d'Aragó, 209, L'Eixample<br>08011 Barcelona</span>
-              </a>
-              <a href="tel:+34613477116"
-                 class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
-                <svg class="w-5 h-5 text-brand-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
-                </svg>
-                +34 613 47-71-16
-              </a>
-              <a href="mailto:info@icetrayweedclub.com"
-                 class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
-                <svg class="w-5 h-5 text-brand-green flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
-                </svg>
-                info@icetrayweedclub.com
-              </a>
-            </div>
-          </div>
-
-          <!-- Social links -->
-          <div>
-            <h3 class="font-semibold text-lg mb-4 text-white">Follow Us</h3>
-            <div class="flex gap-4">
-              <a href="https://instagram.com/icetraycsc" target="_blank" rel="noopener" aria-label="Instagram"
-                 class="w-11 h-11 bg-brand-card rounded-full flex items-center justify-center border border-white/10 hover:border-brand-green hover:bg-brand-green/20 transition-all">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"
-                 class="w-11 h-11 bg-brand-card rounded-full flex items-center justify-center border border-white/10 hover:border-brand-green hover:bg-brand-green/20 transition-all">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"
-                 class="w-11 h-11 bg-brand-card rounded-full flex items-center justify-center border border-white/10 hover:border-brand-green hover:bg-brand-green/20 transition-all">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                </svg>
-              </a>
-              <a href="https://wa.me/34613477116" target="_blank" rel="noopener" aria-label="WhatsApp"
-                 class="w-11 h-11 bg-brand-card rounded-full flex items-center justify-center border border-white/10 hover:border-brand-green hover:bg-brand-green/20 transition-all">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-             target="_blank" rel="noopener"
-             class="w-full py-4 bg-brand-green hover:bg-brand-greenDark text-white font-semibold rounded-full text-center text-base transition-all hover:scale-105 flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Become a Member — It's Free
-          </a>
-        </div>
-
-        <!-- Map -->
-        <div class="w-full lg:w-3/5 fade-in">
-          <div class="rounded-2xl overflow-hidden h-full min-h-80 border border-white/5">
-            <iframe
-              title="IceTray Weed Club location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.4!2d2.1535!3d41.3906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f4cb7a9951%3A0x0!2sCarrer+d'Arag%C3%B3%2C+209%2C+08011+Barcelona!5e0!3m2!1sen!2ses!4v1"
-              width="100%" height="100%" style="min-height:380px;border:0;filter:invert(90%) hue-rotate(180deg)"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
-  <footer class="bg-black border-t border-white/5 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 mb-8">
-        <a href="#home">
-          <img src="assets/images/logo.png" alt="IceTray Weed Club" class="h-10 w-auto object-contain">
-        </a>
-        <nav class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-          <a href="#about"   class="hover:text-white transition-colors">About</a>
-          <a href="#why-us"  class="hover:text-white transition-colors">Why Us</a>
-          <a href="#events"  class="hover:text-white transition-colors">Events</a>
-          <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
-          <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
-          <a href="#faq"     class="hover:text-white transition-colors">FAQ</a>
-          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-        </nav>
-        <div class="flex gap-4">
-          <a href="https://instagram.com/icetraycsc" target="_blank" rel="noopener" aria-label="Instagram"
-             class="text-gray-500 hover:text-white transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://wa.me/34613477116" target="_blank" rel="noopener" aria-label="WhatsApp"
-             class="text-gray-500 hover:text-white transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
-        <p>© 2025 IceTray Weed Club. All rights reserved.</p>
-        <p>Private members association · 18+ only · For members only</p>
-      </div>
-    </div>
-  </footer>
 
   <script src="js/main.js"></script>
 </body>
