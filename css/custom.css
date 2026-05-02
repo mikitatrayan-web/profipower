@@ -1,0 +1,74 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 80px;
+}
+
+/* Navbar: transparent by default, dark when scrolled */
+#navbar {
+  background: transparent;
+}
+#navbar.scrolled {
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Scroll chevron bounce */
+@keyframes bounce-y {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+.scroll-chevron {
+  animation: bounce-y 2s ease-in-out infinite;
+}
+
+/* Fade-in on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FAQ accordion */
+.faq-item .faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.2s ease;
+  padding-bottom: 0;
+}
+.faq-item[open] .faq-body {
+  max-height: 400px;
+  padding-bottom: 1.25rem;
+}
+.faq-item[open] .faq-icon {
+  transform: rotate(180deg);
+}
+/* Remove native marker */
+.faq-summary {
+  list-style: none;
+}
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Gallery lightbox */
+.lightbox {
+  animation: fade-in-overlay 0.2s ease;
+}
+@keyframes fade-in-overlay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Image loading shimmer */
+img {
+  background-color: #1c1c1c;
+}

@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+trello_move_cards.py
+__pycache__/
+*.py[cod]
+.env
+.claude/
