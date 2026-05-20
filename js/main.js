@@ -3,7 +3,7 @@
 /* ── Navbar scroll ───────────────────────────────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
 }, { passive: true });
 
 /* ── Mobile menu ─────────────────────────────────── */
@@ -17,28 +17,24 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
 
-/* ── Parallax about section ──────────────────────── */
-const parallaxEl = document.querySelector('[data-parallax]');
-if (parallaxEl) {
-  window.addEventListener('scroll', () => {
-    const offset = window.scrollY;
-    const section = parallaxEl.closest('#about');
-    if (!section) return;
-    const rect = section.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight && rect.bottom > 0;
-    if (inView) {
-      parallaxEl.style.transform = `translateY(${offset * 0.25}px)`;
+/* ── Language switcher (visual) ──────────────────── */
+document.querySelectorAll('.lang-btn, .footer-langs a').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const group = btn.closest('.lang-switcher, .footer-langs');
+    if (group) {
+      group.querySelectorAll('.lang-btn, a').forEach(b => b.classList.remove('active'));
     }
-  }, { passive: true });
-}
+    btn.classList.add('active');
+  });
+});
 
-/* ── Particle canvas (floating fire sparks) ─────── */
-(function initParticles() {
-  const canvas = document.createElement('canvas');
-  const ctx    = canvas.getContext('2d');
-  const hero   = document.getElementById('hero');
-  const container = document.getElementById('particles');
-  container.appendChild(canvas);
+/* ── Welding sparks particle system ─────────────── */
+(function initSparks() {
+  const canvas = document.getElementById('sparks');
+  if (!canvas) return;
+  const ctx  = canvas.getContext('2d');
+  const hero = document.getElementById('hero');
 
   function resize() {
     canvas.width  = hero.offsetWidth;
@@ -47,45 +43,48 @@ if (parallaxEl) {
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  const particles = [];
-  const COUNT = 55;
-
-  for (let i = 0; i < COUNT; i++) {
-    particles.push({
-      x:    Math.random() * canvas.width,
-      y:    Math.random() * canvas.height,
-      r:    Math.random() * 1.8 + 0.4,
-      vx:   (Math.random() - 0.5) * 0.35,
-      vy:   -(Math.random() * 0.6 + 0.15),
-      life: Math.random(),
-      maxL: 0.6 + Math.random() * 0.4,
-      side: Math.random() < 0.5 ? 'fire' : 'space',
-    });
+  function makeSpark(fromBottom) {
+    const x = fromBottom
+      ? (Math.random() * 0.5 + 0.1) * canvas.width  // sparks rise from bottom-left area (welding zone)
+      : Math.random() * canvas.width;
+    return {
+      x,
+      y:    fromBottom ? canvas.height + 5 : Math.random() * canvas.height,
+      r:    Math.random() * 1.6 + 0.3,
+      vx:   (Math.random() - 0.45) * 1.1,
+      vy:   -(Math.random() * 1.5 + 0.4),
+      life: fromBottom ? 0 : Math.random(),
+      maxL: 0.45 + Math.random() * 0.55,
+      hot:  Math.random() < 0.65,
+    };
   }
+
+  const COUNT = 65;
+  const sparks = Array.from({ length: COUNT }, () => makeSpark(false));
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.x   += p.vx;
-      p.y   += p.vy;
-      p.life += 0.004;
+    for (let i = 0; i < sparks.length; i++) {
+      const p = sparks[i];
+      p.x    += p.vx;
+      p.y    += p.vy;
+      p.life += 0.006;
 
-      if (p.life > p.maxL || p.y < 0) {
-        p.x    = Math.random() * canvas.width;
-        p.y    = canvas.height + 5;
-        p.life = 0;
+      if (p.life > p.maxL || p.y < -10) {
+        sparks[i] = makeSpark(true);
+        continue;
       }
 
-      const alpha = Math.sin(p.life / p.maxL * Math.PI) * 0.7;
-      if (p.side === 'fire') {
-        ctx.fillStyle = `rgba(255, ${Math.floor(140 + Math.random()*60)}, 30, ${alpha})`;
+      const alpha = Math.sin((p.life / p.maxL) * Math.PI) * 0.72;
+      if (p.hot) {
+        ctx.fillStyle = `rgba(255, ${100 + Math.random() * 80 | 0}, 15, ${alpha})`;
       } else {
-        ctx.fillStyle = `rgba(120, 180, 255, ${alpha * 0.5})`;
+        ctx.fillStyle = `rgba(255, ${200 + Math.random() * 55 | 0}, 80, ${alpha * 0.85})`;
       }
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fill();
-    });
+    }
     requestAnimationFrame(draw);
   }
   draw();
@@ -103,35 +102,20 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-/* ── Gallery lightbox ────────────────────────────── */
-const items    = Array.from(document.querySelectorAll('.gallery-item'));
-const lightbox = document.getElementById('lightbox');
-const lbImg    = document.getElementById('lb-img');
-const lbCtr    = document.getElementById('lb-counter');
-let   current  = 0;
-
-function openLightbox(i) {
-  current = i;
-  lbImg.src = items[i].src;
-  lbCtr.textContent = `${i + 1} / ${items.length}`;
-  lightbox.classList.remove('lightbox-hidden');
-  document.body.style.overflow = 'hidden';
+/* ── Contact form (client-side, no backend) ──────── */
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#1e7a3a';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+      form.reset();
+    }, 4000);
+  });
 }
-function closeLightbox() {
-  lightbox.classList.add('lightbox-hidden');
-  document.body.style.overflow = '';
-}
-function prev() { openLightbox((current - 1 + items.length) % items.length); }
-function next() { openLightbox((current + 1) % items.length); }
-
-items.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
-document.getElementById('lb-close').addEventListener('click', closeLightbox);
-document.getElementById('lb-prev').addEventListener('click', prev);
-document.getElementById('lb-next').addEventListener('click', next);
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => {
-  if (lightbox.classList.contains('lightbox-hidden')) return;
-  if (e.key === 'Escape')     closeLightbox();
-  if (e.key === 'ArrowLeft')  prev();
-  if (e.key === 'ArrowRight') next();
-});

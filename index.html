@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="IceTray Weed Club – Private cannabis social club in Barcelona's Eixample. Free membership. 18+ only.">
-  <meta property="og:title" content="IceTray Weed Club | Barcelona">
-  <meta property="og:image" content="assets/images/hero-bg.jpg">
-  <title>IceTray Weed Club | Barcelona</title>
+  <meta name="description" content="Profi Power — Industrial staffing, welding training, and steel manufacturing for Poland's largest production plants. Operating since 1991.">
+  <meta property="og:title" content="Profi Power | Welding Specialists & Industrial Staffing, Poland">
+  <title>Profi Power | Welding Specialists & Industrial Staffing in Poland</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
 </head>
-
 <body>
 
   <!-- ════════════════════════════════════════
@@ -21,32 +19,36 @@
   <header id="navbar">
     <nav class="nav-inner">
       <div class="nav-left">
-        <a href="#about">About</a>
-        <a href="#events">Events</a>
-        <a href="#gallery">Photo</a>
+        <a href="#services">Services</a>
+        <a href="#school">Welding School</a>
+        <a href="#jobs">For Workers</a>
       </div>
-      <a href="#hero" class="nav-logo">ICETRAY WEED CLUB</a>
+      <a href="#hero" class="nav-logo">PROFI<span>POWER</span></a>
       <div class="nav-right">
-        <a href="#contact">Contact</a>
-        <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-           target="_blank" rel="noopener" class="btn-member">Become a member</a>
+        <a href="#about">About</a>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+          <button class="lang-btn" data-lang="ua">UA</button>
+        </div>
+        <a href="#contact" class="btn-cta">Hire Workers</a>
       </div>
     </nav>
 
     <!-- Mobile nav -->
     <div class="mobile-nav-top">
-      <a href="#hero" class="nav-logo">ICETRAY WEED CLUB</a>
+      <a href="#hero" class="nav-logo">PROFI<span>POWER</span></a>
       <button id="menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div id="mobile-menu">
+      <a href="#services">Services</a>
+      <a href="#school">Welding School</a>
+      <a href="#jobs">For Workers</a>
       <a href="#about">About</a>
-      <a href="#events">Events</a>
-      <a href="#gallery">Photo</a>
       <a href="#contact">Contact</a>
-      <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-         target="_blank" rel="noopener" class="btn-member mobile-cta">Become a member</a>
+      <a href="#contact" class="btn-cta mobile-cta">Hire Workers</a>
     </div>
   </header>
 
@@ -55,178 +57,330 @@
   ════════════════════════════════════════ -->
   <section id="hero">
     <div class="hero-bg"></div>
-    <div class="hero-particles" id="particles"></div>
+    <canvas id="sparks"></canvas>
 
-    <!-- Floating 3D objects -->
-    <img src="assets/images/char-bear.png"       class="hero-float hero-float--left"  alt="">
-    <img src="assets/images/crystal-mountain.png" class="hero-float hero-float--right" alt="">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Industrial Staffing &amp; Welding · Poland · Since 1991</div>
+        <h1 class="hero-title">WELDING<br>THE FUTURE<br>OF INDUSTRY</h1>
+        <p class="hero-sub">Poland's premier partner for welding specialists and industrial staffing. Connecting the country's top production plants with certified professionals.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-primary">Hire Welders</a>
+          <a href="#jobs" class="btn-ghost">Find a Job</a>
+        </div>
+      </div>
 
-    <!-- Text -->
-    <div class="hero-content">
-      <h1 class="hero-title">ICETRAY WEED CLUB</h1>
-      <h2 class="hero-subtitle">
-        IN
-        <span class="hero-icon">🧊</span>
-        BARCELONA
-      </h2>
+      <div class="hero-stats">
+        <div class="hs-item">
+          <span class="hs-num">30+</span>
+          <span class="hs-label">Years on Market</span>
+        </div>
+        <div class="hs-item">
+          <span class="hs-num">500+</span>
+          <span class="hs-label">Workers Placed</span>
+        </div>
+        <div class="hs-item">
+          <span class="hs-num">50+</span>
+          <span class="hs-label">Partner Companies</span>
+        </div>
+        <div class="hs-item hs-item--cta">
+          <span class="hs-label">Two offices in Poland</span>
+          <span class="hs-offices">Bydgoszcz · Nowy Sącz</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Timeline -->
-    <div class="hero-timeline">
-      <span>2021</span>
-      <div class="timeline-track"><div class="timeline-dot"></div></div>
-      <span>2025</span>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       ABOUT / PARALLAX
+       SERVICES
+  ════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-label fade-in">What We Do</div>
+      <h2 class="section-heading fade-in">Complete Industrial Solutions</h2>
+      <p class="section-desc fade-in">From steel manufacturing to workforce deployment — we cover the full spectrum of production plant needs.</p>
+
+      <div class="services-grid">
+
+        <div class="svc-card fade-in">
+          <div class="svc-icon orange">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 34V22L13 14M34 34V22L27 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 14h14l3 8H10l3-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M10 22h20v12H10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M17 34v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="20" cy="9" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 9h-4M26 9h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Steel Structure Manufacturing</h3>
+          <p>Production of welded steel structures for machine construction, railcar manufacturing, and bridge structures — engineered for precision and durability.</p>
+          <a href="#contact" class="svc-link">Get a quote →</a>
+        </div>
+
+        <div class="svc-card fade-in">
+          <div class="svc-icon blue">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13" cy="13" r="5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="27" cy="13" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 34c0-5.52 4.48-10 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M37 34c0-5.52-4.48-10-10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M13 24c0 0 3.5-2 7-2s7 2 7 2c2.76 0 5 2.24 5 5v5H8v-5c0-2.76 2.24-5 5-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Industrial Outstaffing</h3>
+          <p>We supply highly qualified welding and production specialists directly to your facility. Flexible contracts, certified workers, immediate deployment.</p>
+          <a href="#contact" class="svc-link">Find workers →</a>
+        </div>
+
+        <div class="svc-card fade-in">
+          <div class="svc-icon orange">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="12" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 12V10a2 2 0 012-2h8a2 2 0 012 2v2" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 22h16M12 27h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20 17v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Job Placement</h3>
+          <p>Employment opportunities for experienced welders and motivated beginners alike. We match workers with the right positions across Poland's industrial sector.</p>
+          <a href="#jobs" class="svc-link">Find a job →</a>
+        </div>
+
+        <div class="svc-card fade-in">
+          <div class="svc-icon blue">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 6L4 14l16 8 16-8-16-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M4 20l16 8 16-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 26l16 8 16-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Welding School</h3>
+          <p>Professional welding training from basics to certification, with guaranteed employment on completion. Join Poland's most in-demand trade.</p>
+          <a href="#school" class="svc-link">Join the school →</a>
+        </div>
+
+        <div class="svc-card fade-in">
+          <div class="svc-icon orange">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 20h5l3-7 5 14 3-9 3 4 4-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M30 8l3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="33" cy="11" r="2" fill="currentColor" opacity=".6"/>
+              <path d="M6 34h28" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".3"/>
+            </svg>
+          </div>
+          <h3>Laser Metal Cutting</h3>
+          <p>CNC-controlled precision laser cutting for industrial components. High accuracy, fast turnaround, and competitive pricing for bulk orders.</p>
+          <a href="#contact" class="svc-link">Get a quote →</a>
+        </div>
+
+        <div class="svc-card svc-card--cta fade-in">
+          <div class="svc-cta-inner">
+            <p class="svc-cta-label">Ready to start?</p>
+            <h3>Talk to Us Today</h3>
+            <p>Whether you need workers, training, or manufactured steel — we have the expertise and capacity.</p>
+            <a href="#contact" class="btn-primary" style="margin-top:1.5rem;">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOR COMPANIES / FOR WORKERS
+  ════════════════════════════════════════ -->
+  <section id="jobs" class="two-path">
+    <div class="path-block path-companies">
+      <div class="path-inner">
+        <div class="path-tag">For Production Plants</div>
+        <h2 class="path-title">Need Certified<br>Welding Staff?</h2>
+        <p class="path-desc">We supply vetted, certified welding specialists to Poland's largest production companies. Rapid deployment, full documentation, no HR headaches.</p>
+        <ul class="path-list">
+          <li>Certified MIG/MAG, TIG &amp; electrode welders</li>
+          <li>Production workers &amp; CNC operators</li>
+          <li>Flexible staffing — temporary or permanent</li>
+          <li>Full compliance &amp; documentation handled</li>
+          <li>Ukrainian-speaking workforce available</li>
+        </ul>
+        <a href="#contact" class="btn-primary">Request Workers</a>
+      </div>
+    </div>
+    <div class="path-block path-workers">
+      <div class="path-inner">
+        <div class="path-tag">For Job Seekers</div>
+        <h2 class="path-title">Build a Career<br>in Welding</h2>
+        <p class="path-desc">Welder salaries in Poland are rising fast. Whether you're experienced or just starting out, we'll place you in the right role — or train you for one.</p>
+        <ul class="path-list">
+          <li>Jobs in Poland's leading production plants</li>
+          <li>Competitive salaries + growth opportunities</li>
+          <li>Open to beginners — training available</li>
+          <li>Support in Polish and Ukrainian</li>
+          <li>Employment documentation fully handled</li>
+        </ul>
+        <a href="#school" class="btn-outline-light">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       WELDING SCHOOL
+  ════════════════════════════════════════ -->
+  <section id="school">
+    <div class="container">
+      <div class="school-inner">
+        <div class="school-content fade-in">
+          <div class="section-label">Welding School</div>
+          <h2 class="section-heading">Train. Certify.<br>Get Hired.</h2>
+          <p>Our professional welding school takes you from zero to employed. Comprehensive hands-on training in MIG/MAG and TIG welding, leading to internationally recognised certification.</p>
+          <p>After graduation, we place you directly with our partner companies. No job hunting. No uncertainty. Just your new career.</p>
+          <div class="school-bullets">
+            <div class="bullet">
+              <span class="bullet-icon">✓</span>
+              <span>Hands-on practical training in real industrial conditions</span>
+            </div>
+            <div class="bullet">
+              <span class="bullet-icon">✓</span>
+              <span>Internationally recognised welding certification</span>
+            </div>
+            <div class="bullet">
+              <span class="bullet-icon">✓</span>
+              <span>Job placement guaranteed after graduation</span>
+            </div>
+            <div class="bullet">
+              <span class="bullet-icon">✓</span>
+              <span>Training available in Polish and Ukrainian</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary">Apply for the School</a>
+        </div>
+
+        <div class="school-visual fade-in">
+          <div class="school-glow"></div>
+          <div class="school-stat-card">
+            <span class="ss-num">↑ Growing</span>
+            <span class="ss-label">Demand for certified welders across Poland's industrial sector</span>
+          </div>
+          <div class="school-stat-card">
+            <span class="ss-num">Rising Salaries</span>
+            <span class="ss-label">Welder wages in Poland are among the fastest-growing in the industrial sector</span>
+          </div>
+          <div class="school-stat-card">
+            <span class="ss-num">100%</span>
+            <span class="ss-label">Job placement rate for our school graduates</span>
+          </div>
+          <div class="school-stat-card">
+            <span class="ss-num">Fast-Track</span>
+            <span class="ss-label">Practical programme — from training to first paycheck in weeks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       INDUSTRIES
+  ════════════════════════════════════════ -->
+  <section id="industries">
+    <div class="container">
+      <div class="section-label fade-in">Industries We Serve</div>
+      <h2 class="section-heading fade-in">Built for Heavy Industry</h2>
+      <div class="industries-grid fade-in">
+
+        <div class="industry-item">
+          <div class="industry-icon">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="18" width="8" height="10" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="8" height="16" stroke="currentColor" stroke-width="1.5"/><rect x="24" y="8" width="4" height="20" stroke="currentColor" stroke-width="1.5"/><path d="M2 28h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span>Machine Construction</span>
+        </div>
+
+        <div class="industry-item">
+          <div class="industry-icon">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="12" width="28" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="23" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="23" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M8 12V9M24 12V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 9h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span>Railcar Manufacturing</span>
+        </div>
+
+        <div class="industry-item">
+          <div class="industry-icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M2 26l6-8 8 4 8-12 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 30h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 18v4M24 18v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span>Bridge Structures</span>
+        </div>
+
+        <div class="industry-item">
+          <div class="industry-icon">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M16 6V4M16 28v-2M6 16H4M28 16h-2M9.17 9.17L7.76 7.76M24.83 24.83l-1.41-1.41M9.17 22.83l-1.41 1.41M24.83 7.17l-1.41 1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span>Steel Fabrication</span>
+        </div>
+
+        <div class="industry-item">
+          <div class="industry-icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M6 28V16L16 6L26 16V28" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 28V21h8v7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Production Plants</span>
+        </div>
+
+        <div class="industry-item">
+          <div class="industry-icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M8 28V14M16 28V6M24 28V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 28h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span>Metal Processing</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       ABOUT
   ════════════════════════════════════════ -->
   <section id="about">
-    <!-- Parallax bg layer -->
-    <div class="about-parallax" data-parallax></div>
-
-    <!-- Bear character -->
-    <img src="assets/images/char-bear.png" class="about-bear" alt="">
-
-    <!-- Vintage title overlay -->
-    <div class="about-banner">
-      <div class="about-banner-text">ICE TRAY WEED CLUB</div>
-    </div>
-
-    <!-- Info boxes -->
-    <div class="about-boxes">
-      <a href="https://maps.google.com/?q=Carrer+d%27Aragó+209+Barcelona"
-         target="_blank" rel="noopener" class="about-box">
-        <div class="about-box__title">Find us on Google maps</div>
-        <div class="about-box__sub">Carrer d'Aragó, 209, L'Eixample, 08011 Barcelona</div>
-      </a>
-      <div class="about-box-divider"></div>
-      <a href="https://instagram.com/icetraycsc" target="_blank" rel="noopener" class="about-box">
-        <div class="about-box__title">Our Insta</div>
-        <div class="about-box__sub">@icetraycsc</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════
-       EVENTS
-  ════════════════════════════════════════ -->
-  <section id="events">
-    <div class="events-header">
-      <div class="events-title-block">
-        <h2 class="events-title">ICE TRAY WEED<br>CLUB IN<br>BARCELONA</h2>
-      </div>
-      <div class="events-meta">
-        <div class="events-meta-row">
-          <img src="https://static.tildacdn.one/lib/icons/tilda/-/paint/ffffff--3-0-100/calendar_paper.svg" alt="">
-          <span>31.10 – 2.11</span>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content fade-in">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-heading">Profi Corporation —<br>Built on Trust</h2>
+          <p>Since 1991, Profi Power has been operating at the intersection of industrial staffing and steel manufacturing. We understand the real demands of production environments — because we work in them every single day.</p>
+          <p>Our team works in Polish and Ukrainian, serving both local professionals and specialists from abroad who fuel Poland's industrial growth. We handle every aspect of employment: documentation, placement, onboarding, and support.</p>
+          <p>With two offices in Bydgoszcz and Nowy Sącz, we serve production plants across Poland — delivering certified welders and manufacturing staff faster than any agency in the region.</p>
+          <blockquote class="about-quote">
+            "Understand responsibility, act professionally."
+            <cite>— Profi Power</cite>
+          </blockquote>
         </div>
-        <div class="events-meta-row">
-          <img src="https://static.tildacdn.one/lib/icons/tilda/-/paint/ffffff--3-0-100/watch_clock_time.svg" alt="">
-          <span>13.00 – 21.30</span>
-        </div>
-        <div class="events-meta-row">
-          <img src="https://static.tildacdn.one/lib/icons/tilda/-/paint/ffffff--3-0-100/marker_location_place_where.svg" alt="">
-          <span>Aragon 209</span>
+        <div class="about-facts-wrap fade-in">
+          <div class="about-facts">
+            <div class="fact-item">
+              <span class="fact-val">1991</span>
+              <span class="fact-label">Founded in Poland</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-val">Bydgoszcz</span>
+              <span class="fact-label">Head Office</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-val">Nowy Sącz</span>
+              <span class="fact-label">Branch Office</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-val">EN · PL · UA</span>
+              <span class="fact-label">Languages Supported</span>
+            </div>
+          </div>
+          <div class="about-tagline">
+            <span>Reliable.</span>
+            <span>Professional.</span>
+            <span>Industrial.</span>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Event poster gallery -->
-    <div class="events-gallery">
-      <div class="events-gallery-item">
-        <img src="assets/images/gallery-11.jpg" alt="Halloween Party">
-      </div>
-      <div class="events-gallery-item">
-        <img src="assets/images/gallery-12.jpg" alt="Halloween Night">
-      </div>
-      <div class="events-gallery-item">
-        <img src="assets/images/gallery-13.jpg" alt="Ice Tray Event">
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════
-       GALLERY / PHOTO
-  ════════════════════════════════════════ -->
-  <section id="gallery">
-    <h2 class="section-title">PHOTO</h2>
-    <div class="gallery-grid" id="gallery-grid">
-      <img src="assets/images/gallery-01.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-02.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-03.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-04.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-05.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-06.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-07.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-08.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-09.jpg" class="gallery-item" alt="">
-      <img src="assets/images/gallery-10.jpg" class="gallery-item" alt="">
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════
-       REVIEWS
-  ════════════════════════════════════════ -->
-  <section id="reviews">
-    <h2 class="section-title">WHAT MEMBERS SAY</h2>
-    <div class="reviews-grid">
-      <blockquote class="review-card">
-        <p>"It was an amazing experience, thank you guys!"</p>
-        <footer>★★★★★ <cite>Emma</cite></footer>
-      </blockquote>
-      <blockquote class="review-card">
-        <p>"It was my first time, and they made it unforgettable."</p>
-        <footer>★★★★★ <cite>Sophie</cite></footer>
-      </blockquote>
-      <blockquote class="review-card">
-        <p>"Came for a vacation with my girl — this place must be visited when you are in Barcelona!"</p>
-        <footer>★★★★★ <cite>Nicholas</cite></footer>
-      </blockquote>
-      <blockquote class="review-card">
-        <p>"Nice service, nice bongs, nice vapes!"</p>
-        <footer>★★★★★ <cite>Michael</cite></footer>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════
-       FAQ
-  ════════════════════════════════════════ -->
-  <section id="faq">
-    <h2 class="section-title">FAQ</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>What are the rules in Barcelona regarding cannabis?
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>Weed is decriminalized and you can smoke limited amounts of it in private properties and social clubs.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can you carry weed in Barcelona?
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>Officially, it's illegal to carry, show, or consume weed in public. If you are low-key about it, no one is going to pat you down for a gram or two.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can foreigners smoke weed in Barcelona?
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>Regardless of whether you are a foreigner or a local, you can access cannabis by becoming a member of a cannabis social club.</p>
-      </details>
-      <details class="faq-item">
-        <summary>How do I get access to cannabis?
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>Access to cannabis is available through private social clubs. Although direct sales are forbidden, loopholes in the law allow people to pay for a membership.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Is membership free?
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>Yes, registration is totally free. You must be 18 or older and present a valid ID.</p>
-      </details>
     </div>
   </section>
 
@@ -234,44 +388,73 @@
        CONTACT
   ════════════════════════════════════════ -->
   <section id="contact">
-    <h2 class="section-title">CONTACT</h2>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-          <span>Carrer d'Aragó, 209, L'Eixample, 08011 Barcelona</span>
+    <div class="container">
+      <div class="section-label fade-in">Get in Touch</div>
+      <h2 class="section-heading fade-in">Two Offices.<br>One Standard.</h2>
+
+      <div class="offices-grid fade-in">
+        <div class="office-card">
+          <div class="office-tag">Head Office</div>
+          <h3>Bydgoszcz</h3>
+          <div class="office-detail">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span>Księdza Piotra Skargi, Bydgoszcz, Poland</span>
+          </div>
+          <div class="office-detail">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <a href="tel:+48571523244">+48 571 523 244</a>
+          </div>
         </div>
-        <div class="contact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-          <a href="tel:+34613477116">+34 613 47-71-16</a>
+
+        <div class="office-card">
+          <div class="office-tag">Branch Office</div>
+          <h3>Nowy Sącz</h3>
+          <div class="office-detail">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span>Zielona 27, Nowy Sącz, Poland</span>
+          </div>
+          <div class="office-detail">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <a href="tel:+48571523244">+48 571 523 244</a>
+          </div>
         </div>
-        <div class="contact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-          <a href="mailto:info@icetrayweedclub.com">info@icetrayweedclub.com</a>
-        </div>
-        <div class="contact-socials">
-          <a href="https://instagram.com/icetraycsc" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://wa.me/34613477116" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
-          <a href="https://tiktok.com/@icetraycsc" target="_blank" rel="noopener" aria-label="TikTok">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-          </a>
-        </div>
-        <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-           target="_blank" rel="noopener" class="btn-member btn-member--large">
-          BECOME A MEMBER — FREE
-        </a>
       </div>
-      <div class="contact-map">
-        <iframe
-          title="IceTray location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.4!2d2.1535!3d41.3906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f4cb7a9951%3A0x0!2sCarrer+d'Arag%C3%B3%2C+209%2C+08011+Barcelona!5e0!3m2!1sen!2ses!4v1"
-          width="100%" height="100%" style="border:0;filter:invert(90%) hue-rotate(180deg)"
-          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+
+      <div class="contact-form fade-in">
+        <h3>Send Us a Message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Name</label>
+              <input id="f-name" type="text" placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="f-company">Company</label>
+              <input id="f-company" type="text" placeholder="Company name (optional)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-contact">Email or Phone</label>
+            <input id="f-contact" type="text" placeholder="How can we reach you?" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="f-type">I am looking for…</label>
+            <select id="f-type">
+              <option value="">Select a topic</option>
+              <option value="workers">Hiring welders / workers</option>
+              <option value="job">Finding a job</option>
+              <option value="school">Welding school enquiry</option>
+              <option value="manufacturing">Manufacturing / laser cutting</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" rows="4" placeholder="Tell us what you need — workers, training, manufacturing, or something else."></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+          <p class="form-note">We respond within 1 business day. Fluent in Polish, Ukrainian &amp; English.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -280,32 +463,34 @@
        FOOTER
   ════════════════════════════════════════ -->
   <footer id="footer">
-    <div class="footer-bg"></div>
-    <img src="assets/images/char-bear.png"        class="footer-float footer-float--left"  alt="">
-    <img src="assets/images/crystal-mountain.png" class="footer-float footer-float--right" alt="">
-
     <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">PROFI<span>POWER</span></div>
+        <p class="footer-tagline">"Understand responsibility,<br>act professionally."</p>
+      </div>
       <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#school">Welding School</a>
+        <a href="#jobs">For Workers</a>
+        <a href="#industries">Industries</a>
         <a href="#about">About</a>
-        <a href="#events">Events</a>
-        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="footer-logo">ICETRAY WEED CLUB</div>
-      <a href="https://wa.me/34613477116?text=Hi%2C%20I%27d%20like%20to%20become%20a%20member%20of%20IceTray%20Weed%20Club"
-         target="_blank" rel="noopener" class="btn-member">BECOME A MEMBER</a>
+      <div class="footer-contact">
+        <a href="tel:+48571523244">+48 571 523 244</a>
+        <span>Bydgoszcz · Nowy Sącz</span>
+        <span>Poland</span>
+      </div>
     </div>
-    <p class="footer-legal">© 2025 IceTray Weed Club · Private members association · 18+ only</p>
+    <div class="footer-bottom">
+      <span>© 2024 Profi Power (Profi Corporation). All rights reserved.</span>
+      <div class="footer-langs">
+        <a href="#" data-lang="pl">PL</a>
+        <a href="#" data-lang="ua">UA</a>
+        <a href="#" data-lang="en" class="active">EN</a>
+      </div>
+    </div>
   </footer>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox-hidden" role="dialog" aria-modal="true">
-    <button id="lb-prev" aria-label="Prev">&#8592;</button>
-    <img id="lb-img" src="" alt="">
-    <button id="lb-next" aria-label="Next">&#8594;</button>
-    <button id="lb-close" aria-label="Close">&#x2715;</button>
-    <div id="lb-counter"></div>
-  </div>
 
   <script src="js/main.js"></script>
 </body>
