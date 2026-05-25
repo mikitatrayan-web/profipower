@@ -1145,6 +1145,15 @@ section { padding: 100px 0; }
   background: rgba(240,120,32,0.2);
   border-color: var(--orange);
 }
+.job-rate-box::before {
+  content: 'від';
+  display: block;
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
 .job-rate-num {
   display: block;
   font-family: 'Anton', sans-serif;
@@ -1152,6 +1161,15 @@ section { padding: 100px 0; }
   color: var(--orange);
   letter-spacing: 0.02em;
   line-height: 1;
+}
+.job-rate-num::after {
+  content: ' zł/год.';
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.03em;
+  vertical-align: middle;
 }
 .job-rate-unit {
   display: block;
