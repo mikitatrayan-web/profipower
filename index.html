@@ -3,729 +3,1324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Школа зварювальників у Бидгощі. Навчання MIG/MAG та TIG зварювання з нуля. Акредитація TÜV Rheinland · ISO 9606 · Пропонуємо працевлаштування.">
-  <meta property="og:title" content="Profi Power — Школа зварювальників, Бидгощ">
-  <title>Profi Power | Школа зварювальників у Бидгощі</title>
+  <meta name="description" content="PROFIPOWER — навчання, працевлаштування та виробництво металоконструкцій у Польщі. Корпорація Профі з 1991 року.">
+  <title>PROFIPOWER — Навчання · Працевлаштування · Виробництво</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
+  <style>
+    /* ── HUB HERO ── */
+    .hub-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hub-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 10% 70%, rgba(240,120,32,0.22) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 20%, rgba(30,95,240,0.12) 0%, transparent 48%),
+        linear-gradient(155deg, rgba(7,12,26,0.94) 0%, rgba(11,20,38,0.90) 60%, rgba(15,25,51,0.86) 100%),
+        url('images/welder.jpg') center 40% / cover no-repeat;
+    }
+    .hub-hero-inner {
+      position: relative; z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      padding: 120px 0 80px;
+    }
+    .hub-hero-content { flex: 1; max-width: 620px; }
+    .hub-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(240,120,32,0.1);
+      border: 1px solid rgba(240,120,32,0.25);
+      border-radius: 24px;
+      padding: 5px 14px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+    .hub-hero-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(4rem, 12vw, 8rem);
+      letter-spacing: 0.04em;
+      line-height: 0.9;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hub-hero-title span { color: var(--orange); }
+    .hub-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .hub-dir-pills {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 36px;
+    }
+    .hub-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px;
+      border: 1px solid rgba(240,120,32,0.35);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      text-transform: uppercase;
+    }
+    .hub-pill:hover { background: rgba(240,120,32,0.15); border-color: var(--orange); }
+    .hub-pill svg { width: 16px; height: 16px; opacity: 0.8; }
+
+    /* Hero trust cards panel */
+    .hub-trust-panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      min-width: 260px;
+      max-width: 300px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .hub-stat-row { display: flex; flex-direction: column; gap: 14px; }
+    .hub-stat { display: flex; align-items: center; gap: 14px; }
+    .hub-stat-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 2rem;
+      color: var(--orange);
+      min-width: 80px;
+    }
+    .hub-stat-label { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .hub-trust-div { height: 1px; background: var(--border); }
+
+    /* ── DIRECTIONS ── */
+    .directions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .dir-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .dir-card:hover {
+      border-color: rgba(240,120,32,0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+    .dir-logo { width: 54px; height: 54px; }
+    .dir-card h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .dir-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .dir-cta-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--orange);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    /* ── SCHOOL FEATURED BLOCK ── */
+    .school-featured {
+      background: linear-gradient(135deg, rgba(240,120,32,0.08) 0%, var(--card) 60%);
+      border: 1px solid rgba(240,120,32,0.3);
+      border-radius: 22px;
+      padding: 56px 52px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      margin-top: 56px;
+      box-shadow: 0 0 0 1px rgba(240,120,32,0.12), 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .school-feat-left {}
+    .school-feat-logo {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 20px;
+    }
+    .school-feat-logo .logo-main {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.06em;
+    }
+    .school-feat-logo .logo-accent { color: var(--orange); }
+    .school-feat-logo .logo-sub-text {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+    }
+    .school-feat-tagline {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: var(--orange);
+    }
+    .school-feat-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .school-feat-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
+    .school-feat-stats { display: flex; gap: 32px; margin-bottom: 32px; }
+    .school-feat-stat { text-align: center; }
+    .school-feat-stat .num {
+      display: block;
+      font-family: 'Anton', sans-serif;
+      font-size: 2rem;
+      color: var(--orange);
+    }
+    .school-feat-stat .lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .school-feat-certs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+    .school-cert-badge {
+      background: rgba(240,120,32,0.1);
+      border: 1px solid rgba(240,120,32,0.3);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      text-transform: uppercase;
+    }
+    .school-feat-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+    .school-feat-cta:hover { background: #d96b10; }
+    .school-feat-right {
+      display: flex; flex-direction: column; gap: 14px;
+      min-width: 200px;
+    }
+    .school-method-badge {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .school-method-badge .meth-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.4rem;
+      color: var(--orange);
+    }
+    .school-method-badge .meth-name { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── EDUCATION COURSES ── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 22px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .edu-card:hover { border-color: rgba(240,120,32,0.4); transform: translateY(-3px); }
+    .edu-card--featured { border-color: var(--orange); background: linear-gradient(135deg, rgba(240,120,32,0.07) 0%, var(--card) 60%); }
+    .edu-tag {
+      display: inline-block;
+      background: rgba(240,120,32,0.12);
+      border: 1px solid rgba(240,120,32,0.25);
+      color: var(--orange);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+      width: fit-content;
+    }
+    .edu-card-icon {
+      width: 40px; height: 40px;
+      background: rgba(240,120,32,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .edu-card-icon svg { width: 22px; height: 22px; color: var(--orange); }
+    .edu-card h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .edu-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; flex: 1; }
+    .edu-card a {
+      display: block; text-align: center;
+      padding: 8px;
+      border: 1px solid rgba(240,120,32,0.3);
+      border-radius: 7px;
+      color: var(--orange);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      margin-top: auto;
+    }
+    .edu-card a:hover { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .edu-card--featured a { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .edu-card--featured a:hover { background: #d96b10; }
+
+    /* ── EMPLOYMENT ── */
+    #employment { background: linear-gradient(180deg, #090e1f 0%, #070c1a 100%); }
+    .empl-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    .empl-stat-item {
+      background: var(--card);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .empl-stat-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.2rem;
+      color: var(--orange);
+      display: block;
+    }
+    .empl-stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; }
+    .empl-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .empl-process h3, .empl-benefits-hub h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .empl-steps { display: flex; flex-direction: column; gap: 14px; }
+    .empl-step {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .empl-step-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.4rem;
+      color: var(--orange);
+      min-width: 36px;
+      line-height: 1;
+    }
+    .empl-step-text h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 3px; }
+    .empl-step-text p { font-size: 0.78rem; color: var(--muted); }
+    .empl-ben-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .empl-ben-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: var(--muted); line-height: 1.4;
+    }
+    .empl-ben-list li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .empl-jobs-row {
+      margin-top: 40px;
+    }
+    .empl-jobs-row h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .empl-jobs-mini {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .empl-job-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 0.8rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px;
+    }
+    .empl-job-chip span { color: var(--muted); font-size: 0.72rem; }
+    .empl-cta-row { margin-top: 32px; text-align: center; }
+    .empl-cta-row a {
+      color: var(--orange); font-weight: 600; font-size: 0.88rem;
+      letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase;
+    }
+    .empl-cta-row a:hover { opacity: 0.8; }
+
+    /* ── PRODUCTION ── */
+    .prod-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .prod-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+    .prod-stat .val {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      color: var(--orange);
+      display: block;
+    }
+    .prod-stat .lbl { font-size: 0.72rem; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .prod-services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .prod-srv-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 22px;
+      display: flex; gap: 16px;
+      transition: border-color 0.2s;
+    }
+    .prod-srv-card:hover { border-color: rgba(240,120,32,0.4); }
+    .prod-srv-icon {
+      width: 44px; height: 44px;
+      background: rgba(240,120,32,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .prod-srv-icon svg { width: 22px; height: 22px; color: var(--orange); }
+    .prod-srv-card h4 {
+      font-family: 'Anton', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .prod-srv-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .prod-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .prod-mat-block h3, .prod-proj-block h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .prod-mat-chips {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .prod-mat-chip {
+      background: rgba(240,120,32,0.08);
+      border: 1px solid rgba(240,120,32,0.2);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+    }
+    .prod-proj-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .prod-proj-list li {
+      font-size: 0.82rem; color: var(--muted);
+      padding-left: 16px; position: relative; line-height: 1.4;
+    }
+    .prod-proj-list li::before { content: '→'; position: absolute; left: 0; color: var(--orange); }
+    .prod-cta-row { margin-top: 36px; }
+    .prod-cta-row a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      border: 1px solid var(--orange);
+      color: var(--orange);
+      padding: 12px 22px;
+      border-radius: 9px;
+      font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .prod-cta-row a:hover { background: var(--orange); color: #fff; }
+
+    /* ── REVIEWS ── */
+    #reviews { background: linear-gradient(180deg, #070c1a 0%, #090e1f 100%); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: border-color 0.2s;
+    }
+    .review-card:hover { border-color: rgba(240,120,32,0.3); }
+    .review-stars { color: var(--orange); font-size: 0.9rem; letter-spacing: 2px; }
+    .review-text { font-size: 0.88rem; color: var(--muted); line-height: 1.65; font-style: italic; flex: 1; }
+    .review-author {
+      display: flex; align-items: center; gap: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    .review-avatar {
+      width: 36px; height: 36px;
+      background: rgba(240,120,32,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Anton', sans-serif;
+      font-size: 0.9rem;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .review-name { font-size: 0.82rem; font-weight: 600; }
+    .review-role { font-size: 0.72rem; color: var(--muted); }
+
+    /* ── CORPORATION ── */
+    .corp-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 56px 52px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .corp-year {
+      font-family: 'Anton', sans-serif;
+      font-size: 6rem;
+      color: rgba(240,120,32,0.12);
+      line-height: 1;
+      margin-bottom: -10px;
+    }
+    .corp-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .corp-text { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
+    .corp-link-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--orange); font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+      border: 1px solid rgba(240,120,32,0.35);
+      border-radius: 8px;
+      padding: 10px 18px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .corp-link-btn:hover { background: rgba(240,120,32,0.1); border-color: var(--orange); }
+    .corp-timeline { display: flex; flex-direction: column; gap: 20px; }
+    .corp-tl-item { display: flex; gap: 18px; align-items: flex-start; }
+    .corp-tl-year {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.1rem;
+      color: var(--orange);
+      min-width: 52px;
+    }
+    .corp-tl-text { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── CONTACT (HUB) ── */
+    #hub-contact { background: #090e1f; }
+    .hub-contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    .hub-form-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 32px 28px; }
+    .hub-form-wrap .form-group { margin-bottom: 16px; }
+    .hub-form-wrap label { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hub-form-wrap input, .hub-form-wrap select, .hub-form-wrap textarea {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      border-radius: 8px; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      padding: 10px 14px; outline: none; transition: border-color 0.2s;
+    }
+    .hub-form-wrap input:focus, .hub-form-wrap select:focus, .hub-form-wrap textarea:focus { border-color: var(--orange); }
+    .hub-form-wrap select option { background: #0d1525; }
+    .hub-form-wrap button[type="submit"] {
+      width: 100%; padding: 13px; background: var(--orange); border: none;
+      border-radius: 9px; color: #fff; font-family: 'Anton', sans-serif;
+      font-size: 1rem; letter-spacing: 0.08em; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .hub-form-wrap button:hover { background: #d96b10; }
+    .hub-contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .hub-info-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 20px;
+    }
+    .hub-info-card h4 { font-family: 'Anton', sans-serif; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; color: var(--orange); }
+    .hub-info-card p, .hub-info-card a { font-size: 0.85rem; color: var(--muted); text-decoration: none; display: block; line-height: 1.6; }
+    .hub-info-card a:hover { color: var(--orange); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .directions-grid { grid-template-columns: 1fr; }
+      .school-featured { grid-template-columns: 1fr; }
+      .school-feat-right { flex-direction: row; flex-wrap: wrap; }
+      .edu-grid { grid-template-columns: repeat(2, 1fr); }
+      .empl-stats-row { grid-template-columns: repeat(2, 1fr); }
+      .empl-body { grid-template-columns: 1fr; }
+      .empl-jobs-mini { grid-template-columns: repeat(2, 1fr); }
+      .prod-stats-row { grid-template-columns: repeat(2, 1fr); }
+      .prod-body { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .corp-block { grid-template-columns: 1fr; padding: 36px 28px; gap: 32px; }
+      .hub-contact-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hub-hero-inner { flex-direction: column; padding: 100px 0 60px; }
+      .hub-trust-panel { max-width: 100%; }
+      .hub-stat-row { flex-direction: row; flex-wrap: wrap; }
+      .school-featured { padding: 32px 22px; }
+      .school-feat-stats { gap: 20px; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .empl-jobs-mini { grid-template-columns: repeat(2, 1fr); }
+      .prod-services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ════════════════════════════════════════
-       NAVBAR
-  ════════════════════════════════════════ -->
-  <header id="navbar">
-    <nav class="nav-inner">
-      <!-- LOGO -->
-      <a href="#hero" class="nav-logo-link">
+  <!-- ════ HEADER ════ -->
+  <header class="site-header">
+    <nav class="container nav-inner">
+      <a href="index.html" class="nav-logo-link">
         <div class="nav-logo">
-          <svg class="logo-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="logo-icon" width="38" height="38" viewBox="0 0 38 38" fill="none">
             <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
             <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
-            <circle cx="10.5" cy="12.5" r="1.5" fill="#f07820" opacity="0.45"/>
-            <circle cx="31" cy="27" r="1.5" fill="#f07820" opacity="0.35"/>
-            <!-- welding arc, top-right -->
-            <line x1="31" y1="7" x2="28" y2="12" stroke="#f07820" stroke-width="1.3" stroke-linecap="round"/>
-            <circle cx="28" cy="12" r="2.5" fill="#f07820" opacity="0.18"/>
-            <circle cx="28" cy="12" r="0.9" fill="#fff8ee"/>
-            <line x1="28" y1="12" x2="30" y2="9"  stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.8"/>
-            <line x1="28" y1="12" x2="31" y2="13" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.65"/>
-            <line x1="28" y1="12" x2="30" y2="15" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="10.5" cy="12.5" r="1.5" fill="#f07820" opacity="0.4"/>
+            <circle cx="31" cy="27" r="1.5" fill="#f07820" opacity="0.3"/>
           </svg>
           <div class="logo-text">
             <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
-            <span class="logo-sub" data-i18n="logo_sub">Школа зварювальників</span>
+            <span class="logo-sub" data-i18n="logo_sub">Ваш партнер у Польщі</span>
           </div>
         </div>
       </a>
 
-      <!-- Desktop links -->
       <div class="nav-links">
-        <a href="#programs" data-i18n="nav_programs">Програми</a>
-        <a href="#why-us" data-i18n="nav_why">Переваги</a>
-        <a href="#employment" data-i18n="nav_employment">Вакансії</a>
-        <a href="#faq" data-i18n="nav_faq">FAQ</a>
-        <a href="#contact" data-i18n="nav_contacts">Контакти</a>
+        <a href="#education" data-i18n="nav_edu">Навчання</a>
+        <a href="#employment" data-i18n="nav_empl">Працевлаштування</a>
+        <a href="#production" data-i18n="nav_prod">Виробництво</a>
+        <a href="#about" data-i18n="nav_about">Про нас</a>
       </div>
 
-      <!-- Lang + CTA -->
       <div class="nav-right">
         <div class="lang-switcher">
           <button class="lang-btn active" data-lang="ua">UA</button>
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="pl">PL</button>
         </div>
-        <a href="#contact" class="btn-cta" data-i18n="nav_cta">Записатися</a>
+        <a href="#hub-contact" class="btn-cta" data-i18n="nav_cta">Зв'язатися</a>
       </div>
     </nav>
 
-    <!-- Mobile -->
     <div class="mobile-nav-top">
-      <a href="#hero" class="nav-logo-link">
+      <a href="index.html" class="nav-logo-link">
         <div class="nav-logo nav-logo--sm">
           <svg class="logo-icon" width="30" height="30" viewBox="0 0 38 38" fill="none">
             <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
             <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
-            <!-- welding arc, top-right -->
-            <line x1="31" y1="7" x2="28" y2="12" stroke="#f07820" stroke-width="1.3" stroke-linecap="round"/>
-            <circle cx="28" cy="12" r="2.5" fill="#f07820" opacity="0.18"/>
-            <circle cx="28" cy="12" r="0.9" fill="#fff8ee"/>
-            <line x1="28" y1="12" x2="30" y2="9"  stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.8"/>
-            <line x1="28" y1="12" x2="31" y2="13" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.65"/>
-            <line x1="28" y1="12" x2="30" y2="15" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
           </svg>
           <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
         </div>
       </a>
-      <button id="menu-btn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button id="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
     <div id="mobile-menu">
-      <a href="#programs" data-i18n="nav_programs">Програми</a>
-      <a href="#why-us" data-i18n="nav_why">Переваги</a>
-      <a href="#employment" data-i18n="nav_employment">Вакансії</a>
-      <a href="#faq" data-i18n="nav_faq">FAQ</a>
-      <a href="#contact" data-i18n="nav_contacts">Контакти</a>
+      <a href="#education" data-i18n="nav_edu">Навчання</a>
+      <a href="#employment" data-i18n="nav_empl">Працевлаштування</a>
+      <a href="#production" data-i18n="nav_prod">Виробництво</a>
+      <a href="#about" data-i18n="nav_about">Про нас</a>
       <div class="mobile-lang">
         <button class="lang-btn active" data-lang="ua">UA</button>
         <button class="lang-btn" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="pl">PL</button>
       </div>
-      <a href="#contact" class="btn-cta mobile-cta" data-i18n="nav_cta">Записатися</a>
+      <a href="#hub-contact" class="btn-cta mobile-cta" data-i18n="nav_cta">Зв'язатися</a>
     </div>
   </header>
 
-  <!-- ════════════════════════════════════════
-       HERO
-  ════════════════════════════════════════ -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <canvas id="sparks"></canvas>
-
-    <div class="hero-inner container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">
+  <!-- ════ HERO ════ -->
+  <section id="hero" class="hub-hero">
+    <div class="hub-hero-bg"></div>
+    <div class="hub-hero-inner container">
+      <div class="hub-hero-content fade-in">
+        <div class="hub-hero-badge">
           <span class="eyebrow-dot"></span>
-          <span data-i18n="hero_eyebrow">Школа зварювальників · Бидгощ, Польща</span>
+          <span data-i18n="hero_eyebrow">Корпорація Профі · з 1991 року</span>
         </div>
-        <h1 class="hero-title" data-i18n="hero_title">НАВЧАННЯ ЗВАРЮВАЛЬНИКА</h1>
-        <p class="hero-sub" data-i18n="hero_sub">Міжнародна сертифікація TÜV Rheinland · ISO 9606</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn-primary" data-i18n="hero_cta1">Записатися на навчання</a>
-          <a href="#programs" class="btn-ghost" data-i18n="hero_cta2">Дізнатися більше</a>
+        <h1 class="hub-hero-title">PROFI<span>POWER</span></h1>
+        <p class="hub-hero-sub" data-i18n="hero_sub">Ваш партнер у навчанні, працевлаштуванні та виробництві в Польщі</p>
+        <div class="hub-dir-pills">
+          <a href="#education" class="hub-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <span data-i18n="hero_dir1">Навчання</span>
+          </a>
+          <a href="#employment" class="hub-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            <span data-i18n="hero_dir2">Працевлаштування</span>
+          </a>
+          <a href="#production" class="hub-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41"/></svg>
+            <span data-i18n="hero_dir3">Виробництво</span>
+          </a>
         </div>
       </div>
 
-      <!-- Trust panel -->
-      <div class="hero-trust-panel">
-        <div class="htp-cert">
-          <div class="cert-badge">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6l-9-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="hub-trust-panel fade-in">
+        <div class="hub-stat-row">
+          <div class="hub-stat">
+            <span class="hub-stat-num">5 000+</span>
+            <span class="hub-stat-label" data-i18n="empl_s1">працевлаштованих</span>
           </div>
-          <div class="cert-text">
-            <strong>TÜV Rheinland</strong>
-            <span data-i18n="cert_label">Акредитований центр</span>
+          <div class="hub-trust-div"></div>
+          <div class="hub-stat">
+            <span class="hub-stat-num">2 000+</span>
+            <span class="hub-stat-label" data-i18n="school_stat1">випускників</span>
           </div>
-        </div>
-        <div class="htp-cert">
-          <div class="cert-badge cert-badge--blue">
-            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M8 8h5M8 16h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="hub-trust-div"></div>
+          <div class="hub-stat">
+            <span class="hub-stat-num">15+</span>
+            <span class="hub-stat-label" data-i18n="empl_s3">заводів-партнерів</span>
           </div>
-          <div class="cert-text">
-            <strong>ISO 9606</strong>
-            <span data-i18n="iso_label">Міжнародний стандарт</span>
-          </div>
-        </div>
-        <div class="htp-stats">
-          <div class="htp-stat">
-            <span class="htp-num">2 000+</span>
-            <span class="htp-label" data-i18n="stat_students">випускників</span>
-          </div>
-          <div class="htp-stat">
-            <span class="htp-num">10+</span>
-            <span class="htp-label" data-i18n="stat_years">років досвіду</span>
-          </div>
-          <div class="htp-stat">
-            <span class="htp-num">15+</span>
-            <span class="htp-label" data-i18n="stat_partners">заводів-партнерів</span>
+          <div class="hub-trust-div"></div>
+          <div class="hub-stat">
+            <span class="hub-stat-num">30+</span>
+            <span class="hub-stat-label" data-i18n="corp_sub">років досвіду</span>
           </div>
         </div>
-        <a href="#contact" class="htp-cta" data-i18n="htp_cta">Безкоштовна консультація →</a>
       </div>
-    </div>
-
-    <div class="hero-scroll">
-      <span data-i18n="scroll_hint">Гортай вниз</span>
-      <div class="hero-scroll-line"></div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════
-       PROGRAMS
-  ════════════════════════════════════════ -->
-  <section id="programs">
+  <!-- ════ THREE DIRECTIONS ════ -->
+  <section>
     <div class="container">
-      <div class="section-label fade-in" data-i18n="programs_label">Що ми пропонуємо</div>
-      <h2 class="section-heading fade-in" data-i18n="programs_title">ПРОГРАМИ НАВЧАННЯ</h2>
-      <p class="section-desc fade-in" data-i18n="programs_sub">Оберіть програму, яка підходить саме вам — від повного курсу до підготовки до іспиту</p>
+      <div class="section-label fade-in" data-i18n="dir_label">Наші напрямки</div>
+      <h2 class="section-heading fade-in" data-i18n="dir_title">ТРИ НАПРЯМКИ — ОДНА КОМПАНІЯ</h2>
 
-      <div class="programs-grid">
+      <div class="directions-grid">
 
-        <!-- Card 1 -->
-        <div class="prog-card prog-card--featured fade-in">
-          <div class="prog-badge" data-i18n="prog1_tag">Найпопулярніша</div>
-          <div class="prog-icon prog-icon--orange">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M8 26V14L16 6L24 14V26" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 26V19h8v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 26h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3 data-i18n="prog1_title">MIG/MAG зварювання (135, 136, 138)</h3>
-          <div class="prog-duration">
-            <span class="prog-time" data-i18n="prog1_duration">3 тижні</span>
-            <span class="prog-result" data-i18n="prog1_result">з нуля + працевлаштування</span>
-          </div>
-          <p data-i18n="prog1_desc">Повний курс зварювання методом 135/136. Від базових навичок до першого робочого місця на заводах Польщі.</p>
-          <ul class="prog-list">
-            <li data-i18n="prog1_li1">Базова теорія та безпека</li>
-            <li data-i18n="prog1_li2">Максимум практики</li>
-            <li data-i18n="prog1_li3">Підготовка до сертифікаційного іспиту</li>
-            <li data-i18n="prog1_li4">Допомога з працевлаштуванням</li>
-          </ul>
-          <a href="#contact" class="btn-primary" data-i18n="prog_cta">Записатися</a>
-        </div>
+        <!-- Навчання -->
+        <a href="#education" class="dir-card fade-in">
+          <svg class="dir-logo" viewBox="0 0 54 54" fill="none">
+            <circle cx="27" cy="27" r="25" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.08)"/>
+            <path d="M30 11L19 29H27L21 43L41 25H31L34 11Z" fill="#f07820"/>
+            <!-- Graduation cap top-right -->
+            <polygon points="38,8 44,11 38,14 32,11" fill="#f07820" opacity="0.85"/>
+            <rect x="36" y="14" width="4" height="3" rx="0.6" fill="#f07820" opacity="0.7"/>
+            <line x1="44" y1="11" x2="45" y2="16" stroke="#f07820" stroke-width="1" stroke-linecap="round" opacity="0.75"/>
+            <circle cx="45" cy="16.5" r="0.9" fill="#f07820" opacity="0.65"/>
+          </svg>
+          <h3 data-i18n="dir1_title">Навчання</h3>
+          <p data-i18n="dir1_desc">Курси зварювання, малярства, читання креслень та польської мови. Навчаємо з нуля.</p>
+          <span class="dir-cta-link"><span data-i18n="dir1_cta">Дізнатися більше</span> →</span>
+        </a>
 
+        <!-- Працевлаштування -->
+        <a href="#employment" class="dir-card fade-in">
+          <svg class="dir-logo" viewBox="0 0 54 54" fill="none">
+            <circle cx="27" cy="27" r="25" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.08)"/>
+            <path d="M30 11L19 29H27L21 43L41 25H31L34 11Z" fill="#f07820"/>
+            <!-- Briefcase top-right -->
+            <rect x="33" y="13" width="12" height="9" rx="1.5" stroke="#f07820" stroke-width="1.3" fill="rgba(240,120,32,0.12)"/>
+            <path d="M36 13v-2a1.3 1.3 0 011.3-1.3h3.4A1.3 1.3 0 0142 11v2" stroke="#f07820" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+            <line x1="33" y1="18" x2="45" y2="18" stroke="#f07820" stroke-width="0.9" opacity="0.7"/>
+          </svg>
+          <h3 data-i18n="dir2_title">Працевлаштування</h3>
+          <p data-i18n="dir2_desc">Офіційна робота в Польщі. 5 000+ працевлаштованих. 15+ заводів-партнерів.</p>
+          <span class="dir-cta-link"><span data-i18n="dir2_cta">Вакансії</span> →</span>
+        </a>
+
+        <!-- Виробництво -->
+        <a href="#production" class="dir-card fade-in">
+          <svg class="dir-logo" viewBox="0 0 54 54" fill="none">
+            <circle cx="27" cy="27" r="25" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.08)"/>
+            <path d="M30 11L19 29H27L21 43L41 25H31L34 11Z" fill="#f07820"/>
+            <!-- Gear top-right -->
+            <circle cx="40" cy="13" r="5" stroke="#f07820" stroke-width="1.3" fill="rgba(240,120,32,0.1)"/>
+            <circle cx="40" cy="13" r="1.8" fill="#f07820"/>
+            <line x1="40" y1="6.5" x2="40" y2="8.5" stroke="#f07820" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="40" y1="17.5" x2="40" y2="19.5" stroke="#f07820" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="33.5" y1="13" x2="35.5" y2="13" stroke="#f07820" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="44.5" y1="13" x2="46.5" y2="13" stroke="#f07820" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="35.5" y1="8.5" x2="36.9" y2="9.9" stroke="#f07820" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="43.1" y1="16.1" x2="44.5" y2="17.5" stroke="#f07820" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="44.5" y1="8.5" x2="43.1" y2="9.9" stroke="#f07820" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="36.9" y1="16.1" x2="35.5" y2="17.5" stroke="#f07820" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <h3 data-i18n="dir3_title">Виробництво</h3>
+          <p data-i18n="dir3_desc">Металоконструкції, лазерна різка, ЧПУ-фрезерування. Повний цикл виробництва.</p>
+          <span class="dir-cta-link"><span data-i18n="dir3_cta">Послуги</span> →</span>
+        </a>
 
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════
-       HOW IT WORKS
-  ════════════════════════════════════════ -->
-  <section id="how-it-works">
+  <!-- ════ ШКОЛА ЗВАРЮВАЛЬНИКІВ (featured) ════ -->
+  <section id="school">
     <div class="container">
-      <div class="section-label fade-in" data-i18n="steps_label">Процес навчання</div>
-      <h2 class="section-heading fade-in" data-i18n="steps_title">ЯК ЦЕ ПРАЦЮЄ</h2>
-      <div class="steps-grid fade-in">
+      <div class="section-label fade-in" data-i18n="school_label">Напрямок 1</div>
 
-        <div class="step-item">
-          <div class="step-num">01</div>
-          <div class="step-icon">
-            <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M11 11h10M11 15h10M11 19h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="school-featured fade-in">
+        <div class="school-feat-left">
+          <div class="school-feat-logo">
+            <svg width="48" height="48" viewBox="0 0 38 38" fill="none">
+              <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
+              <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+              <line x1="31" y1="7" x2="28" y2="12" stroke="#f07820" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="28" cy="12" r="2.5" fill="#f07820" opacity="0.18"/>
+              <circle cx="28" cy="12" r="0.9" fill="#fff8ee"/>
+              <line x1="28" y1="12" x2="30" y2="9" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.8"/>
+              <line x1="28" y1="12" x2="31" y2="13" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.65"/>
+              <line x1="28" y1="12" x2="30" y2="15" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+            <div>
+              <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+              <span class="logo-sub-text" data-i18n="school_title">ШКОЛА ЗВАРЮВАЛЬНИКІВ</span>
+            </div>
           </div>
-          <h4 data-i18n="step1_title">Подайте заявку</h4>
-          <p data-i18n="step1_desc">Заповніть коротку форму або зателефонуйте нам. Разом визначимо потрібну програму.</p>
-        </div>
-
-        <div class="step-arrow">→</div>
-
-        <div class="step-item">
-          <div class="step-num">02</div>
-          <div class="step-icon">
-            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 22c0-3.31 2.69-6 6-6s6 2.69 6 6v4H10v-4z" stroke="currentColor" stroke-width="1.5"/><path d="M16 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="school-feat-sub" data-i18n="school_sub">Міжнародна сертифікація TÜV Rheinland · ISO 9606 · Методи 135, 136, 138 (MIG/MAG)</p>
+          <div class="school-feat-certs">
+            <span class="school-cert-badge">TÜV Rheinland</span>
+            <span class="school-cert-badge">ISO 9606</span>
+            <span class="school-cert-badge">MIG/MAG</span>
           </div>
-          <h4 data-i18n="step2_title">Навчання</h4>
-          <p data-i18n="step2_desc">Практичні заняття з досвідченими інструкторами. Індивідуальний підхід до кожного учня.</p>
-        </div>
-
-        <div class="step-arrow">→</div>
-
-        <div class="step-item">
-          <div class="step-num">03</div>
-          <div class="step-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 9v9c0 6.6 5.1 12.8 12 14.3C22.9 30.8 28 24.6 28 18V9L16 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 16l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="school-feat-stats">
+            <div class="school-feat-stat">
+              <span class="num">2 000+</span>
+              <span class="lbl" data-i18n="school_stat1">випускників</span>
+            </div>
+            <div class="school-feat-stat">
+              <span class="num">3</span>
+              <span class="lbl" data-i18n="school_stat2">тижні навчання</span>
+            </div>
+            <div class="school-feat-stat">
+              <span class="num">TÜV</span>
+              <span class="lbl" data-i18n="school_stat3">акредитація</span>
+            </div>
           </div>
-          <h4 data-i18n="step3_title">Здача іспиту та сертифікація</h4>
-          <p data-i18n="step3_desc">Складіть іспит та отримайте сертифікат ISO 9606, акредитований TÜV Rheinland. Дійсний 3 роки по всій Європі.</p>
+          <a href="school.html" class="school-feat-cta" data-i18n="school_cta">До школи зварювальників →</a>
         </div>
-
+        <div class="school-feat-right">
+          <div class="school-method-badge">
+            <span class="meth-num">135</span>
+            <span class="meth-name">MIG зварювання</span>
+          </div>
+          <div class="school-method-badge">
+            <span class="meth-num">136</span>
+            <span class="meth-name">MAG зварювання</span>
+          </div>
+          <div class="school-method-badge">
+            <span class="meth-num">138</span>
+            <span class="meth-name">Порошковий дріт</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════
-       WHY US
-  ════════════════════════════════════════ -->
-  <section id="why-us">
+  <!-- ════ НАВЧАННЯ — всі курси ════ -->
+  <section id="education">
     <div class="container">
-      <div class="section-label fade-in" data-i18n="why_label">Ваш вибір</div>
-      <h2 class="section-heading fade-in" data-i18n="why_title">ЧОМУ ОБИРАЮТЬ НАС</h2>
+      <div class="section-label fade-in" data-i18n="edu_label">Навчання</div>
+      <h2 class="section-heading fade-in" data-i18n="edu_title">ПРОГРАМИ НАВЧАННЯ</h2>
+      <p class="section-sub fade-in" data-i18n="edu_sub">Практичні курси для роботи на виробництві в Польщі</p>
 
-      <div class="why-grid">
+      <div class="edu-grid">
 
-        <div class="why-card why-card--featured fade-in">
-          <div class="why-icon why-icon--green">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 9v9c0 6.6 5.1 12.8 12 14.3C22.9 30.8 28 24.6 28 18V9L16 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 16l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="edu-card edu-card--featured fade-in">
+          <span class="edu-tag" data-i18n="edu1_tag">MIG/MAG · ISO 9606</span>
+          <div class="edu-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h7l-2 8 11-12h-7l2-8z"/></svg>
           </div>
-          <h3 data-i18n="why1_title">TÜV Rheinland акредитація</h3>
-          <p data-i18n="why1_desc">Ми сертифікуємо зварювальників за міжнародним стандартом ISO 9606. Ваш сертифікат визнається по всій Європі та дійсний 3 роки.</p>
+          <h3 data-i18n="edu1_title">Школа зварювальників</h3>
+          <p data-i18n="edu1_desc">MIG/MAG зварювання методами 135, 136, 138. Сертифікація ISO 9606 від TÜV Rheinland.</p>
+          <a href="school.html" data-i18n="edu_cta">Записатися</a>
         </div>
 
-        <div class="why-card fade-in">
-          <div class="why-icon why-icon--orange">
-            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="6" stroke="currentColor" stroke-width="2"/><path d="M6 28c0-5.52 4.48-10 10-10s10 4.48 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 14l2 2-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="edu-card fade-in">
+          <span class="edu-tag" data-i18n="edu2_tag">Підготовчий курс</span>
+          <div class="edu-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22V8M5 12l7-9 7 9M5 17h14"/></svg>
           </div>
-          <h3 data-i18n="why3_title">Досвідчені інструктори</h3>
-          <p data-i18n="why3_desc">Наші інструктори — практикуючі зварювальники з багаторічним виробничим досвідом. Не теорія, а реальна практика.</p>
+          <h3 data-i18n="edu2_title">Курс для малярів</h3>
+          <p data-i18n="edu2_desc">Підготовка маляра по металу: підготовка поверхонь, нанесення покриттів, фарбування.</p>
+          <a href="#hub-contact" data-i18n="edu_cta">Записатися</a>
         </div>
 
-        <div class="why-card fade-in">
-          <div class="why-icon why-icon--blue">
-            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 12h24M10 6V4M22 6V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 18h3v3H9zM15 17h3v4h-3zM21 15h2v6h-2z" fill="currentColor" opacity=".6"/></svg>
+        <div class="edu-card fade-in">
+          <span class="edu-tag" data-i18n="edu3_tag">Технічна підготовка</span>
+          <div class="edu-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h5M8 16h3"/></svg>
           </div>
-          <h3 data-i18n="why4_title">Гнучкий графік</h3>
-          <p data-i18n="why4_desc">Індивідуальна програма під ваш запит та зручний розклад. Підберемо час, що підходить саме вам.</p>
+          <h3 data-i18n="edu3_title">Читання технічних креслень</h3>
+          <p data-i18n="edu3_desc">Курс для монтерів, механіків, електромонтерів та слюсарів. Від символів до просторового мислення.</p>
+          <a href="#hub-contact" data-i18n="edu_cta">Записатися</a>
         </div>
 
-        <div class="why-card why-card--featured fade-in">
-          <div class="why-icon why-icon--green">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M6 16l6 6 14-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="edu-card fade-in">
+          <span class="edu-tag" data-i18n="edu4_tag">2 дні</span>
+          <div class="edu-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
           </div>
-          <h3 data-i18n="why5_title">Пропонуємо працевлаштування</h3>
-          <p data-i18n="why5_desc">15+ заводів-партнерів у Польщі. Ми не просто навчаємо — ми безпосередньо допомагаємо з першим місцем роботи.</p>
+          <h3 data-i18n="edu4_title">Підготовка до вхідного контролю</h3>
+          <p data-i18n="edu4_desc">Інтенсивний курс для проходження заводського іспиту. Позиція PF, практичні тести.</p>
+          <a href="#hub-contact" data-i18n="edu_cta">Записатися</a>
         </div>
 
-        <div class="why-card fade-in">
-          <div class="why-icon why-icon--blue">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M4 6l12 10L28 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+        <div class="edu-card fade-in">
+          <span class="edu-tag" data-i18n="edu5_tag">Мова</span>
+          <div class="edu-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
-          <h3 data-i18n="why6_title">Підтримка українською</h3>
-          <p data-i18n="why6_desc">Говоримо українською, польською та англійською. Допоможемо з документами та адаптацією в Польщі.</p>
+          <h3 data-i18n="edu5_title">Польські розмовні курси</h3>
+          <p data-i18n="edu5_desc">Базовий польський для роботи на виробництві: команди, документи, спілкування з колегами.</p>
+          <a href="#hub-contact" data-i18n="edu_cta">Записатися</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════
-       STATS BANNER
-  ════════════════════════════════════════ -->
-  <div class="stats-banner">
-    <div class="container stats-inner">
-      <div class="sban-item fade-in">
-        <span class="sban-num">2 000+</span>
-        <span class="sban-label" data-i18n="sban_students">випускників пройшли навчання</span>
-      </div>
-      <div class="sban-div"></div>
-      <div class="sban-item fade-in">
-        <span class="sban-num">3</span>
-        <span class="sban-label" data-i18n="sban_weeks">тижні — від нуля до роботи</span>
-      </div>
-      <div class="sban-div"></div>
-      <div class="sban-item fade-in">
-        <span class="sban-num">15+</span>
-        <span class="sban-label" data-i18n="sban_partners">заводів-партнерів у Польщі</span>
-      </div>
-      <div class="sban-div"></div>
-      <div class="sban-item fade-in">
-        <span class="sban-num">10+</span>
-        <span class="sban-label" data-i18n="sban_years">років на ринку</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ════════════════════════════════════════
-       EMPLOYMENT / ВАКАНСІЇ
-  ════════════════════════════════════════ -->
+  <!-- ════ ПРАЦЕВЛАШТУВАННЯ ════ -->
   <section id="employment">
     <div class="container">
-      <div class="section-label fade-in" data-i18n="empl_label">Відкриті вакансії</div>
-      <h2 class="section-heading fade-in" data-i18n="empl_title">ПРАЦЕВЛАШТУВАННЯ</h2>
-      <p class="section-sub fade-in" data-i18n="empl_sub">Офіційне працевлаштування на заводах Польщі. Оберіть свою спеціальність — ми допоможемо з усім іншим.</p>
+      <div class="section-label fade-in" data-i18n="empl_label">Напрямок 2</div>
+      <h2 class="section-heading fade-in" data-i18n="empl_title">ПРАЦЕВЛАШТУВАННЯ В ПОЛЬЩІ</h2>
+      <p class="section-sub fade-in" data-i18n="empl_sub">Офіційна робота на заводах Польщі. Повний супровід від заявки до першого дня роботи.</p>
 
-      <!-- Job cards grid -->
-      <div class="jobs-grid">
-
-        <!-- 1 Слюсар -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job1_title">Слюсар</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">31</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job1_r1">Досвід роботи слюсарем від 1 року</li>
-            <li data-i18n="job1_r2">Вміння читати технічні малюнки</li>
-            <li data-i18n="job1_r3">Досвід монтажу металоконструкцій</li>
-            <li data-i18n="job1_r4">Знання слюсарного інструменту</li>
-            <li data-i18n="job1_r5">Відповідальність та уважність</li>
-            <li data-i18n="job1_r6">Бажання навчатися</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
+      <div class="empl-stats-row fade-in">
+        <div class="empl-stat-item">
+          <span class="empl-stat-num">5 000+</span>
+          <span class="empl-stat-label" data-i18n="empl_s1">працевлаштованих</span>
         </div>
-
-        <!-- 2 Слюсар-зварювальник -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job2_title">Слюсар-зварювальник</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">33</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job2_r1">Досвід роботи слюсарем-зварювальником від 1 року</li>
-            <li data-i18n="job2_r2">Вміння читати технічні малюнки</li>
-            <li data-i18n="job2_r3">Навички MIG/MAG або TIG зварювання</li>
-            <li data-i18n="job2_r4">Досвід слюсарних робіт</li>
-            <li data-i18n="job2_r5">Уважність до деталей</li>
-            <li data-i18n="job2_r6">Командна робота</li>
-            <li data-i18n="job2_r7">Готовність до фізичної праці</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
+        <div class="empl-stat-item">
+          <span class="empl-stat-num">10+</span>
+          <span class="empl-stat-label" data-i18n="empl_s2">років на ринку</span>
         </div>
-
-        <!-- 3 Зварювальник MIG/MAG 135 — FEATURED -->
-        <div class="job-card job-card--featured fade-in">
-          <div class="job-badge" data-i18n="job_top_badge">Топ вакансія</div>
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job3_title">Зварювальник MIG/MAG 135</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">38</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job3_r1">Досвід MIG/MAG зварювання від 2 років</li>
-            <li data-i18n="job3_r2">Посвідчення зварювальника (бажано ISO 9606)</li>
-            <li data-i18n="job3_r3">Вміння читати технічні малюнки</li>
-            <li data-i18n="job3_r4">Якісне виконання швів</li>
-            <li data-i18n="job3_r5">Відповідальність</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
+        <div class="empl-stat-item">
+          <span class="empl-stat-num">15+</span>
+          <span class="empl-stat-label" data-i18n="empl_s3">заводів-партнерів</span>
         </div>
-
-        <!-- 4 Простовач термічний -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job4_title">Простовач термічний (рихтувальник)</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">31</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job4_r1">Досвід термічного рихтування металу</li>
-            <li data-i18n="job4_r2">Робота з газовим пальником</li>
-            <li data-i18n="job4_r3">Фізична витривалість</li>
-            <li data-i18n="job4_r4">Уважність та точність</li>
-            <li data-i18n="job4_r5">Дотримання норм безпеки</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
+        <div class="empl-stat-item">
+          <span class="empl-stat-num">2</span>
+          <span class="empl-stat-label" data-i18n="empl_s4">офіси в Польщі</span>
         </div>
-
-        <!-- 5 Оператор зварювального робота -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job5_title">Оператор зварювального робота</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">32</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job5_r1">Досвід роботи з зварювальними роботами</li>
-            <li data-i18n="job5_r2">Базові знання програмування ЧПУ</li>
-            <li data-i18n="job5_r3">Технічна грамотність</li>
-            <li data-i18n="job5_r4">Уважність та відповідальність</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
-        </div>
-
-        <!-- 6 Маляр -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job6_title">Маляр</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">31</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job6_r1">Досвід малярних робіт від 1 року</li>
-            <li data-i18n="job6_r2">Робота з фарборозпилювачем</li>
-            <li data-i18n="job6_r3">Підготовка поверхонь до фарбування</li>
-            <li data-i18n="job6_r4">Дотримання норм охорони праці</li>
-            <li data-i18n="job6_r5">Охайність та акуратність</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
-        </div>
-
-        <!-- 7 Монтер -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job7_title">Монтер</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">30</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job7_r1">Досвід монтажних робіт</li>
-            <li data-i18n="job7_r2">Читання технічних схем</li>
-            <li data-i18n="job7_r3">Робота з монтажним інструментом</li>
-            <li data-i18n="job7_r4">Відповідальність</li>
-            <li data-i18n="job7_r5">Робота у команді</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
-        </div>
-
-        <!-- 8 Електромонтер -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job8_title">Електромонтер</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">30</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job8_r1">Досвід електромонтажних робіт від 1 року</li>
-            <li data-i18n="job8_r2">Знання електричних схем</li>
-            <li data-i18n="job8_r3">Посвідчення електрика (бажано)</li>
-            <li data-i18n="job8_r4">Дотримання правил електробезпеки</li>
-            <li data-i18n="job8_r5">Уважність та точність</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
-        </div>
-
-        <!-- 9 Механік -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job9_title">Механік</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">30</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job9_r1">Досвід механічних робіт від 1 року</li>
-            <li data-i18n="job9_r2">Читання технічних малюнків</li>
-            <li data-i18n="job9_r3">Знання механічного інструменту</li>
-            <li data-i18n="job9_r4">Технічне мислення</li>
-            <li data-i18n="job9_r5">Відповідальне ставлення до роботи</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
-        </div>
-
-        <!-- 10 Дробеструминник -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job10_title">Дробеструминник (піскоструминник)</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">32</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job10_r1">Досвід дробеструминної обробки</li>
-            <li data-i18n="job10_r2">Робота зі спецобладнанням</li>
-            <li data-i18n="job10_r3">Дотримання норм безпеки</li>
-            <li data-i18n="job10_r4">Фізична витривалість</li>
-            <li data-i18n="job10_r5">Відповідальність</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
-        </div>
-
-        <!-- 11 Електронік -->
-        <div class="job-card fade-in">
-          <div class="job-header">
-            <h3 class="job-title" data-i18n="job11_title">Електронік</h3>
-            <div class="job-rate-box">
-              <span class="job-rate-num">33</span>
-            </div>
-          </div>
-          <ul class="job-reqs">
-            <li data-i18n="job11_r1">Вища або середня технічна освіта (електроніка)</li>
-            <li data-i18n="job11_r2">Досвід обслуговування електронних систем</li>
-            <li data-i18n="job11_r3">Знання схемотехніки</li>
-            <li data-i18n="job11_r4">Вміння користуватися вимірювальними приладами</li>
-            <li data-i18n="job11_r5">Аналітичне мислення</li>
-            <li data-i18n="job11_r6">Уважність до деталей</li>
-            <li data-i18n="job11_r7">Готовність до навчання</li>
-          </ul>
-          <a href="#contact" class="job-apply-btn" data-i18n="job_apply">Подати заявку</a>
-        </div>
-
-      </div><!-- /.jobs-grid -->
-
-      <!-- Benefits panel -->
-      <div class="empl-benefits fade-in">
-        <div class="empl-ben-header">
-          <div class="empl-ben-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f07820"/></svg>
-          </div>
-          <h3 data-i18n="benefits_title">Що ми пропонуємо</h3>
-        </div>
-        <p class="empl-benefits-intro" data-i18n="benefits_intro">Офіційне працевлаштування з повним соціальним пакетом на заводах-партнерах у Польщі.</p>
-        <ul class="benefits-list">
-          <li data-i18n="ben1">Офіційне працевлаштування</li>
-          <li data-i18n="ben2">Сплата всіх податків</li>
-          <li data-i18n="ben3">Виплата до 10-го числа щомісяця без затримок</li>
-          <li data-i18n="ben4">Інструмент та одяг за рахунок фірми</li>
-          <li data-i18n="ben5">Повний супровід на заводі до виходу на роботу</li>
-          <li data-i18n="ben6">Житло за необхідності</li>
-          <li data-i18n="ben7">Безкоштовна перевірка кваліфікації для зварювальників та слюсарів</li>
-          <li data-i18n="ben8">Курс донавчання читання технічних малюнків (монтер, механік, електромонтер, слюсар)</li>
-        </ul>
       </div>
 
+      <div class="empl-body">
+        <div class="empl-process fade-in">
+          <h3 data-i18n="empl_proc_title">Як почати працювати?</h3>
+          <div class="empl-steps">
+            <div class="empl-step">
+              <span class="empl-step-num">01</span>
+              <div class="empl-step-text">
+                <h4 data-i18n="empl_p1">Подайте заявку</h4>
+                <p data-i18n="empl_p1d">Заповніть форму або зателефонуйте нам</p>
+              </div>
+            </div>
+            <div class="empl-step">
+              <span class="empl-step-num">02</span>
+              <div class="empl-step-text">
+                <h4 data-i18n="empl_p2">Переїзд та оселення</h4>
+                <p data-i18n="empl_p2d">Допомагаємо з документами, проживанням</p>
+              </div>
+            </div>
+            <div class="empl-step">
+              <span class="empl-step-num">03</span>
+              <div class="empl-step-text">
+                <h4 data-i18n="empl_p3">Медогляд та вхідний контроль</h4>
+                <p data-i18n="empl_p3d">Супровід до першого дня на заводі</p>
+              </div>
+            </div>
+            <div class="empl-step">
+              <span class="empl-step-num">04</span>
+              <div class="empl-step-text">
+                <h4 data-i18n="empl_p4">Починайте працювати</h4>
+                <p data-i18n="empl_p4d">Офіційний договір, вчасна оплата</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="empl-benefits-hub fade-in">
+          <h3 data-i18n="empl_ben_title">Що ми гарантуємо</h3>
+          <ul class="empl-ben-list">
+            <li data-i18n="empl_b1">Офіційне працевлаштування</li>
+            <li data-i18n="empl_b2">Сплата всіх податків (ЗУС, ПІТ 11)</li>
+            <li data-i18n="empl_b3">Виплата до 10-го числа без затримок</li>
+            <li data-i18n="empl_b4">Інструмент та спецодяг від фірми</li>
+            <li data-i18n="empl_b5">Повний супровід на заводі</li>
+            <li data-i18n="empl_b6">Житло за необхідності</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="empl-jobs-row fade-in">
+        <h3 data-i18n="empl_jobs_title">Відкриті вакансії</h3>
+        <div class="empl-jobs-mini">
+          <div class="empl-job-chip">Зварювальник MIG/MAG <span>38 zł</span></div>
+          <div class="empl-job-chip">Слюсар-зварювальник <span>33 zł</span></div>
+          <div class="empl-job-chip">Електронік <span>33 zł</span></div>
+          <div class="empl-job-chip">Дробеструминник <span>32 zł</span></div>
+          <div class="empl-job-chip">Оператор ЧПУ <span>32 zł</span></div>
+          <div class="empl-job-chip">Слюсар <span>31 zł</span></div>
+          <div class="empl-job-chip">Маляр <span>31 zł</span></div>
+          <div class="empl-job-chip">Електромонтер <span>30 zł</span></div>
+        </div>
+        <div class="empl-cta-row">
+          <a href="school.html#employment" data-i18n="empl_cta">Переглянути всі вакансії →</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════
-       FAQ
-  ════════════════════════════════════════ -->
-  <section id="faq">
+  <!-- ════ ВИРОБНИЦТВО ════ -->
+  <section id="production">
     <div class="container">
-      <div class="section-label fade-in" data-i18n="faq_label">Відповіді на питання</div>
-      <h2 class="section-heading fade-in" data-i18n="faq_title">ЧАСТІ ЗАПИТАННЯ</h2>
-      <div class="faq-list fade-in">
+      <div class="section-label fade-in" data-i18n="prod_label">Напрямок 3</div>
+      <h2 class="section-heading fade-in" data-i18n="prod_title">ВИРОБНИЦТВО МЕТАЛОКОНСТРУКЦІЙ</h2>
+      <p class="section-sub fade-in" data-i18n="prod_sub">Повний цикл виробництва в Бидгощі. Лазерна різка, ЧПУ-фрезерування, зварювання, фарбування.</p>
 
-        <details class="faq-item">
-          <summary><span data-i18n="faq1_q">Чи потрібен досвід зварювання для вступу?</span><span class="faq-icon">+</span></summary>
-          <p data-i18n="faq1_a">Ні. У нас є програми для повних початківців — ми навчаємо з нуля. Головне — бажання навчатися та трудитися.</p>
-        </details>
+      <div class="prod-stats-row fade-in">
+        <div class="prod-stat">
+          <span class="val">0,02 мм</span>
+          <span class="lbl" data-i18n="prod_s1">точність різки</span>
+        </div>
+        <div class="prod-stat">
+          <span class="val" data-i18n="prod_s2v">1–10 днів</span>
+          <span class="lbl" data-i18n="prod_s2">термін виконання</span>
+        </div>
+        <div class="prod-stat">
+          <span class="val" data-i18n="prod_s3v">6+</span>
+          <span class="lbl" data-i18n="prod_s3">матеріалів</span>
+        </div>
+        <div class="prod-stat">
+          <span class="val">1991</span>
+          <span class="lbl" data-i18n="prod_s4">рік заснування</span>
+        </div>
+      </div>
 
-        <details class="faq-item">
-          <summary><span data-i18n="faq3_q">Які методи зварювання ви викладаєте?</span><span class="faq-icon">+</span></summary>
-          <p data-i18n="faq3_a">Ми навчаємо методам 135 та 136 (MIG/MAG) і 138. Це найзатребуваніші методи на виробничих підприємствах Польщі.</p>
-        </details>
+      <div class="prod-services-grid fade-in">
+        <div class="prod-srv-card">
+          <div class="prod-srv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22V8M5 12l7-9 7 9M5 17h14"/><path d="M3 22h18"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="prod_srv1">Лазерна різка</h4>
+            <p data-i18n="prod_srv1d">Точність до 0,02 мм. Складні форми, серійне та одиничне виробництво.</p>
+          </div>
+        </div>
+        <div class="prod-srv-card">
+          <div class="prod-srv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="prod_srv2">ЧПУ-фрезерування</h4>
+            <p data-i18n="prod_srv2d">Складні деталі, внутрішні порожнини, прототипи та серійне виробництво.</p>
+          </div>
+        </div>
+        <div class="prod-srv-card">
+          <div class="prod-srv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4zM4 9h16M4 14h16M9 4v16"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="prod_srv3">Повний цикл</h4>
+            <p data-i18n="prod_srv3d">Різка → гнуття → зварювання → мехобробка → фарбування → збірка.</p>
+          </div>
+        </div>
+        <div class="prod-srv-card">
+          <div class="prod-srv-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M6 20V8l6-6 6 6v12"/><path d="M10 20v-5h4v5"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="prod_srv4">Інженерна підтримка</h4>
+            <p data-i18n="prod_srv4d">Доопрацювання креслень, 3D-моделювання, розробка технічних рішень.</p>
+          </div>
+        </div>
+      </div>
 
-        <details class="faq-item">
-          <summary><span data-i18n="faq4_q">Як довго дійсний сертифікат ISO 9606?</span><span class="faq-icon">+</span></summary>
-          <p data-i18n="faq4_a">Сертифікат ISO 9606, акредитований TÜV Rheinland, дійсний 3 роки. Він визнається роботодавцями по всій Європі.</p>
-        </details>
+      <div class="prod-body fade-in">
+        <div>
+          <div class="prod-mat-block">
+            <h3 data-i18n="prod_mat_title">Матеріали</h3>
+            <div class="prod-mat-chips">
+              <span class="prod-mat-chip" data-i18n="prod_m1">Сталь</span>
+              <span class="prod-mat-chip" data-i18n="prod_m2">Нержавіюча сталь</span>
+              <span class="prod-mat-chip" data-i18n="prod_m3">Алюміній</span>
+              <span class="prod-mat-chip" data-i18n="prod_m4">Титан</span>
+              <span class="prod-mat-chip" data-i18n="prod_m5">Латунь</span>
+              <span class="prod-mat-chip" data-i18n="prod_m6">Мідь</span>
+            </div>
+          </div>
+          <div class="prod-cta-row" style="margin-top:28px">
+            <a href="#hub-contact" data-i18n="prod_cta">Запросити розрахунок →</a>
+          </div>
+        </div>
+        <div class="prod-proj-block">
+          <h3 data-i18n="prod_proj_title">Реалізовані проекти</h3>
+          <ul class="prod-proj-list">
+            <li data-i18n="prod_pr1">Мости в Новому Сончі</li>
+            <li data-i18n="prod_pr2">Трубопровідні системи Siemens</li>
+            <li data-i18n="prod_pr3">Складські металоконструкції в Бидгощі</li>
+            <li data-i18n="prod_pr4">Трубопроводи в Кракові</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <details class="faq-item">
-          <summary><span data-i18n="faq5_q">Чи допоможете знайти роботу після навчання?</span><span class="faq-icon">+</span></summary>
-          <p data-i18n="faq5_a">Так. Ми маємо 15+ заводів-партнерів і безпосередньо допомагаємо з працевлаштуванням після завершення навчання.</p>
-        </details>
+  <!-- ════ ВІДГУКИ ════ -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-label fade-in" data-i18n="rev_label">Відгуки</div>
+      <h2 class="section-heading fade-in" data-i18n="rev_title">ЩО ГОВОРЯТЬ НАШІ ПРАЦІВНИКИ</h2>
 
-        <details class="faq-item">
-          <summary><span data-i18n="faq7_q">Чи є підтримка для тих, хто не говорить польською?</span><span class="faq-icon">+</span></summary>
-          <p data-i18n="faq7_a">Так. Наш персонал говорить українською, польською та англійською. Ми допомагаємо з документами та адаптацією.</p>
-        </details>
+      <div class="reviews-grid">
+
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev1_text">Тут цінують кожну людину. Заробітна плата досить конкурентна порівняно з іншими компаніями.</p>
+          <div class="review-author">
+            <div class="review-avatar">Б</div>
+            <div>
+              <div class="review-name" data-i18n="rev1_name">Богдан Г.</div>
+              <div class="review-role">Зварювальник</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev2_text">Чудова робоча атмосфера та злагоджена команда. Рекомендую всім, хто шукає роботу в Польщі.</p>
+          <div class="review-author">
+            <div class="review-avatar">Д</div>
+            <div>
+              <div class="review-name" data-i18n="rev2_name">Денис С.</div>
+              <div class="review-role">Слюсар</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev3_text">Працюю вже 5 років разом із членами сім'ї. Стабільна виплата, офіційне оформлення.</p>
+          <div class="review-author">
+            <div class="review-avatar">А</div>
+            <div>
+              <div class="review-name" data-i18n="rev3_name">Андрій К.</div>
+              <div class="review-role">Монтер</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev4_text">Не жалкую про свій вибір вже 2 роки. Хороші умови, нормальні керівники, вчасна оплата.</p>
+          <div class="review-author">
+            <div class="review-avatar">В</div>
+            <div>
+              <div class="review-name" data-i18n="rev4_name">Віталій Б.</div>
+              <div class="review-role">Електромонтер</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card fade-in">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-i18n="rev5_text">Приїхав 2 роки тому і повністю задоволений. Компанія виконує всі обіцянки.</p>
+          <div class="review-author">
+            <div class="review-avatar">Д</div>
+            <div>
+              <div class="review-name" data-i18n="rev5_name">Дмитро Г.</div>
+              <div class="review-role">Маляр</div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════
-       CONTACT / APPLY
-  ════════════════════════════════════════ -->
-  <section id="contact">
+  <!-- ════ КОРПОРАЦІЯ ПРОФІ ════ -->
+  <section id="about">
     <div class="container">
-      <div class="section-label fade-in" data-i18n="contact_label">Почати навчання</div>
-      <h2 class="section-heading fade-in" data-i18n="contact_title">ЗАПИСАТИСЯ НА НАВЧАННЯ</h2>
-      <p class="section-desc fade-in" data-i18n="contact_sub">Заповніть форму і ми зв'яжемося з вами протягом 1 робочого дня</p>
+      <div class="section-label fade-in" data-i18n="corp_label">Про нас</div>
+      <h2 class="section-heading fade-in" data-i18n="corp_title">КОРПОРАЦІЯ ПРОФІ</h2>
 
-      <div class="contact-layout">
+      <div class="corp-block fade-in">
+        <div>
+          <div class="corp-year">1991</div>
+          <h3 class="corp-title" data-i18n="corp_title">КОРПОРАЦІЯ ПРОФІ</h3>
+          <p class="corp-text" data-i18n="corp_text">З 1991 року компанія спеціалізувалась на виробництві зварних металоконструкцій. Протягом десятиліть ми розширили напрямки: у 2015 році запустили підрозділ працевлаштування, а пізніше — школу зварювальників та курси підготовки виробничого персоналу.</p>
+          <a href="https://proficorp.com.ua/" target="_blank" rel="noopener" class="corp-link-btn" data-i18n="corp_link">Офіційний сайт корпорації →</a>
+        </div>
+        <div class="corp-timeline">
+          <div class="corp-tl-item">
+            <span class="corp-tl-year">1991</span>
+            <span class="corp-tl-text">Заснування компанії. Виробництво зварних металоконструкцій.</span>
+          </div>
+          <div class="corp-tl-item">
+            <span class="corp-tl-year">2015</span>
+            <span class="corp-tl-text">Запуск підрозділу працевлаштування. Перші 1 000 працівників.</span>
+          </div>
+          <div class="corp-tl-item">
+            <span class="corp-tl-year">2018</span>
+            <span class="corp-tl-text">Відкриття школи зварювальників з акредитацією TÜV Rheinland.</span>
+          </div>
+          <div class="corp-tl-item">
+            <span class="corp-tl-year">2024</span>
+            <span class="corp-tl-text">5 000+ працевлаштованих. 2 офіси. 15+ заводів-партнерів.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Application Form -->
-        <div class="contact-form-wrap fade-in">
-          <form id="contact-form" novalidate>
+  <!-- ════ КОНТАКТ ════ -->
+  <section id="hub-contact">
+    <div class="container">
+      <div class="section-label fade-in" data-i18n="contact_label">Зв'язатися</div>
+      <h2 class="section-heading fade-in" data-i18n="contact_title">ЗВ'ЯЖІТЬСЯ З НАМИ</h2>
+      <p class="section-sub fade-in" data-i18n="contact_sub">Оберіть напрямок — розкажемо детальніше</p>
+
+      <div class="hub-contact-inner">
+        <div class="hub-form-wrap fade-in">
+          <form id="hub-form" novalidate>
             <div class="form-group">
-              <label data-i18n="form_name_label">Ваше ім'я</label>
-              <input id="f-name" type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я" autocomplete="name">
+              <label data-i18n="form_name">Ваше ім'я</label>
+              <input type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я" autocomplete="name">
             </div>
             <div class="form-group">
-              <label data-i18n="form_phone_label">Телефон / WhatsApp</label>
-              <input id="f-phone" type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp" autocomplete="tel">
+              <label data-i18n="form_phone">Телефон / WhatsApp</label>
+              <input type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp" autocomplete="tel">
             </div>
             <div class="form-group">
-              <label data-i18n="form_program_label">Програма навчання</label>
-              <select id="f-program">
-                <option value="" data-i18n="prog_select_default">Оберіть програму</option>
-                <option value="135" data-i18n="prog_select_1">MIG/MAG (135, 136) — 3 тижні</option>
-                <option value="141" data-i18n="prog_select_2">TIG (141) — 2 тижні</option>
-                <option value="exam" data-i18n="prog_select_3">Підготовка до вхідного контролю — 2 дні</option>
-                <option value="other" data-i18n="prog_select_4">Інше / не знаю ще</option>
+              <label data-i18n="form_topic">Оберіть напрямок</label>
+              <select>
+                <option value="" data-i18n="form_topic">Оберіть напрямок</option>
+                <option value="edu" data-i18n="form_t1">Навчання</option>
+                <option value="empl" data-i18n="form_t2">Працевлаштування</option>
+                <option value="prod" data-i18n="form_t3">Виробництво</option>
+                <option value="other" data-i18n="form_t4">Інше</option>
               </select>
             </div>
-            <div class="form-group">
-              <label data-i18n="form_msg_label">Запитання (необов'язково)</label>
-              <textarea id="f-message" rows="3" data-i18n-placeholder="form_msg" placeholder="Ваше запитання або коментар..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary btn-full" data-i18n="form_submit">Надіслати заявку</button>
-            <p class="form-note" data-i18n="form_note">Відповідаємо протягом 1 робочого дня. Говоримо українською, польською та англійською.</p>
+            <button type="submit" data-i18n="form_submit">Надіслати</button>
           </form>
         </div>
 
-        <!-- Offices + contacts -->
-        <div class="contact-info-wrap fade-in">
-          <div class="office-card">
-            <div class="office-tag" data-i18n="office1_tag">Головний офіс</div>
-            <h3 data-i18n="office1_city">Бидгощ</h3>
-            <div class="office-detail">
-              <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
-              <span data-i18n="office1_addr">Poznańska 27/1, 85-129 Bydgoszcz, Polska</span>
-            </div>
-            <div class="office-detail">
-              <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
-              <a href="tel:+48571523244">+48 571 523 244</a>
-            </div>
+        <div class="hub-contact-info fade-in">
+          <div class="hub-info-card">
+            <h4>Головний офіс</h4>
+            <p>Poznańska 27/1, 85-129 Bydgoszcz, Polska</p>
+            <a href="tel:+48571523244">+48 571 523 244</a>
           </div>
-
-          <div class="office-card office-card--school">
-            <div class="office-tag office-tag--school" data-i18n="office2_tag">Школа зварювання</div>
-            <h3 data-i18n="office2_city">Бидгощ</h3>
-            <div class="office-detail">
-              <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
-              <span data-i18n="office2_addr">ul. Witebska 1B, 85-759 Bydgoszcz, Polska</span>
-            </div>
-            <div class="office-detail">
-              <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
-              <a href="tel:+48571523244">+48 571 523 244</a>
-            </div>
+          <div class="hub-info-card">
+            <h4>Школа зварювання</h4>
+            <p>ul. Witebska 1B, 85-759 Bydgoszcz, Polska</p>
           </div>
-
-          <div class="office-card office-card--branch">
-            <div class="office-tag office-tag--branch" data-i18n="office3_tag">Філіал</div>
-            <h3 data-i18n="office3_city">Новий Сонч</h3>
-            <div class="office-detail">
-              <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
-              <span data-i18n="office3_addr">Zielona 27, 33-300 Nowy Sącz, Polska</span>
-            </div>
+          <div class="hub-info-card">
+            <h4>Філіал</h4>
+            <p>Zielona 27, 33-300 Nowy Sącz, Polska</p>
           </div>
-
-          <!-- Social / instant contact -->
-          <div class="contact-social-row">
-            <a href="https://instagram.com/corporation.profi" target="_blank" rel="noopener" class="social-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              @corporation.profi
-            </a>
-            <a href="https://wa.me/48571523244" target="_blank" rel="noopener" class="social-btn social-btn--green">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              <span data-i18n="whatsapp_label">Написати у WhatsApp</span>
-            </a>
-          </div>
-
-          <!-- Guarantee badge -->
-          <div class="guarantee-badge">
-            <div class="guar-icon">
-              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 9v9c0 6.6 5.1 12.8 12 14.3C22.9 30.8 28 24.6 28 18V9L16 4z" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="1.5"/><path d="M11 16l3 3 7-7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <strong data-i18n="guar_title">Пропонуємо працевлаштування</strong>
-              <p data-i18n="guar_desc">Після завершення навчання ми гарантуємо підбір роботи через мережу 15+ заводів-партнерів.</p>
-            </div>
+          <div class="hub-info-card">
+            <h4>Соціальні мережі</h4>
+            <a href="https://instagram.com/corporation.profi" target="_blank" rel="noopener">@corporation.profi</a>
+            <a href="https://wa.me/48571523244" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://proficorp.com.ua/" target="_blank" rel="noopener">proficorp.com.ua</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════════ -->
-  <footer id="footer">
-    <div class="footer-inner container">
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <div class="footer-brand">
         <div class="footer-logo">
           <svg width="32" height="32" viewBox="0 0 38 38" fill="none">
             <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.1)"/>
             <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
-            <!-- welding arc, top-right -->
-            <line x1="31" y1="7" x2="28" y2="12" stroke="#f07820" stroke-width="1.3" stroke-linecap="round"/>
-            <circle cx="28" cy="12" r="2.5" fill="#f07820" opacity="0.18"/>
-            <circle cx="28" cy="12" r="0.9" fill="#fff8ee"/>
-            <line x1="28" y1="12" x2="30" y2="9"  stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.8"/>
-            <line x1="28" y1="12" x2="31" y2="13" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.65"/>
-            <line x1="28" y1="12" x2="30" y2="15" stroke="#f07820" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
           </svg>
           <span>PROFI<span>POWER</span></span>
         </div>
@@ -733,33 +1328,30 @@
         <div class="footer-certs">
           <span class="fcert">TÜV Rheinland</span>
           <span class="fcert">ISO 9606</span>
+          <span class="fcert">з 1991</span>
         </div>
       </div>
 
       <nav class="footer-nav">
-        <a href="#programs" data-i18n="nav_programs">Програми</a>
-        <a href="#why-us" data-i18n="nav_why">Переваги</a>
-        <a href="#employment" data-i18n="nav_employment">Вакансії</a>
-        <a href="#faq" data-i18n="nav_faq">FAQ</a>
-        <a href="#contact" data-i18n="nav_contacts">Контакти</a>
+        <a href="#education" data-i18n="nav_edu">Навчання</a>
+        <a href="school.html">Школа зварювальників</a>
+        <a href="#employment" data-i18n="nav_empl">Працевлаштування</a>
+        <a href="#production" data-i18n="nav_prod">Виробництво</a>
+        <a href="#about" data-i18n="nav_about">Про нас</a>
+        <a href="https://proficorp.com.ua/" target="_blank" rel="noopener">Корпорація Профі</a>
       </nav>
 
       <div class="footer-contact">
         <a href="tel:+48571523244">+48 571 523 244</a>
         <a href="https://instagram.com/corporation.profi" target="_blank" rel="noopener">@corporation.profi</a>
-        <span data-i18n="footer_city">Бидгощ, Польща</span>
+        <a href="https://proficorp.com.ua/" target="_blank" rel="noopener">proficorp.com.ua</a>
       </div>
     </div>
-    <div class="footer-bottom container">
-      <span data-i18n="footer_copy">© 2024 Profi Power (Profi Corporation). Всі права захищено.</span>
-      <div class="footer-langs">
-        <button class="lang-btn active" data-lang="ua">UA</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="pl">PL</button>
-      </div>
+    <div class="container" style="padding-top:20px;border-top:1px solid var(--border);margin-top:20px">
+      <p style="font-size:0.72rem;color:var(--muted);text-align:center" data-i18n="footer_copy">© 2024 Profi Power (Profi Corporation). Всі права захищено.</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/hub.js"></script>
 </body>
 </html>
