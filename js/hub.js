@@ -80,7 +80,7 @@ const HUB_TRANSLATIONS = {
     empl_b4:       'Інструмент та спецодяг від фірми',
     empl_b5:       'Повний супровід на заводі',
     empl_b6:       'Житло за необхідності',
-    empl_cta:      'Переглянути всі вакансії →',
+    empl_cta:      'Детальніше про школу →',
 
     prod_label:    'Напрямок 3',
     prod_title:    'ВИРОБНИЦТВО МЕТАЛОКОНСТРУКЦІЙ',
@@ -229,7 +229,7 @@ const HUB_TRANSLATIONS = {
     empl_b4:       'Tools and workwear provided',
     empl_b5:       'Full factory support',
     empl_b6:       'Housing if needed',
-    empl_cta:      'View all vacancies →',
+    empl_cta:      'Learn more about the school →',
 
     prod_label:    'Direction 3',
     prod_title:    'METAL STRUCTURE PRODUCTION',
@@ -378,7 +378,7 @@ const HUB_TRANSLATIONS = {
     empl_b4:       'Narzędzia i odzież robocza od firmy',
     empl_b5:       'Pełna obsługa w zakładzie',
     empl_b6:       'Zakwaterowanie w razie potrzeby',
-    empl_cta:      'Zobacz wszystkie oferty →',
+    empl_cta:      'Więcej o szkole →',
 
     prod_label:    'Kierunek 3',
     prod_title:    'PRODUKCJA KONSTRUKCJI METALOWYCH',
