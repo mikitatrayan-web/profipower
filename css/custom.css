@@ -887,6 +887,10 @@ section { padding: 100px 0; }
   margin-bottom: 0.6rem;
 }
 .office-tag--school { color: var(--green); }
+.office-card--branch::before {
+  background: linear-gradient(90deg, #6366f1, transparent 70%);
+}
+.office-tag--branch { color: #818cf8; }
 .office-card h3 {
   font-family: 'Anton', Impact, sans-serif;
   font-size: 1.5rem;
