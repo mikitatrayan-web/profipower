@@ -1046,6 +1046,246 @@ section { padding: 100px 0; }
 .fade-in.visible { opacity: 1; transform: none; }
 
 /* ═══════════════════════════════════════
+   EMPLOYMENT / ВАКАНСІЇ
+═══════════════════════════════════════ */
+#employment {
+  padding: 90px 0 70px;
+  background: linear-gradient(180deg, #070c1a 0%, #090e1f 100%);
+}
+
+/* Jobs grid — 3 cols desktop */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+/* Base job card */
+.job-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.job-card:hover {
+  border-color: rgba(240,120,32,0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+}
+
+/* Featured card */
+.job-card--featured {
+  border-color: var(--orange);
+  background: linear-gradient(145deg, rgba(240,120,32,0.06) 0%, var(--card) 60%);
+  box-shadow: 0 0 0 1px rgba(240,120,32,0.3), 0 8px 28px rgba(240,120,32,0.12);
+}
+.job-card--featured:hover {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 1px var(--orange), 0 14px 36px rgba(240,120,32,0.22);
+}
+
+/* Badge */
+.job-badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* Card header: title + rate side by side */
+.job-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.job-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.25;
+  flex: 1;
+  margin-top: 8px; /* offset for badge on featured */
+}
+.job-card:not(.job-card--featured) .job-title {
+  margin-top: 0;
+}
+
+/* Rate box */
+.job-rate-box {
+  background: rgba(240,120,32,0.12);
+  border: 1px solid rgba(240,120,32,0.3);
+  border-radius: 10px;
+  padding: 6px 10px;
+  text-align: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.job-card--featured .job-rate-box {
+  background: rgba(240,120,32,0.2);
+  border-color: var(--orange);
+}
+.job-rate-num {
+  display: block;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.35rem;
+  color: var(--orange);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.job-rate-unit {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+}
+
+/* Requirements list */
+.job-reqs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.job-reqs li {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.4;
+}
+.job-reqs li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: 0.75rem;
+}
+
+/* Apply button */
+.job-apply-btn {
+  display: block;
+  text-align: center;
+  padding: 9px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(240,120,32,0.4);
+  color: var(--orange);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  margin-top: auto;
+}
+.job-apply-btn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+.job-card--featured .job-apply-btn {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+.job-card--featured .job-apply-btn:hover {
+  background: #d96b10;
+  border-color: #d96b10;
+}
+
+/* Benefits panel */
+.empl-benefits {
+  margin-top: 60px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 40px 44px;
+}
+.empl-ben-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.empl-ben-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(240,120,32,0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.empl-ben-header h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.empl-benefits-intro {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 26px;
+  line-height: 1.6;
+  padding-left: 62px;
+}
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 32px;
+}
+.benefits-list li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Employment responsive */
+@media (max-width: 1024px) {
+  .jobs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .jobs-grid { grid-template-columns: 1fr; }
+  .empl-benefits { padding: 28px 20px; }
+  .empl-benefits-intro { padding-left: 0; }
+  .benefits-list { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════
    SCROLLBAR
 ═══════════════════════════════════════ */
 ::-webkit-scrollbar { width: 5px; }
