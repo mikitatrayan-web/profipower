@@ -131,7 +131,7 @@ const TRANSLATIONS = {
     office1_addr:     'Poznańska 27/1, 85-129 Bydgoszcz, Polska',
     office2_tag:      'Школа зварювання',
     office2_city:     'Бидгощ',
-    office2_addr:     'Zielona 27, 33-300 Nowy Sącz, Polska',
+    office2_addr:     'ul. Witebska 1B, 85-759 Bydgoszcz, Polska',
     whatsapp_label:   'Написати у WhatsApp',
 
     guar_title:       'Пропонуємо працевлаштування',
@@ -371,7 +371,7 @@ const TRANSLATIONS = {
     office1_addr:     'Poznańska 27/1, 85-129 Bydgoszcz, Polska',
     office2_tag:      'Welding school',
     office2_city:     'Bydgoszcz',
-    office2_addr:     'Zielona 27, 33-300 Nowy Sącz, Polska',
+    office2_addr:     'ul. Witebska 1B, 85-759 Bydgoszcz, Polska',
     whatsapp_label:   'Write on WhatsApp',
 
     guar_title:       'Employment guarantee',
@@ -611,7 +611,7 @@ const TRANSLATIONS = {
     office1_addr:     'Poznańska 27/1, 85-129 Bydgoszcz, Polska',
     office2_tag:      'Szkoła spawalnicza',
     office2_city:     'Bydgoszcz',
-    office2_addr:     'Zielona 27, 33-300 Nowy Sącz, Polska',
+    office2_addr:     'ul. Witebska 1B, 85-759 Bydgoszcz, Polska',
     whatsapp_label:   'Napisz na WhatsApp',
 
     guar_title:       'Gwarancja zatrudnienia',
