@@ -312,10 +312,10 @@ section { padding: 100px 0; }
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 12% 80%, rgba(240,120,32,0.22) 0%, transparent 50%),
-    radial-gradient(ellipse at 88% 15%, rgba(30,95,240,0.13) 0%, transparent 48%),
-    radial-gradient(ellipse at 45% 100%, rgba(240,120,32,0.08) 0%, transparent 36%),
-    linear-gradient(155deg, #070c1a 0%, #0b1426 50%, #0f1933 100%);
+    radial-gradient(ellipse at 12% 80%, rgba(240,120,32,0.28) 0%, transparent 50%),
+    radial-gradient(ellipse at 88% 15%, rgba(30,95,240,0.15) 0%, transparent 48%),
+    linear-gradient(155deg, rgba(7,12,26,0.82) 0%, rgba(11,20,38,0.78) 50%, rgba(15,25,51,0.72) 100%),
+    url('../images/welder.jpg') center 40% / cover no-repeat;
   z-index: 0;
 }
 .hero-bg::after {
@@ -323,7 +323,7 @@ section { padding: 100px 0; }
   position: absolute; inset: 0;
   background-image: repeating-linear-gradient(
     -45deg, transparent 0px, transparent 40px,
-    rgba(255,255,255,0.012) 40px, rgba(255,255,255,0.012) 41px
+    rgba(255,255,255,0.010) 40px, rgba(255,255,255,0.010) 41px
   );
 }
 #sparks { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
@@ -702,7 +702,9 @@ section { padding: 100px 0; }
    STATS BANNER
 ═══════════════════════════════════════ */
 .stats-banner {
-  background: linear-gradient(135deg, #0d1a3a 0%, #111d36 100%);
+  background:
+    linear-gradient(135deg, rgba(13,26,58,0.90) 0%, rgba(17,29,54,0.88) 100%),
+    url('../images/factory.png') center / cover no-repeat;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 60px 0;
