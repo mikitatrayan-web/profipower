@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Profi Power — Industrial staffing, welding training, and steel manufacturing for Poland's largest production plants. Operating since 1991.">
-  <meta property="og:title" content="Profi Power | Welding Specialists & Industrial Staffing, Poland">
-  <title>Profi Power | Welding Specialists & Industrial Staffing in Poland</title>
+  <meta name="description" content="Школа зварників у Бидгощі. Навчання MIG/MAG та TIG зварювання з нуля. Акредитація TÜV Rheinland · ISO 9606 · Гарантія працевлаштування.">
+  <meta property="og:title" content="Profi Power — Школа зварників, Бидгощ">
+  <title>Profi Power | Школа зварників у Бидгощі</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,37 +18,68 @@
   ════════════════════════════════════════ -->
   <header id="navbar">
     <nav class="nav-inner">
-      <div class="nav-left">
-        <a href="#services">Services</a>
-        <a href="#school">Welding School</a>
-        <a href="#jobs">For Workers</a>
-      </div>
-      <a href="#hero" class="nav-logo">PROFI<span>POWER</span></a>
-      <div class="nav-right">
-        <a href="#about">About</a>
-        <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="pl">PL</button>
-          <button class="lang-btn" data-lang="ua">UA</button>
+      <!-- LOGO -->
+      <a href="#hero" class="nav-logo-link">
+        <div class="nav-logo">
+          <svg class="logo-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+            <circle cx="10.5" cy="12.5" r="1.5" fill="#f07820" opacity="0.45"/>
+            <circle cx="29" cy="11" r="1" fill="#f07820" opacity="0.35"/>
+            <circle cx="31" cy="27" r="1.5" fill="#f07820" opacity="0.35"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+            <span class="logo-sub" data-i18n="logo_sub">Школа зварників</span>
+          </div>
         </div>
-        <a href="#contact" class="btn-cta">Hire Workers</a>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="nav-links">
+        <a href="#programs" data-i18n="nav_programs">Програми</a>
+        <a href="#why-us" data-i18n="nav_why">Переваги</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_contacts">Контакти</a>
+      </div>
+
+      <!-- Lang + CTA -->
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+        </div>
+        <a href="#contact" class="btn-cta" data-i18n="nav_cta">Записатися</a>
       </div>
     </nav>
 
-    <!-- Mobile nav -->
+    <!-- Mobile -->
     <div class="mobile-nav-top">
-      <a href="#hero" class="nav-logo">PROFI<span>POWER</span></a>
+      <a href="#hero" class="nav-logo-link">
+        <div class="nav-logo nav-logo--sm">
+          <svg class="logo-icon" width="30" height="30" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+        </div>
+      </a>
       <button id="menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div id="mobile-menu">
-      <a href="#services">Services</a>
-      <a href="#school">Welding School</a>
-      <a href="#jobs">For Workers</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="btn-cta mobile-cta">Hire Workers</a>
+      <a href="#programs" data-i18n="nav_programs">Програми</a>
+      <a href="#why-us" data-i18n="nav_why">Переваги</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#contact" data-i18n="nav_contacts">Контакти</a>
+      <div class="mobile-lang">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contact" class="btn-cta mobile-cta" data-i18n="nav_cta">Записатися</a>
     </div>
   </header>
 
@@ -59,133 +90,132 @@
     <div class="hero-bg"></div>
     <canvas id="sparks"></canvas>
 
-    <div class="hero-inner">
+    <div class="hero-inner container">
       <div class="hero-content">
-        <div class="hero-eyebrow">Industrial Staffing &amp; Welding · Poland · Since 1991</div>
-        <h1 class="hero-title">WELDING<br>THE FUTURE<br>OF INDUSTRY</h1>
-        <p class="hero-sub">Poland's premier partner for welding specialists and industrial staffing. Connecting the country's top production plants with certified professionals.</p>
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span data-i18n="hero_eyebrow">Школа зварників · Бидгощ, Польща</span>
+        </div>
+        <h1 class="hero-title" data-i18n="hero_title">НАВЧАННЯ ЗВАРНИКА З НУЛЯ ДО РОБОТИ</h1>
+        <p class="hero-sub" data-i18n="hero_sub">Міжнародна сертифікація TÜV Rheinland · ISO 9606 · Гарантія працевлаштування на заводах Польщі</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn-primary">Hire Welders</a>
-          <a href="#jobs" class="btn-ghost">Find a Job</a>
+          <a href="#contact" class="btn-primary" data-i18n="hero_cta1">Записатися на навчання</a>
+          <a href="#programs" class="btn-ghost" data-i18n="hero_cta2">Дізнатися більше</a>
         </div>
       </div>
 
-      <div class="hero-stats">
-        <div class="hs-item">
-          <span class="hs-num">30+</span>
-          <span class="hs-label">Years on Market</span>
+      <!-- Trust panel -->
+      <div class="hero-trust-panel">
+        <div class="htp-cert">
+          <div class="cert-badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6l-9-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="cert-text">
+            <strong>TÜV Rheinland</strong>
+            <span data-i18n="cert_label">Акредитований центр</span>
+          </div>
         </div>
-        <div class="hs-item">
-          <span class="hs-num">500+</span>
-          <span class="hs-label">Workers Placed</span>
+        <div class="htp-cert">
+          <div class="cert-badge cert-badge--blue">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M8 8h5M8 16h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="cert-text">
+            <strong>ISO 9606</strong>
+            <span data-i18n="iso_label">Міжнародний стандарт</span>
+          </div>
         </div>
-        <div class="hs-item">
-          <span class="hs-num">50+</span>
-          <span class="hs-label">Partner Companies</span>
+        <div class="htp-stats">
+          <div class="htp-stat">
+            <span class="htp-num">2 000+</span>
+            <span class="htp-label" data-i18n="stat_students">випускників</span>
+          </div>
+          <div class="htp-stat">
+            <span class="htp-num">10+</span>
+            <span class="htp-label" data-i18n="stat_years">років досвіду</span>
+          </div>
+          <div class="htp-stat">
+            <span class="htp-num">15+</span>
+            <span class="htp-label" data-i18n="stat_partners">заводів-партнерів</span>
+          </div>
         </div>
-        <div class="hs-item hs-item--cta">
-          <span class="hs-label">Two offices in Poland</span>
-          <span class="hs-offices">Bydgoszcz · Nowy Sącz</span>
-        </div>
+        <a href="#contact" class="htp-cta" data-i18n="htp_cta">Безкоштовна консультація →</a>
       </div>
     </div>
 
     <div class="hero-scroll">
-      <span>Scroll</span>
+      <span data-i18n="scroll_hint">Гортай вниз</span>
       <div class="hero-scroll-line"></div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       SERVICES
+       PROGRAMS
   ════════════════════════════════════════ -->
-  <section id="services">
+  <section id="programs">
     <div class="container">
-      <div class="section-label fade-in">What We Do</div>
-      <h2 class="section-heading fade-in">Complete Industrial Solutions</h2>
-      <p class="section-desc fade-in">From steel manufacturing to workforce deployment — we cover the full spectrum of production plant needs.</p>
+      <div class="section-label fade-in" data-i18n="programs_label">Що ми пропонуємо</div>
+      <h2 class="section-heading fade-in" data-i18n="programs_title">ПРОГРАМИ НАВЧАННЯ</h2>
+      <p class="section-desc fade-in" data-i18n="programs_sub">Оберіть програму, яка підходить саме вам — від повного курсу до підготовки до іспиту</p>
 
-      <div class="services-grid">
+      <div class="programs-grid">
 
-        <div class="svc-card fade-in">
-          <div class="svc-icon orange">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 34V22L13 14M34 34V22L27 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M13 14h14l3 8H10l3-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M10 22h20v12H10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M17 34v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <circle cx="20" cy="9" r="3" stroke="currentColor" stroke-width="2"/>
-              <path d="M14 9h-4M26 9h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        <!-- Card 1 -->
+        <div class="prog-card prog-card--featured fade-in">
+          <div class="prog-badge" data-i18n="prog1_tag">Найпопулярніша</div>
+          <div class="prog-icon prog-icon--orange">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M8 26V14L16 6L24 14V26" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 26V19h8v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 26h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h3>Steel Structure Manufacturing</h3>
-          <p>Production of welded steel structures for machine construction, railcar manufacturing, and bridge structures — engineered for precision and durability.</p>
-          <a href="#contact" class="svc-link">Get a quote →</a>
+          <h3 data-i18n="prog1_title">MIG/MAG зварювання (135, 136)</h3>
+          <div class="prog-duration">
+            <span class="prog-time" data-i18n="prog1_duration">3 тижні</span>
+            <span class="prog-result" data-i18n="prog1_result">з нуля + працевлаштування</span>
+          </div>
+          <p data-i18n="prog1_desc">Повний курс зварювання методом 135/136. Від базових навичок до першого робочого місця на заводах Польщі.</p>
+          <ul class="prog-list">
+            <li data-i18n="prog1_li1">Базова теорія та безпека</li>
+            <li data-i18n="prog1_li2">Максимум практики на апаратах ESAB</li>
+            <li data-i18n="prog1_li3">Підготовка до сертифікаційного іспиту</li>
+            <li data-i18n="prog1_li4">Допомога з працевлаштуванням</li>
+          </ul>
+          <a href="#contact" class="btn-primary" data-i18n="prog_cta">Записатися</a>
         </div>
 
-        <div class="svc-card fade-in">
-          <div class="svc-icon blue">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="13" cy="13" r="5" stroke="currentColor" stroke-width="2"/>
-              <circle cx="27" cy="13" r="5" stroke="currentColor" stroke-width="2"/>
-              <path d="M3 34c0-5.52 4.48-10 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M37 34c0-5.52-4.48-10-10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M13 24c0 0 3.5-2 7-2s7 2 7 2c2.76 0 5 2.24 5 5v5H8v-5c0-2.76 2.24-5 5-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
+        <!-- Card 2 -->
+        <div class="prog-card fade-in">
+          <div class="prog-icon prog-icon--blue">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M8 24V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 24V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 24h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="8" r="2" fill="currentColor"/></svg>
           </div>
-          <h3>Industrial Outstaffing</h3>
-          <p>We supply highly qualified welding and production specialists directly to your facility. Flexible contracts, certified workers, immediate deployment.</p>
-          <a href="#contact" class="svc-link">Find workers →</a>
+          <h3 data-i18n="prog2_title">TIG зварювання (141)</h3>
+          <div class="prog-duration">
+            <span class="prog-time" data-i18n="prog2_duration">2 тижні</span>
+            <span class="prog-result" data-i18n="prog2_result">перехід з MIG/MAG</span>
+          </div>
+          <p data-i18n="prog2_desc">Освоєння методу 141 TIG для тих, хто вже має базові навички MIG/MAG зварювання. Відкриває нові можливості на виробництві.</p>
+          <ul class="prog-list">
+            <li data-i18n="prog2_li1">Техніка TIG зварювання</li>
+            <li data-i18n="prog2_li2">Зварювання нержавіючої сталі</li>
+            <li data-i18n="prog2_li3">Сертифікація ISO 9606-1 (141)</li>
+          </ul>
+          <a href="#contact" class="btn-outline-light" data-i18n="prog_cta">Записатися</a>
         </div>
 
-        <div class="svc-card fade-in">
-          <div class="svc-icon orange">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="12" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
-              <path d="M14 12V10a2 2 0 012-2h8a2 2 0 012 2v2" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 22h16M12 27h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M20 17v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        <!-- Card 3 -->
+        <div class="prog-card fade-in">
+          <div class="prog-icon prog-icon--orange">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M6 20h5l3-6 4 10 3-6 3 4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 28h24" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".4"/></svg>
           </div>
-          <h3>Job Placement</h3>
-          <p>Employment opportunities for experienced welders and motivated beginners alike. We match workers with the right positions across Poland's industrial sector.</p>
-          <a href="#jobs" class="svc-link">Find a job →</a>
-        </div>
-
-        <div class="svc-card fade-in">
-          <div class="svc-icon blue">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L4 14l16 8 16-8-16-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M4 20l16 8 16-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 26l16 8 16-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <h3 data-i18n="prog3_title">Підготовка до вхідного контролю</h3>
+          <div class="prog-duration">
+            <span class="prog-time" data-i18n="prog3_duration">2 дні</span>
+            <span class="prog-result" data-i18n="prog3_result">позиція PF</span>
           </div>
-          <h3>Welding School</h3>
-          <p>Professional welding training from basics to certification, with guaranteed employment on completion. Join Poland's most in-demand trade.</p>
-          <a href="#school" class="svc-link">Join the school →</a>
-        </div>
-
-        <div class="svc-card fade-in">
-          <div class="svc-icon orange">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 20h5l3-7 5 14 3-9 3 4 4-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M30 8l3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="33" cy="11" r="2" fill="currentColor" opacity=".6"/>
-              <path d="M6 34h28" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".3"/>
-            </svg>
-          </div>
-          <h3>Laser Metal Cutting</h3>
-          <p>CNC-controlled precision laser cutting for industrial components. High accuracy, fast turnaround, and competitive pricing for bulk orders.</p>
-          <a href="#contact" class="svc-link">Get a quote →</a>
-        </div>
-
-        <div class="svc-card svc-card--cta fade-in">
-          <div class="svc-cta-inner">
-            <p class="svc-cta-label">Ready to start?</p>
-            <h3>Talk to Us Today</h3>
-            <p>Whether you need workers, training, or manufactured steel — we have the expertise and capacity.</p>
-            <a href="#contact" class="btn-primary" style="margin-top:1.5rem;">Contact Us</a>
-          </div>
+          <p data-i18n="prog3_desc">Інтенсивна підготовка до заводського вхідного іспиту. Максимум практики за мінімальний час. Для тих, хто вже має досвід.</p>
+          <ul class="prog-list">
+            <li data-i18n="prog3_li1">Технічна підготовка до іспиту</li>
+            <li data-i18n="prog3_li2">Відпрацювання позиції PF</li>
+            <li data-i18n="prog3_li3">Разбір типових помилок</li>
+          </ul>
+          <a href="#contact" class="btn-outline-light" data-i18n="prog_cta">Записатися</a>
         </div>
 
       </div>
@@ -193,145 +223,116 @@
   </section>
 
   <!-- ════════════════════════════════════════
-       FOR COMPANIES / FOR WORKERS
+       HOW IT WORKS
   ════════════════════════════════════════ -->
-  <section id="jobs" class="two-path">
-    <div class="path-block path-companies">
-      <div class="path-inner">
-        <div class="path-tag">For Production Plants</div>
-        <h2 class="path-title">Need Certified<br>Welding Staff?</h2>
-        <p class="path-desc">We supply vetted, certified welding specialists to Poland's largest production companies. Rapid deployment, full documentation, no HR headaches.</p>
-        <ul class="path-list">
-          <li>Certified MIG/MAG, TIG &amp; electrode welders</li>
-          <li>Production workers &amp; CNC operators</li>
-          <li>Flexible staffing — temporary or permanent</li>
-          <li>Full compliance &amp; documentation handled</li>
-          <li>Ukrainian-speaking workforce available</li>
-        </ul>
-        <a href="#contact" class="btn-primary">Request Workers</a>
-      </div>
-    </div>
-    <div class="path-block path-workers">
-      <div class="path-inner">
-        <div class="path-tag">For Job Seekers</div>
-        <h2 class="path-title">Build a Career<br>in Welding</h2>
-        <p class="path-desc">Welder salaries in Poland are rising fast. Whether you're experienced or just starting out, we'll place you in the right role — or train you for one.</p>
-        <ul class="path-list">
-          <li>Jobs in Poland's leading production plants</li>
-          <li>Competitive salaries + growth opportunities</li>
-          <li>Open to beginners — training available</li>
-          <li>Support in Polish and Ukrainian</li>
-          <li>Employment documentation fully handled</li>
-        </ul>
-        <a href="#school" class="btn-outline-light">Get Started</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════
-       WELDING SCHOOL
-  ════════════════════════════════════════ -->
-  <section id="school">
+  <section id="how-it-works">
     <div class="container">
-      <div class="school-inner">
-        <div class="school-content fade-in">
-          <div class="section-label">Welding School</div>
-          <h2 class="section-heading">Train. Certify.<br>Get Hired.</h2>
-          <p>Our professional welding school takes you from zero to employed. Comprehensive hands-on training in MIG/MAG and TIG welding, leading to internationally recognised certification.</p>
-          <p>After graduation, we place you directly with our partner companies. No job hunting. No uncertainty. Just your new career.</p>
-          <div class="school-bullets">
-            <div class="bullet">
-              <span class="bullet-icon">✓</span>
-              <span>Hands-on practical training in real industrial conditions</span>
-            </div>
-            <div class="bullet">
-              <span class="bullet-icon">✓</span>
-              <span>Internationally recognised welding certification</span>
-            </div>
-            <div class="bullet">
-              <span class="bullet-icon">✓</span>
-              <span>Job placement guaranteed after graduation</span>
-            </div>
-            <div class="bullet">
-              <span class="bullet-icon">✓</span>
-              <span>Training available in Polish and Ukrainian</span>
-            </div>
+      <div class="section-label fade-in" data-i18n="steps_label">Процес навчання</div>
+      <h2 class="section-heading fade-in" data-i18n="steps_title">ЯК ЦЕ ПРАЦЮЄ</h2>
+      <div class="steps-grid fade-in">
+
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M11 11h10M11 15h10M11 19h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
-          <a href="#contact" class="btn-primary">Apply for the School</a>
+          <h4 data-i18n="step1_title">Подайте заявку</h4>
+          <p data-i18n="step1_desc">Заповніть коротку форму або зателефонуйте нам. Разом визначимо потрібну програму.</p>
         </div>
 
-        <div class="school-visual fade-in">
-          <div class="school-glow"></div>
-          <div class="school-stat-card">
-            <span class="ss-num">↑ Growing</span>
-            <span class="ss-label">Demand for certified welders across Poland's industrial sector</span>
+        <div class="step-arrow">→</div>
+
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 22c0-3.31 2.69-6 6-6s6 2.69 6 6v4H10v-4z" stroke="currentColor" stroke-width="1.5"/><path d="M16 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="school-stat-card">
-            <span class="ss-num">Rising Salaries</span>
-            <span class="ss-label">Welder wages in Poland are among the fastest-growing in the industrial sector</span>
-          </div>
-          <div class="school-stat-card">
-            <span class="ss-num">100%</span>
-            <span class="ss-label">Job placement rate for our school graduates</span>
-          </div>
-          <div class="school-stat-card">
-            <span class="ss-num">Fast-Track</span>
-            <span class="ss-label">Practical programme — from training to first paycheck in weeks</span>
-          </div>
+          <h4 data-i18n="step2_title">Навчайтесь на практиці</h4>
+          <p data-i18n="step2_desc">Максимум практики на обладнанні ESAB з досвідченими інструкторами. Індивідуальний підхід.</p>
         </div>
+
+        <div class="step-arrow">→</div>
+
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 9v9c0 6.6 5.1 12.8 12 14.3C22.9 30.8 28 24.6 28 18V9L16 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 16l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4 data-i18n="step3_title">Отримайте сертифікат</h4>
+          <p data-i18n="step3_desc">Складіть іспит та отримайте сертифікат ISO 9606, акредитований TÜV Rheinland. Дійсний 3 роки по всій Європі.</p>
+        </div>
+
+        <div class="step-arrow">→</div>
+
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M20 10V8a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" stroke-width="1.5"/><path d="M12 18h8M16 14v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h4 data-i18n="step4_title">Починайте працювати</h4>
+          <p data-i18n="step4_desc">Ми напряму зв'яжемо вас із заводами-партнерами. Гарантуємо працевлаштування після навчання.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       INDUSTRIES
+       WHY US
   ════════════════════════════════════════ -->
-  <section id="industries">
+  <section id="why-us">
     <div class="container">
-      <div class="section-label fade-in">Industries We Serve</div>
-      <h2 class="section-heading fade-in">Built for Heavy Industry</h2>
-      <div class="industries-grid fade-in">
+      <div class="section-label fade-in" data-i18n="why_label">Ваш вибір</div>
+      <h2 class="section-heading fade-in" data-i18n="why_title">ЧОМУ ОБИРАЮТЬ НАС</h2>
 
-        <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="18" width="8" height="10" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="8" height="16" stroke="currentColor" stroke-width="1.5"/><rect x="24" y="8" width="4" height="20" stroke="currentColor" stroke-width="1.5"/><path d="M2 28h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="why-grid">
+
+        <div class="why-card why-card--featured fade-in">
+          <div class="why-icon why-icon--green">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 9v9c0 6.6 5.1 12.8 12 14.3C22.9 30.8 28 24.6 28 18V9L16 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 16l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <span>Machine Construction</span>
+          <h3 data-i18n="why1_title">TÜV Rheinland акредитація</h3>
+          <p data-i18n="why1_desc">Ми сертифікуємо зварників за міжнародним стандартом ISO 9606. Ваш сертифікат визнається по всій Європі та дійсний 3 роки.</p>
         </div>
 
-        <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="12" width="28" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="23" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="23" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M8 12V9M24 12V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 9h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--orange">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="16" width="24" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 16V10a8 8 0 1116 0v6" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="22" r="2" fill="currentColor"/></svg>
           </div>
-          <span>Railcar Manufacturing</span>
+          <h3 data-i18n="why2_title">Обладнання ESAB</h3>
+          <p data-i18n="why2_desc">Навчання на апаратах ESAB — такому ж обладнанні, що встановлено на реальних виробничих підприємствах.</p>
         </div>
 
-        <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M2 26l6-8 8 4 8-12 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 30h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 18v4M24 18v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--orange">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="6" stroke="currentColor" stroke-width="2"/><path d="M6 28c0-5.52 4.48-10 10-10s10 4.48 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 14l2 2-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <span>Bridge Structures</span>
+          <h3 data-i18n="why3_title">Досвідчені інструктори</h3>
+          <p data-i18n="why3_desc">Наші інструктори — практикуючі зварники з багаторічним виробничим досвідом. Не теорія, а реальна практика.</p>
         </div>
 
-        <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M16 6V4M16 28v-2M6 16H4M28 16h-2M9.17 9.17L7.76 7.76M24.83 24.83l-1.41-1.41M9.17 22.83l-1.41 1.41M24.83 7.17l-1.41 1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--blue">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 12h24M10 6V4M22 6V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 18h3v3H9zM15 17h3v4h-3zM21 15h2v6h-2z" fill="currentColor" opacity=".6"/></svg>
           </div>
-          <span>Steel Fabrication</span>
+          <h3 data-i18n="why4_title">Гнучкий графік</h3>
+          <p data-i18n="why4_desc">Індивідуальна програма під ваш запит та зручний розклад. Підберемо час, що підходить саме вам.</p>
         </div>
 
-        <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M6 28V16L16 6L26 16V28" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 28V21h8v7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <div class="why-card why-card--featured fade-in">
+          <div class="why-icon why-icon--green">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M6 16l6 6 14-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <span>Production Plants</span>
+          <h3 data-i18n="why5_title">Гарантія працевлаштування</h3>
+          <p data-i18n="why5_desc">15+ заводів-партнерів у Польщі. Ми не просто навчаємо — ми безпосередньо допомагаємо з першим місцем роботи.</p>
         </div>
 
-        <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M8 28V14M16 28V6M24 28V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 28h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="why-card fade-in">
+          <div class="why-icon why-icon--blue">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M4 6l12 10L28 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/></svg>
           </div>
-          <span>Metal Processing</span>
+          <h3 data-i18n="why6_title">Підтримка українською</h3>
+          <p data-i18n="why6_desc">Говоримо українською, польською та англійською. Допоможемо з документами та адаптацією в Польщі.</p>
         </div>
 
       </div>
@@ -339,122 +340,172 @@
   </section>
 
   <!-- ════════════════════════════════════════
-       ABOUT
+       STATS BANNER
   ════════════════════════════════════════ -->
-  <section id="about">
+  <div class="stats-banner">
+    <div class="container stats-inner">
+      <div class="sban-item fade-in">
+        <span class="sban-num">2 000+</span>
+        <span class="sban-label" data-i18n="sban_students">випускників пройшли навчання</span>
+      </div>
+      <div class="sban-div"></div>
+      <div class="sban-item fade-in">
+        <span class="sban-num">3</span>
+        <span class="sban-label" data-i18n="sban_weeks">тижні — від нуля до роботи</span>
+      </div>
+      <div class="sban-div"></div>
+      <div class="sban-item fade-in">
+        <span class="sban-num">15+</span>
+        <span class="sban-label" data-i18n="sban_partners">заводів-партнерів у Польщі</span>
+      </div>
+      <div class="sban-div"></div>
+      <div class="sban-item fade-in">
+        <span class="sban-num">10+</span>
+        <span class="sban-label" data-i18n="sban_years">років на ринку</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════ -->
+  <section id="faq">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-content fade-in">
-          <div class="section-label">Who We Are</div>
-          <h2 class="section-heading">Profi Corporation —<br>Built on Trust</h2>
-          <p>Since 1991, Profi Power has been operating at the intersection of industrial staffing and steel manufacturing. We understand the real demands of production environments — because we work in them every single day.</p>
-          <p>Our team works in Polish and Ukrainian, serving both local professionals and specialists from abroad who fuel Poland's industrial growth. We handle every aspect of employment: documentation, placement, onboarding, and support.</p>
-          <p>With two offices in Bydgoszcz and Nowy Sącz, we serve production plants across Poland — delivering certified welders and manufacturing staff faster than any agency in the region.</p>
-          <blockquote class="about-quote">
-            "Understand responsibility, act professionally."
-            <cite>— Profi Power</cite>
-          </blockquote>
-        </div>
-        <div class="about-facts-wrap fade-in">
-          <div class="about-facts">
-            <div class="fact-item">
-              <span class="fact-val">1991</span>
-              <span class="fact-label">Founded in Poland</span>
-            </div>
-            <div class="fact-item">
-              <span class="fact-val">Bydgoszcz</span>
-              <span class="fact-label">Head Office</span>
-            </div>
-            <div class="fact-item">
-              <span class="fact-val">Nowy Sącz</span>
-              <span class="fact-label">Branch Office</span>
-            </div>
-            <div class="fact-item">
-              <span class="fact-val">EN · PL · UA</span>
-              <span class="fact-label">Languages Supported</span>
-            </div>
-          </div>
-          <div class="about-tagline">
-            <span>Reliable.</span>
-            <span>Professional.</span>
-            <span>Industrial.</span>
-          </div>
-        </div>
+      <div class="section-label fade-in" data-i18n="faq_label">Відповіді на питання</div>
+      <h2 class="section-heading fade-in" data-i18n="faq_title">ЧАСТІ ЗАПИТАННЯ</h2>
+      <div class="faq-list fade-in">
+
+        <details class="faq-item">
+          <summary><span data-i18n="faq1_q">Чи потрібен досвід зварювання для вступу?</span><span class="faq-icon">+</span></summary>
+          <p data-i18n="faq1_a">Ні. У нас є програми для повних початківців — ми навчаємо з нуля. Головне — бажання навчатися та трудитися.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary><span data-i18n="faq2_q">Скільки коштує навчання?</span><span class="faq-icon">+</span></summary>
+          <p data-i18n="faq2_a">Вартість залежить від обраної програми та індивідуальних умов. Зв'яжіться з нами напряму — розкажемо про актуальні ціни та можливі знижки.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary><span data-i18n="faq3_q">Які методи зварювання ви викладаєте?</span><span class="faq-icon">+</span></summary>
+          <p data-i18n="faq3_a">Ми навчаємо методам 135 та 136 (MIG/MAG) і 141 (TIG). Це найзатребуваніші методи на виробничих підприємствах Польщі.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary><span data-i18n="faq4_q">Як довго дійсний сертифікат ISO 9606?</span><span class="faq-icon">+</span></summary>
+          <p data-i18n="faq4_a">Сертифікат ISO 9606, акредитований TÜV Rheinland, дійсний 3 роки. Він визнається роботодавцями по всій Європі.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary><span data-i18n="faq5_q">Чи допоможете знайти роботу після навчання?</span><span class="faq-icon">+</span></summary>
+          <p data-i18n="faq5_a">Так. Ми маємо 15+ заводів-партнерів і безпосередньо допомагаємо з працевлаштуванням після завершення навчання.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary><span data-i18n="faq6_q">На якому обладнанні проходить навчання?</span><span class="faq-icon">+</span></summary>
+          <p data-i18n="faq6_a">Ми навчаємо на апаратах ESAB — одне з найпрофесійніших брендів у зварювальному обладнанні, яке використовується на провідних виробничих підприємствах.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary><span data-i18n="faq7_q">Чи є підтримка для тих, хто не говорить польською?</span><span class="faq-icon">+</span></summary>
+          <p data-i18n="faq7_a">Так. Наш персонал говорить українською, польською та англійською. Ми допомагаємо з документами та адаптацією.</p>
+        </details>
+
       </div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       CONTACT
+       CONTACT / APPLY
   ════════════════════════════════════════ -->
   <section id="contact">
     <div class="container">
-      <div class="section-label fade-in">Get in Touch</div>
-      <h2 class="section-heading fade-in">Two Offices.<br>One Standard.</h2>
+      <div class="section-label fade-in" data-i18n="contact_label">Почати навчання</div>
+      <h2 class="section-heading fade-in" data-i18n="contact_title">ЗАПИСАТИСЯ НА НАВЧАННЯ</h2>
+      <p class="section-desc fade-in" data-i18n="contact_sub">Заповніть форму і ми зв'яжемося з вами протягом 1 робочого дня</p>
 
-      <div class="offices-grid fade-in">
-        <div class="office-card">
-          <div class="office-tag">Head Office</div>
-          <h3>Bydgoszcz</h3>
-          <div class="office-detail">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>Księdza Piotra Skargi, Bydgoszcz, Poland</span>
-          </div>
-          <div class="office-detail">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
-            <a href="tel:+48571523244">+48 571 523 244</a>
-          </div>
-        </div>
+      <div class="contact-layout">
 
-        <div class="office-card">
-          <div class="office-tag">Branch Office</div>
-          <h3>Nowy Sącz</h3>
-          <div class="office-detail">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>Zielona 27, Nowy Sącz, Poland</span>
-          </div>
-          <div class="office-detail">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
-            <a href="tel:+48571523244">+48 571 523 244</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-form fade-in">
-        <h3>Send Us a Message</h3>
-        <form id="contact-form" novalidate>
-          <div class="form-row">
+        <!-- Application Form -->
+        <div class="contact-form-wrap fade-in">
+          <form id="contact-form" novalidate>
             <div class="form-group">
-              <label for="f-name">Name</label>
-              <input id="f-name" type="text" placeholder="Your name" autocomplete="name">
+              <label data-i18n="form_name_label">Ваше ім'я</label>
+              <input id="f-name" type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я" autocomplete="name">
             </div>
             <div class="form-group">
-              <label for="f-company">Company</label>
-              <input id="f-company" type="text" placeholder="Company name (optional)">
+              <label data-i18n="form_phone_label">Телефон / WhatsApp</label>
+              <input id="f-phone" type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_program_label">Програма навчання</label>
+              <select id="f-program">
+                <option value="" data-i18n="prog_select_default">Оберіть програму</option>
+                <option value="135" data-i18n="prog_select_1">MIG/MAG (135, 136) — 3 тижні</option>
+                <option value="141" data-i18n="prog_select_2">TIG (141) — 2 тижні</option>
+                <option value="exam" data-i18n="prog_select_3">Підготовка до вхідного контролю — 2 дні</option>
+                <option value="other" data-i18n="prog_select_4">Інше / не знаю ще</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_msg_label">Запитання (необов'язково)</label>
+              <textarea id="f-message" rows="3" data-i18n-placeholder="form_msg" placeholder="Ваше запитання або коментар..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full" data-i18n="form_submit">Надіслати заявку</button>
+            <p class="form-note" data-i18n="form_note">Відповідаємо протягом 1 робочого дня. Говоримо українською, польською та англійською.</p>
+          </form>
+        </div>
+
+        <!-- Offices + contacts -->
+        <div class="contact-info-wrap fade-in">
+          <div class="office-card">
+            <div class="office-tag" data-i18n="office1_tag">Головний офіс</div>
+            <h3 data-i18n="office1_city">Бидгощ</h3>
+            <div class="office-detail">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span data-i18n="office1_addr">вул. Ксьондза Скарги 3, 85-018 Бидгощ</span>
+            </div>
+            <div class="office-detail">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+              <a href="tel:+48571523244">+48 571 523 244</a>
             </div>
           </div>
-          <div class="form-group">
-            <label for="f-contact">Email or Phone</label>
-            <input id="f-contact" type="text" placeholder="How can we reach you?" autocomplete="email">
+
+          <div class="office-card office-card--school">
+            <div class="office-tag office-tag--school" data-i18n="office2_tag">Школа зварювання</div>
+            <h3 data-i18n="office2_city">Бидгощ</h3>
+            <div class="office-detail">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2a7 7 0 017 7c0 5.25-7 11-7 11S3 14.25 3 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span data-i18n="office2_addr">вул. Вітебська 1B, 85-759 Бидгощ</span>
+            </div>
+            <div class="office-detail">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+              <a href="tel:+48571523244">+48 571 523 244</a>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="f-type">I am looking for…</label>
-            <select id="f-type">
-              <option value="">Select a topic</option>
-              <option value="workers">Hiring welders / workers</option>
-              <option value="job">Finding a job</option>
-              <option value="school">Welding school enquiry</option>
-              <option value="manufacturing">Manufacturing / laser cutting</option>
-              <option value="other">Other</option>
-            </select>
+
+          <!-- Social / instant contact -->
+          <div class="contact-social-row">
+            <a href="https://instagram.com/corporation.profi" target="_blank" rel="noopener" class="social-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              @corporation.profi
+            </a>
+            <a href="https://wa.me/48571523244" target="_blank" rel="noopener" class="social-btn social-btn--green">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <span data-i18n="whatsapp_label">Написати у WhatsApp</span>
+            </a>
           </div>
-          <div class="form-group">
-            <label for="f-message">Message</label>
-            <textarea id="f-message" rows="4" placeholder="Tell us what you need — workers, training, manufacturing, or something else."></textarea>
+
+          <!-- Guarantee badge -->
+          <div class="guarantee-badge">
+            <div class="guar-icon">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 9v9c0 6.6 5.1 12.8 12 14.3C22.9 30.8 28 24.6 28 18V9L16 4z" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="1.5"/><path d="M11 16l3 3 7-7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <strong data-i18n="guar_title">Гарантія працевлаштування</strong>
+              <p data-i18n="guar_desc">Після завершення навчання ми гарантуємо підбір роботи через мережу 15+ заводів-партнерів.</p>
+            </div>
           </div>
-          <button type="submit" class="btn-primary">Send Message</button>
-          <p class="form-note">We respond within 1 business day. Fluent in Polish, Ukrainian &amp; English.</p>
-        </form>
+        </div>
       </div>
     </div>
   </section>
@@ -463,31 +514,41 @@
        FOOTER
   ════════════════════════════════════════ -->
   <footer id="footer">
-    <div class="footer-inner">
+    <div class="footer-inner container">
       <div class="footer-brand">
-        <div class="footer-logo">PROFI<span>POWER</span></div>
-        <p class="footer-tagline">"Understand responsibility,<br>act professionally."</p>
+        <div class="footer-logo">
+          <svg width="32" height="32" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.1)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <span>PROFI<span>POWER</span></span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer_tagline">"Розуміємо відповідальність, діємо професійно."</p>
+        <div class="footer-certs">
+          <span class="fcert">TÜV Rheinland</span>
+          <span class="fcert">ISO 9606</span>
+        </div>
       </div>
+
       <nav class="footer-nav">
-        <a href="#services">Services</a>
-        <a href="#school">Welding School</a>
-        <a href="#jobs">For Workers</a>
-        <a href="#industries">Industries</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#programs" data-i18n="nav_programs">Програми</a>
+        <a href="#why-us" data-i18n="nav_why">Переваги</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_contacts">Контакти</a>
       </nav>
+
       <div class="footer-contact">
         <a href="tel:+48571523244">+48 571 523 244</a>
-        <span>Bydgoszcz · Nowy Sącz</span>
-        <span>Poland</span>
+        <a href="https://instagram.com/corporation.profi" target="_blank" rel="noopener">@corporation.profi</a>
+        <span data-i18n="footer_city">Бидгощ, Польща</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2024 Profi Power (Profi Corporation). All rights reserved.</span>
+    <div class="footer-bottom container">
+      <span data-i18n="footer_copy">© 2024 Profi Power (Profi Corporation). Всі права захищено.</span>
       <div class="footer-langs">
-        <a href="#" data-lang="pl">PL</a>
-        <a href="#" data-lang="ua">UA</a>
-        <a href="#" data-lang="en" class="active">EN</a>
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
       </div>
     </div>
   </footer>
