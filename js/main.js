@@ -127,7 +127,7 @@ const TRANSLATIONS = {
 
     office1_tag:      'Головний офіс',
     office1_city:     'Бидгощ',
-    office1_addr:     'вул. Ксьондза Скарги 3, 85-018 Бидгощ',
+    office1_addr:     'Poznańska 27/1, 85-129 Bydgoszcz, Polska',
     office2_tag:      'Школа зварювання',
     office2_city:     'Бидгощ',
     office2_addr:     'вул. Вітебська 1B, 85-759 Бидгощ',
@@ -264,7 +264,7 @@ const TRANSLATIONS = {
 
     office1_tag:      'Main office',
     office1_city:     'Bydgoszcz',
-    office1_addr:     'ul. Księdza Skargi 3, 85-018 Bydgoszcz',
+    office1_addr:     'Poznańska 27/1, 85-129 Bydgoszcz, Polska',
     office2_tag:      'Welding school',
     office2_city:     'Bydgoszcz',
     office2_addr:     'ul. Witebska 1B, 85-759 Bydgoszcz',
@@ -401,7 +401,7 @@ const TRANSLATIONS = {
 
     office1_tag:      'Główne biuro',
     office1_city:     'Bydgoszcz',
-    office1_addr:     'ul. Księdza Skargi 3, 85-018 Bydgoszcz',
+    office1_addr:     'Poznańska 27/1, 85-129 Bydgoszcz, Polska',
     office2_tag:      'Szkoła spawalnicza',
     office2_city:     'Bydgoszcz',
     office2_addr:     'ul. Witebska 1B, 85-759 Bydgoszcz',
