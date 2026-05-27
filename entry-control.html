@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Підготовка до вхідного контролю на польських заводах. Практичне відпрацювання позиції, тест, медогляд. PROFIPOWER — супровід від навчання до першого дня роботи.">
+  <title>Вхідний контроль | PROFIPOWER</title>
+  <style>
+    .back-bar {
+      background: rgba(240,120,32,0.08); border-bottom: 1px solid rgba(240,120,32,0.15);
+      padding: 7px 0; text-align: center;
+    }
+    .back-bar a {
+      color: var(--orange); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s;
+    }
+    .back-bar a:hover { opacity: 0.75; }
+    .phone-block { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+    .phone-btn {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(240,120,32,0.08); border: 1px solid rgba(240,120,32,0.25);
+      border-radius: 10px; padding: 10px 14px; text-decoration: none;
+      color: var(--orange); font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.03em; transition: background 0.2s, border-color 0.2s;
+    }
+    .phone-btn:hover { background: rgba(240,120,32,0.18); border-color: var(--orange); }
+    .sub-hero { padding: 80px 0 60px; position: relative; overflow: hidden; }
+    .sub-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 15% 60%, rgba(240,120,32,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .sub-breadcrumb {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .sub-breadcrumb a { color: var(--orange); text-decoration: none; }
+    .sub-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .sub-eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--orange); }
+    .sub-title {
+      font-family: 'Anton', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.05; letter-spacing: 0.04em; color: #fff; margin-bottom: 18px;
+    }
+    .sub-title span { color: var(--orange); }
+    .sub-desc { font-size: 1rem; color: var(--gray); line-height: 1.7; max-width: 620px; margin-bottom: 32px; }
+    .sub-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-orange {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: #fff; font-size: 0.88rem; font-weight: 700;
+      padding: 13px 26px; border-radius: 10px; letter-spacing: 0.04em;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .btn-orange:hover { background: var(--orange-2); }
+    .btn-outline-o {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; border: 1px solid rgba(240,120,32,0.4);
+      color: var(--orange); font-size: 0.88rem; font-weight: 600;
+      padding: 13px 26px; border-radius: 10px; letter-spacing: 0.04em;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .btn-outline-o:hover { border-color: var(--orange); background: rgba(240,120,32,0.08); }
+    .stats-strip {
+      display: flex; background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; margin-bottom: 48px;
+    }
+    .stat-box { flex: 1; padding: 24px 20px; text-align: center; border-right: 1px solid var(--border); }
+    .stat-box:last-child { border-right: none; }
+    .stat-box .num { font-family: 'Anton', sans-serif; font-size: 1.8rem; color: var(--orange); display: block; }
+    .stat-box .lbl { font-size: 0.68rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* What is entry control */
+    .what-card {
+      background: linear-gradient(135deg, rgba(240,120,32,0.08) 0%, rgba(240,120,32,0.03) 100%);
+      border: 1px solid rgba(240,120,32,0.2); border-radius: 16px; padding: 36px;
+      margin-bottom: 40px;
+    }
+    .what-card h3 { font-family: 'Anton', sans-serif; font-size: 1.3rem; letter-spacing: 0.04em; color: #fff; margin-bottom: 10px; }
+    .what-card p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
+
+    /* Prep grid */
+    .prep-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 48px; }
+    .prep-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 18px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .prep-card:hover { border-color: rgba(240,120,32,0.35); transform: translateY(-2px); }
+    .prep-card--featured { border-color: rgba(240,120,32,0.3); }
+    .prep-num { font-family: 'Anton', sans-serif; font-size: 1.8rem; color: var(--orange); opacity: 0.35; margin-bottom: 8px; }
+    .prep-card h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .prep-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
+
+    /* Two-col */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .content-col h3 { font-family: 'Anton', sans-serif; font-size: 1.3rem; letter-spacing: 0.04em; color: #fff; margin-bottom: 14px; }
+    .content-col p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; margin-bottom: 12px; }
+    .benefit-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .benefit-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--gray-2); line-height: 1.4; }
+    .benefit-list li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px;
+      background: linear-gradient(to bottom, rgba(240,120,32,0.6), rgba(240,120,32,0.1));
+    }
+    .tl-item { display: flex; gap: 20px; align-items: flex-start; padding: 0 0 24px; position: relative; }
+    .tl-dot {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(240,120,32,0.12); border: 2px solid rgba(240,120,32,0.4);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Anton', sans-serif; font-size: 0.85rem; color: var(--orange);
+      position: relative; z-index: 1;
+    }
+    .tl-content { padding-top: 8px; }
+    .tl-content h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .tl-content p { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .contact-form { display: flex; flex-direction: column; gap: 13px; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      background: var(--card); border: 1px solid var(--border); color: #fff;
+      font-size: 0.88rem; padding: 12px 16px; border-radius: 10px;
+      outline: none; transition: border-color 0.2s; font-family: inherit; width: 100%;
+    }
+    .contact-form input:focus, .contact-form select:focus { border-color: var(--orange); }
+    .contact-form select option { background: var(--card); }
+    .contact-form .form-sent { color: var(--orange); font-size: 0.9rem; text-align: center; display: none; padding-top: 8px; }
+    .info-col { display: flex; flex-direction: column; gap: 16px; }
+    .info-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .info-card h4 { font-family: 'Anton', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+    .info-card p, .info-card a { font-size: 0.85rem; color: var(--gray); display: block; line-height: 1.6; text-decoration: none; }
+    .info-card a:hover { color: var(--orange); }
+    .corp-link-block {
+      background: linear-gradient(135deg, rgba(30,95,240,0.08) 0%, rgba(30,95,240,0.03) 100%);
+      border: 1px solid rgba(30,95,240,0.2); border-radius: 14px; padding: 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .corp-link-block h3 { font-family: 'Anton', sans-serif; font-size: 1rem; letter-spacing: 0.04em; color: #60a5fa; }
+    .corp-link-block p { font-size: 0.82rem; color: var(--gray); margin-top: 4px; }
+    .corp-link-block a {
+      background: rgba(30,95,240,0.15); border: 1px solid rgba(59,130,246,0.3);
+      color: #60a5fa; padding: 9px 18px; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 700; white-space: nowrap; transition: background 0.2s;
+    }
+    .corp-link-block a:hover { background: rgba(30,95,240,0.25); }
+    @media (max-width: 768px) {
+      .two-col, .contact-grid { grid-template-columns: 1fr; }
+      .prep-grid { grid-template-columns: 1fr 1fr; }
+      .stats-strip { flex-wrap: wrap; }
+      .stat-box { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-box:last-child { border-bottom: none; }
+    }
+    @media (max-width: 520px) { .prep-grid { grid-template-columns: 1fr; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+  <div class="back-bar"><a href="index.html">← PROFIPOWER</a></div>
+
+  <!-- ════ NAVBAR ════ -->
+  <header id="navbar">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo-link">
+        <div class="nav-logo">
+          <svg class="logo-icon" width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+            <span class="logo-sub">Вхідний контроль</span>
+          </div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#what-is">Що таке ВК</a>
+        <a href="#prep">Підготовка</a>
+        <a href="#contact">Контакти</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+        </div>
+        <a href="#contact" class="btn-cta">Записатися</a>
+      </div>
+    </nav>
+    <div class="mobile-nav-top">
+      <a href="index.html" class="nav-logo-link">
+        <div class="nav-logo nav-logo--sm">
+          <svg class="logo-icon" width="30" height="30" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+        </div>
+      </a>
+      <button id="menu-btn"><span></span><span></span><span></span></button>
+    </div>
+    <div id="mobile-menu">
+      <a href="#what-is">Що таке ВК</a>
+      <a href="#prep">Підготовка</a>
+      <a href="#contact">Контакти</a>
+      <div class="mobile-lang">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contact" class="btn-cta mobile-cta">Записатися</a>
+    </div>
+  </header>
+
+  <!-- ════ HERO ════ -->
+  <section class="sub-hero">
+    <div class="container">
+      <div class="sub-breadcrumb fade-in">
+        <a href="index.html">PROFIPOWER</a><span>›</span><span>Вхідний контроль</span>
+      </div>
+      <div class="sub-eyebrow fade-in">Підготовка · Польща · Супровід</div>
+      <h1 class="sub-title fade-in">ВХІДНИЙ<br/><span>КОНТРОЛЬ</span></h1>
+      <p class="sub-desc fade-in">Вхідний контроль — це заводський іспит перед початком роботи. Ми готуємо вас до нього: практичне відпрацювання позиції, розбір типових помилок, медогляд, та повний супровід у перший день на заводі.</p>
+      <div class="sub-btns fade-in">
+        <a href="#contact" class="btn-orange">Записатися на підготовку</a>
+        <a href="#what-is" class="btn-outline-o">Дізнатися більше</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ STATS ════ -->
+  <section style="padding:20px 0 60px">
+    <div class="container">
+      <div class="stats-strip fade-in">
+        <div class="stat-box"><span class="num">2 дні</span><span class="lbl">Підготовка</span></div>
+        <div class="stat-box"><span class="num">100%</span><span class="lbl">Супровід</span></div>
+        <div class="stat-box"><span class="num">Медогляд</span><span class="lbl">Організуємо</span></div>
+        <div class="stat-box"><span class="num">Офіційно</span><span class="lbl">Оформлення</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ WHAT IS ENTRY CONTROL ════ -->
+  <section id="what-is">
+    <div class="container">
+      <div class="section-label fade-in">Що таке вхідний контроль</div>
+      <h2 class="section-heading fade-in">ЩО ВАС ЧЕКАЄ НА ЗАВОДІ</h2>
+
+      <div class="what-card fade-in">
+        <h3>Вхідний контроль (вхідний іспит)</h3>
+        <p>Перед виходом на робоче місце кожен завод у Польщі проводить вхідний контроль — практичну перевірку навичок кандидата. Для зварників це зазвичай зварювання зразка в позиції PF або PA. Для слюсарів — виконання типового монтажного завдання. Для малярів — нанесення покриття на зразок поверхні.</p>
+        <p style="margin-top:12px">Результат вхідного контролю визначає, чи підходить кандидат для конкретної позиції. Якщо не вдається з першого разу — завод може дати другий шанс або відмовити. Наша підготовка значно підвищує шанс успішного проходження.</p>
+      </div>
+
+      <div class="prep-grid">
+        <div class="prep-card prep-card--featured fade-in">
+          <div class="prep-num">01</div>
+          <h4>Практичний тест</h4>
+          <p>Виконання зварювального зразка, монтажного або малярного завдання в умовах, наближених до заводських.</p>
+        </div>
+        <div class="prep-card fade-in">
+          <div class="prep-num">02</div>
+          <h4>Теоретична частина</h4>
+          <p>На деяких підприємствах є короткий тест з охорони праці та технічних знань відповідно до профілю.</p>
+        </div>
+        <div class="prep-card fade-in">
+          <div class="prep-num">03</div>
+          <h4>Медичний огляд</h4>
+          <p>Обов'язковий медогляд перед виходом на завод — перевірка загального стану здоров'я та придатності до роботи.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ PREPARATION ════ -->
+  <section id="prep">
+    <div class="container">
+      <div class="section-label fade-in">Як ми готуємо</div>
+      <h2 class="section-heading fade-in">ПІДГОТОВКА ДО ВХІДНОГО КОНТРОЛЮ</h2>
+
+      <div class="two-col">
+        <div class="content-col fade-in">
+          <h3>ЩО ВХОДИТЬ В ПІДГОТОВКУ</h3>
+          <p>Інтенсивна підготовка до кваліфікаційного іспиту — практичне тестування та відпрацювання навичок відповідно до вимог підприємства за запитом кандидата.</p>
+          <ul class="benefit-list" style="margin-top:8px">
+            <li>Аналіз вимог конкретного заводу та позиції</li>
+            <li>Практичне відпрацювання в умовах вхідного контролю</li>
+            <li>Розбір типових помилок та техніка їх уникнення</li>
+            <li>Психологічна підготовка — впевненість під тиском</li>
+            <li>Тренування читання технічних завдань польською</li>
+            <li>Підготовка документів для медогляду</li>
+          </ul>
+        </div>
+        <div class="content-col fade-in">
+          <h3>ЩО МИ ОРГАНІЗУЄМО</h3>
+          <p>Ми не просто готуємо — ми супроводжуємо весь процес від прибуття до першого дня на роботі.</p>
+          <ul class="benefit-list" style="margin-top:8px">
+            <li>Запис на вхідний контроль на конкретний завод</li>
+            <li>Організація медичного огляду в Польщі</li>
+            <li>Допомога з документами та перекладом</li>
+            <li>Фізична присутність нашого представника у перший день</li>
+            <li>Підтримка після виходу на завод</li>
+            <li>Вирішення питань з роботодавцем при потребі</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ TIMELINE ════ -->
+  <section>
+    <div class="container">
+      <div class="section-label fade-in">Як виглядає процес</div>
+      <h2 class="section-heading fade-in">ВІД ЗАПИТУ ДО ПЕРШОГО ДНЯ</h2>
+
+      <div class="timeline fade-in">
+        <div class="tl-item">
+          <div class="tl-dot">1</div>
+          <div class="tl-content">
+            <h4>Запит та підбір заводу</h4>
+            <p>Ви звертаєтесь до нас — ми аналізуємо ваші навички та добираємо підходящий завод з найвищими шансами успішного вхідного контролю.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">2</div>
+          <div class="tl-content">
+            <h4>Підготовка в Україні (за потреби)</h4>
+            <p>Якщо потрібна додаткова практика — курс у нашому тренувальному центрі в Київі (Харківське шосе, 15).</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">3</div>
+          <div class="tl-content">
+            <h4>Переїзд та адаптація</h4>
+            <p>Допомагаємо з оформленням документів та забезпечуємо житлом за потреби. Допомога при переїзді та перших кроках у Польщі.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">4</div>
+          <div class="tl-content">
+            <h4>Вхідний контроль на заводі</h4>
+            <p>Супровід під час проходження вхідного контролю. Наш представник присутній та допомагає з перекладом і комунікацією.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">5</div>
+          <div class="tl-content">
+            <h4>Медогляд</h4>
+            <p>Організація медичного огляду за вимогами заводу. Підтримка протягом усієї процедури.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">6</div>
+          <div class="tl-content">
+            <h4>Перший день роботи</h4>
+            <p>Ви виходите на завод — ми залишаємось на зв'язку та підтримуємо в будь-яких питаннях щодо роботи і умов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ CORP PROMO ════ -->
+  <section style="padding:40px 0">
+    <div class="container">
+      <div class="corp-link-block fade-in">
+        <div>
+          <h3>КОРПОРАЦІЯ ПРОФІ — Кваліфікаційний центр в Україні</h3>
+          <p>Потрібна офіційна кваліфікація перед вхідним контролем? Акредитований центр присвоєння кваліфікацій — Рішення НКА № 18, 20.06.2024.</p>
+        </div>
+        <a href="corp/qualification.html">Кваліфікаційний центр →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ CONTACTS ════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label fade-in">Зв'язатися</div>
+      <h2 class="section-heading fade-in">ЗАПИСАТИСЯ НА ПІДГОТОВКУ</h2>
+      <div class="contact-grid">
+        <form class="contact-form fade-in" id="entry-form">
+          <input type="text" placeholder="Ваше ім'я"/>
+          <input type="tel" placeholder="Телефон / WhatsApp"/>
+          <select>
+            <option value="">Ваша спеціалізація</option>
+            <option value="weld">Зварювальник (MAG/TIG)</option>
+            <option value="lock">Слюсар-монтажник</option>
+            <option value="paint">Маляр-пістолетник</option>
+            <option value="other">Інше</option>
+          </select>
+          <select>
+            <option value="">Маєте досвід?</option>
+            <option value="yes-ua">Так, є досвід в Україні</option>
+            <option value="yes-pl">Так, вже працював(а) в Польщі</option>
+            <option value="no">Ні, починаю вперше</option>
+          </select>
+          <button type="submit" class="btn-orange" style="width:100%;justify-content:center">Записатися на підготовку</button>
+          <p class="form-sent">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+        </form>
+        <div class="info-col fade-in">
+          <div class="info-card">
+            <h4>Час підготовки</h4>
+            <p>Інтенсивна підготовка: 2 дні</p>
+            <p style="margin-top:4px">Тренувальний центр: Харківське шосе, 15, Київ</p>
+          </div>
+          <div class="info-card">
+            <h4>Телефони</h4>
+            <div class="phone-block">
+              <a href="tel:+48504648898" class="phone-btn"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>+48 504 648 898</a>
+              <a href="tel:+48571523244" class="phone-btn"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>+48 571 523 244</a>
+              <a href="tel:+380674637017" class="phone-btn"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>+38 067 463 70 17</a>
+            </div>
+          </div>
+          <div class="info-card"><h4>Email</h4><a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="32" height="32" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.1)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+        </div>
+        <p class="footer-tagline">"Навчаємо. Працевлаштовуємо. Підтримуємо."</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Навчання</h4>
+        <a href="school.html">Школа зварювальників</a>
+        <a href="painters.html">Курс малярів</a>
+        <a href="locksmith-pl.html">Підготовка слюсарів</a>
+        <a href="entry-control.html">Вхідний контроль</a>
+      </nav>
+      <div class="footer-contacts">
+        <h4>Контакти</h4>
+        <a href="tel:+48504648898">+48 504 648 898</a>
+        <a href="tel:+48571523244">+48 571 523 244</a>
+        <a href="tel:+380674637017">+38 067 463 70 17</a>
+        <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2015–2024 PROFIPOWER / Корпорація Профі. Всі права захищено.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const form = document.getElementById('entry-form');
+    if (form) { form.addEventListener('submit', e => { e.preventDefault(); const s = form.querySelector('.form-sent'); if(s){ s.style.display='block'; form.reset(); } }); }
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

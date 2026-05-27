@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Виробництво металоконструкцій — Корпорація Профі</title>
+  <meta name="description" content="Виготовлення зварних металоконструкцій, ЧПУ-фрезерування, лазерне зварювання. ТОВ «УкрПрофіГруп» — 30+ років досвіду. Київ."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/corp.css"/>
+</head>
+<body>
+
+<!-- ── Back bar ──────────────────────────────────────────── -->
+<div class="back-bar">
+  <a href="index.html">← Корпорація Профі</a>
+</div>
+
+<!-- ── NAVBAR desktop ──────────────────────────────────── -->
+<nav class="corp-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="36" height="36" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <div class="corp-logo-text">
+        <span class="logo-main">КОРПОРАЦІЯ <span class="logo-accent">ПРОФІ</span></span>
+        <span class="logo-sub" data-i18n="logo_sub">з 1992 року</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="vyrobnytstvo.html" class="active" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contacts" class="btn-cta-nav" data-i18n="nav_cta">Зв'яжіться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── NAVBAR mobile ───────────────────────────────────── -->
+<nav class="corp-nav" style="display:none" id="mobile-nav-wrap">
+  <div class="mobile-nav-top">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="28" height="28" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <span class="logo-main" style="font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.05em">КОРПОРАЦІЯ <span class="logo-accent" style="color:var(--blue-lt)">ПРОФІ</span></span>
+    </a>
+    <button id="menu-btn"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="vyrobnytstvo.html">Виробництво</a>
+    <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+    <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+    <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+    <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-lang="ua">UA</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pl">PL</button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    const mn = document.getElementById('mobile-nav-wrap');
+    const dn = document.querySelector('nav.corp-nav:not(#mobile-nav-wrap)');
+    function check(){ const m=window.innerWidth<=900; mn.style.display=m?'block':'none'; dn.style.display=m?'none':'block'; }
+    check(); window.addEventListener('resize',check);
+  })();
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE HERO
+══════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-breadcrumb fade-in">
+        <a href="index.html">Корпорація Профі</a>
+        <span>›</span>
+        <span>Виробництво</span>
+      </div>
+      <div class="section-label fade-in">ТОВ «УкрПрофіГруп»</div>
+      <h1 class="page-title fade-in">ВИРОБНИЦТВО<br/><span>МЕТАЛОКОНСТРУКЦІЙ</span></h1>
+      <p class="page-desc fade-in">Зварні металоконструкції будь-якої складності — від окремих вузлів до великих промислових об'єктів. ЧПУ-фрезерування, лазерне зварювання, слюсарно-монтажні роботи. Понад 30 років досвіду.</p>
+      <div class="hero-btns fade-in">
+        <a href="#contacts" class="btn-primary">Замовити</a>
+        <a href="#services" class="btn-ghost">Послуги</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     STATS
+══════════════════════════════════════════════════════ -->
+<section style="padding:30px 0">
+  <div class="container">
+    <div class="stats-row fade-in">
+      <div class="stat-item">
+        <span class="num">30+</span>
+        <span class="lbl">Років досвіду</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">500+</span>
+        <span class="lbl">Завершених проєктів</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">5</span>
+        <span class="lbl">Методів зварювання</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">ISO</span>
+        <span class="lbl">Стандарти якості</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-label fade-in">Послуги</div>
+    <h2 class="section-heading fade-in">ЩО МИ ВИГОТОВЛЯЄМО</h2>
+    <p class="section-sub fade-in">Повний цикл металообробки — від проєктування до готового виробу.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card service-card--featured fade-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Зварні металоконструкції</h3>
+        <p>Несучі рами, ферми, балки, колони та будь-які зварні вироби із сталі, нержавіючої сталі та алюмінію за кресленнями замовника.</p>
+        <span class="service-tag">MAG · MIG · TIG · MMA</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M3 15h18M9 3v18"/>
+          </svg>
+        </div>
+        <h3>ЧПУ-фрезерування</h3>
+        <p>Точна обробка металевих деталей на верстатах з числовим програмним управлінням. Висока повторюваність і точність геометрії.</p>
+        <span class="service-tag">CNC Milling</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M13 2L4 14h7l-2 8 11-12h-7l2-8z"/>
+          </svg>
+        </div>
+        <h3>Лазерне зварювання</h3>
+        <p>Зварювання тонких та відповідальних вузлів лазерним методом — мінімальна деформація, чистий шов без додаткової обробки.</p>
+        <span class="service-tag">Laser Welding</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>Слюсарно-монтажні роботи</h3>
+        <p>Збирання та монтаж металоконструкцій. Свердління, різання, гнуття, зачищення. Виїзд на об'єкт замовника.</p>
+        <span class="service-tag">Fabrication</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3>Виготовлення за кресленнями</h3>
+        <p>Виробництво за технічним завданням або кресленнями замовника. Розробка конструкторської документації за потреби.</p>
+        <span class="service-tag">Custom</span>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+        </div>
+        <h3>Контроль якості</h3>
+        <p>Вхідний контроль матеріалів, контроль зварних з'єднань, вимірювальний контроль геометрії. Документація відповідно до вимог замовника.</p>
+        <span class="service-tag">QC / ISO</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     MATERIALS & METHODS
+══════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="two-col-grid">
+      <div class="content-block fade-in">
+        <div class="section-label">Матеріали</div>
+        <h3>З ЧИМ МИ ПРАЦЮЄМО</h3>
+        <p>Виробництво металоконструкцій із широкого спектру матеріалів — під потреби будь-якої галузі.</p>
+        <ul class="check-list">
+          <li>Вуглецева сталь (S235, S355, конструкційна)</li>
+          <li>Нержавіюча сталь (304, 316, харчовий клас)</li>
+          <li>Алюміній та алюмінієві сплави</li>
+          <li>Листовий та профільний прокат</li>
+          <li>Труби круглі, квадратні та прямокутні</li>
+        </ul>
+      </div>
+
+      <div class="content-block fade-in">
+        <div class="section-label">Методи зварювання</div>
+        <h3>ПРОЦЕСИ</h3>
+        <p>Усі основні промислові методи зварювання виконуються власними сертифікованими зварниками.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-2 8 11-12h-7l2-8z"/></svg>
+            </div>
+            <div>
+              <h4>MAG 135 / MIG 131</h4>
+              <p>Напівавтоматичне зварювання — основний метод для конструкційної сталі та алюмінію</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83"/></svg>
+            </div>
+            <div>
+              <h4>TIG 141</h4>
+              <p>Аргонодугове зварювання — нержавіюча сталь, алюміній, відповідальні з'єднання</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h4>MMA 111 / Laser</h4>
+              <p>Ручне дугове та лазерне зварювання — для складних та тонкостінних вузлів</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     HOW WE WORK
+══════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-label fade-in">Процес роботи</div>
+    <h2 class="section-heading fade-in">ЯК МИ ПРАЦЮЄМО</h2>
+
+    <div class="steps-list">
+      <div class="step-item fade-in">
+        <span class="step-num">01</span>
+        <div class="step-content">
+          <h4>Запит та технічне завдання</h4>
+          <p>Надішліть креслення, ескіз або опис — ми уточнимо матеріал, обсяг і терміни. Безкоштовна консультація інженера.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">02</span>
+        <div class="step-content">
+          <h4>Комерційна пропозиція</h4>
+          <p>Розраховуємо вартість і строки виконання. Погоджуємо технічні вимоги та стандарти якості.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">03</span>
+        <div class="step-content">
+          <h4>Виробництво</h4>
+          <p>Виготовлення на власному виробничому майданчику (вул. Ремонтна, 6, Київ). Контроль якості на кожному етапі.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">04</span>
+        <div class="step-content">
+          <h4>Здача та документація</h4>
+          <p>Передача готового виробу з пакетом документів — акт прийомки, сертифікати матеріалів, протоколи контролю зварних з'єднань.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROFIPOWER CTA
+══════════════════════════════════════════════════════ -->
+<section style="padding:40px 0">
+  <div class="container">
+    <div class="profipower-link-block fade-in">
+      <div>
+        <h3>PROFIPOWER — Навчання та робота в Польщі</h3>
+        <p>Потрібні зварники або слюсарі для вашого підприємства в Польщі? Наша школа готує фахівців під вхідний контроль.</p>
+      </div>
+      <a href="../index.html">Перейти на PROFIPOWER →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACTS
+══════════════════════════════════════════════════════ -->
+<section id="contacts">
+  <div class="container">
+    <div class="section-label fade-in" data-i18n="contact_label">Зв'язатися</div>
+    <h2 class="section-heading fade-in" data-i18n="contact_title">КОНТАКТИ</h2>
+
+    <div class="contact-grid">
+      <form class="contact-form fade-in" id="corp-contact-form">
+        <input type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я"/>
+        <input type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp"/>
+        <select>
+          <option value="">Виробництво / замовлення</option>
+          <option value="prod">Металоконструкції</option>
+          <option value="cnc">ЧПУ-фрезерування</option>
+          <option value="laser">Лазерне зварювання</option>
+          <option value="other">Інше</option>
+        </select>
+        <button type="submit" class="btn-primary" data-i18n="form_submit">Надіслати</button>
+        <p class="form-sent" data-i18n="form_sent">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+      </form>
+
+      <div class="contact-info-col fade-in">
+        <div class="info-card">
+          <h4>Виробничий майданчик</h4>
+          <p>вул. Ремонтна, 6, Київ, 02090</p>
+        </div>
+        <div class="info-card">
+          <h4 data-i18n="office1_tag">Головний офіс</h4>
+          <p data-i18n="office1_addr">вул. Омеляновича-Павленка, 14/12, Київ, 01010</p>
+        </div>
+        <div class="info-card">
+          <h4>Телефони</h4>
+          <div class="phone-block">
+            <a href="tel:+380442860121" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 044 286 01 21
+            </a>
+            <a href="tel:+380667163108" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 066 716 31 08
+            </a>
+            <a href="tel:+380678758074" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 067 875 80 74
+            </a>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>Email</h4>
+          <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer class="corp-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h3>КОРПОРАЦІЯ <span>ПРОФІ</span></h3>
+      <p data-i18n="footer_tagline">"Розуміємо відповідальність — діємо професійно."</p>
+      <p style="margin-top:8px;font-size:0.75rem;color:var(--muted2)">Київ · з 1992 року</p>
+    </div>
+    <nav class="footer-nav">
+      <h4>Навігація</h4>
+      <a href="index.html">Головна</a>
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="../index.html" style="color:var(--orange)">PROFIPOWER (Польща)</a>
+    </nav>
+    <div class="footer-contacts">
+      <h4>Контакти</h4>
+      <a href="tel:+380442860121">+38 044 286 01 21</a>
+      <a href="tel:+380667163108">+38 066 716 31 08</a>
+      <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+      <p style="margin-top:6px">proficorp.com.ua</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span data-i18n="footer_copy">© 2015–2024 Корпорація Профі. Всі права захищено.</span>
+  </div>
+</footer>
+
+<script src="js/corp.js"></script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Кваліфікаційний центр — Корпорація Профі</title>
+  <meta name="description" content="Акредитований кваліфікаційний центр присвоєння та підтвердження кваліфікацій зварювальників і слюсарів. Рішення НКА №18, 20.06.2024. Київ."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/corp.css"/>
+</head>
+<body>
+
+<!-- ── Back bar ──────────────────────────────────────────── -->
+<div class="back-bar">
+  <a href="index.html">← Корпорація Профі</a>
+</div>
+
+<!-- ── NAVBAR desktop ──────────────────────────────────── -->
+<nav class="corp-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="36" height="36" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <div class="corp-logo-text">
+        <span class="logo-main">КОРПОРАЦІЯ <span class="logo-accent">ПРОФІ</span></span>
+        <span class="logo-sub" data-i18n="logo_sub">з 1992 року</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" class="active" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contacts" class="btn-cta-nav" data-i18n="nav_cta">Зв'яжіться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── NAVBAR mobile ───────────────────────────────────── -->
+<nav class="corp-nav" style="display:none" id="mobile-nav-wrap">
+  <div class="mobile-nav-top">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="28" height="28" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <span class="logo-main" style="font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.05em">КОРПОРАЦІЯ <span class="logo-accent" style="color:var(--blue-lt)">ПРОФІ</span></span>
+    </a>
+    <button id="menu-btn"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+    <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+    <a href="qualification.html">Кваліфікаційний центр</a>
+    <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+    <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-lang="ua">UA</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pl">PL</button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    const mn = document.getElementById('mobile-nav-wrap');
+    const dn = document.querySelector('nav.corp-nav:not(#mobile-nav-wrap)');
+    function check(){ const m=window.innerWidth<=900; mn.style.display=m?'block':'none'; dn.style.display=m?'none':'block'; }
+    check(); window.addEventListener('resize',check);
+  })();
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE HERO
+══════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-breadcrumb fade-in">
+        <a href="index.html">Корпорація Профі</a>
+        <span>›</span>
+        <span>Кваліфікаційний центр</span>
+      </div>
+      <div class="section-label fade-in">ТОВ «Профі Велдінг» · Акредитований центр</div>
+      <h1 class="page-title fade-in">КВАЛІФІКАЦІЙНИЙ<br/><span>ЦЕНТР</span></h1>
+      <p class="page-desc fade-in">Акредитований центр присвоєння та підтвердження кваліфікацій зварювальників і слюсарів. Рішення НКА № 18 від 20.06.2024. Підтверджений рівень кваліфікації — офіційний документ державного зразка.</p>
+      <div class="hero-btns fade-in">
+        <a href="#contacts" class="btn-primary">Записатися на іспит</a>
+        <a href="#process" class="btn-ghost">Як проходить</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ACCREDITATION BAND
+══════════════════════════════════════════════════════ -->
+<section style="padding:30px 0">
+  <div class="container">
+    <div class="stats-row fade-in">
+      <div class="stat-item">
+        <span class="num" style="font-size:1.1rem">НКА №18</span>
+        <span class="lbl">Рішення від 20.06.2024</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">ISO 9606</span>
+        <span class="lbl">Стандарт атестації</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">3</span>
+        <span class="lbl">Доступні кваліфікації</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">Держ.</span>
+        <span class="lbl">Зразок документа</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     QUALIFICATIONS
+══════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-label fade-in">Доступні кваліфікації</div>
+    <h2 class="section-heading fade-in">ЩО МОЖНА ПІДТВЕРДИТИ</h2>
+    <p class="section-sub fade-in">Присвоєння та підтвердження кваліфікаційних рівнів відповідно до Національної рамки кваліфікацій.</p>
+
+    <div class="qual-grid">
+
+      <div class="qual-card qual-card--featured fade-in">
+        <div class="qual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M13 2L4 14h7l-2 8 11-12h-7l2-8z"/>
+          </svg>
+        </div>
+        <h3>Електрозварник ручного зварювання</h3>
+        <p>Присвоєння та підтвердження кваліфікаційного рівня за результатами практичного іспиту. MAG, MIG, TIG, MMA.</p>
+        <span class="qual-standard">ISO 9606-1 · EN 287-1</span>
+      </div>
+
+      <div class="qual-card fade-in">
+        <div class="qual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>Слюсар-монтажник</h3>
+        <p>Підтвердження кваліфікаційного рівня слюсаря-монтажника для промислових підприємств та будівельних компаній.</p>
+        <span class="qual-standard">НРК · Галузевий стандарт</span>
+      </div>
+
+      <div class="qual-card fade-in">
+        <div class="qual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+        </div>
+        <h3>Підготовка до вхідного контролю</h3>
+        <p>Інтенсивна підготовка до кваліфікаційного іспиту, практичне тестування та відпрацювання навичок відповідно до вимог підприємства.</p>
+        <span class="qual-standard">За запитом підприємства</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     WHO CAN APPLY + REQUIREMENTS
+══════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="two-col-grid">
+      <div class="content-block fade-in">
+        <div class="section-label">Хто може подати заявку</div>
+        <h3>УМОВИ ДОПУСКУ</h3>
+        <p>Кваліфікаційний іспит може складати будь-який фахівець, що відповідає базовим вимогам.</p>
+        <ul class="check-list">
+          <li>Базові практичні навички за обраним напрямком</li>
+          <li>Вік від 18 років</li>
+          <li>Медична довідка про відсутність протипоказань (надається комісією)</li>
+          <li>Документ, що посвідчує особу</li>
+          <li>Попередня підготовка або виробничий досвід (рекомендовано)</li>
+        </ul>
+        <p style="margin-top:8px;font-size:0.85rem;color:var(--muted)">Немає досвіду? Пройдіть підготовку в нашому <a href="trening.html" style="color:var(--blue-pale)">тренувальному центрі</a> перед іспитом.</p>
+      </div>
+
+      <div class="content-block fade-in">
+        <div class="section-label">Що потрібно знати</div>
+        <h3>ПРАКТИЧНИЙ ІСПИТ</h3>
+        <p>Кваліфікаційний іспит складається з практичної частини та перевірки теоретичних знань.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-2 8 11-12h-7l2-8z"/></svg>
+            </div>
+            <div>
+              <h4>Практичне завдання</h4>
+              <p>Зварювання або монтаж зразка за вказаними параметрами та умовами іспиту</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+            </div>
+            <div>
+              <h4>Теоретичний тест</h4>
+              <p>Матеріалознавство, стандарти якості, охорона праці — за відповідною програмою</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div>
+              <h4>Результат та документ</h4>
+              <p>За результатом — кваліфікаційне посвідчення державного зразка або довідка про кваліфікаційний рівень</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROCESS
+══════════════════════════════════════════════════════ -->
+<section id="process">
+  <div class="container">
+    <div class="section-label fade-in">Як записатися</div>
+    <h2 class="section-heading fade-in">ПРОЦЕС ПОДАЧІ ЗАЯВКИ</h2>
+
+    <div class="steps-list">
+      <div class="step-item fade-in">
+        <span class="step-num">01</span>
+        <div class="step-content">
+          <h4>Подати заявку</h4>
+          <p>Зателефонуйте або заповніть форму нижче — вкажіть, яку кваліфікацію хочете підтвердити. Ми уточнимо деталі та призначимо дату іспиту.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">02</span>
+        <div class="step-content">
+          <h4>Підготовча консультація</h4>
+          <p>За потреби — пояснення вимог іспиту, рекомендації щодо підготовки або запис на підготовчий курс у тренувальному центрі.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">03</span>
+        <div class="step-content">
+          <h4>Проходження іспиту</h4>
+          <p>Практичний іспит на базі кваліфікаційного центру (Харківське шосе, 15). Оцінювання комісією відповідно до стандарту.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">04</span>
+        <div class="step-content">
+          <h4>Отримання документа</h4>
+          <p>Видача кваліфікаційного посвідчення або довідки про кваліфікаційний рівень. Документ визнається роботодавцями в Україні та за кордоном.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROFIPOWER CTA
+══════════════════════════════════════════════════════ -->
+<section style="padding:40px 0">
+  <div class="container">
+    <div class="profipower-link-block fade-in">
+      <div>
+        <h3>PROFIPOWER — Підготовка до вхідного контролю в Польщі</h3>
+        <p>Підтвердили кваліфікацію — готові до роботи в Польщі? Допомагаємо пройти вхідний контроль та знайти офіційне працевлаштування.</p>
+      </div>
+      <a href="../index.html">Перейти на PROFIPOWER →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACTS
+══════════════════════════════════════════════════════ -->
+<section id="contacts">
+  <div class="container">
+    <div class="section-label fade-in" data-i18n="contact_label">Зв'язатися</div>
+    <h2 class="section-heading fade-in" data-i18n="contact_title">КОНТАКТИ</h2>
+
+    <div class="contact-grid">
+      <form class="contact-form fade-in" id="corp-contact-form">
+        <input type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я"/>
+        <input type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp"/>
+        <select>
+          <option value="">Тема звернення</option>
+          <option value="weld">Кваліфікація зварювальника</option>
+          <option value="lock">Кваліфікація слюсаря</option>
+          <option value="entry">Підготовка до вхідного контролю</option>
+          <option value="other">Інше</option>
+        </select>
+        <button type="submit" class="btn-primary" data-i18n="form_submit">Надіслати</button>
+        <p class="form-sent" data-i18n="form_sent">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+      </form>
+
+      <div class="contact-info-col fade-in">
+        <div class="info-card">
+          <h4 data-i18n="office2_tag">Кваліфікаційний центр</h4>
+          <p data-i18n="office2_addr">Харківське шосе, 15, Київ, 02090</p>
+        </div>
+        <div class="info-card">
+          <h4>Акредитація</h4>
+          <p>Рішення НКА № 18 від 20.06.2024</p>
+          <p style="margin-top:4px">Стандарт: ISO 9606-1 / EN 287-1</p>
+        </div>
+        <div class="info-card">
+          <h4>Телефони</h4>
+          <div class="phone-block">
+            <a href="tel:+380442860121" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 044 286 01 21
+            </a>
+            <a href="tel:+380667163108" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 066 716 31 08
+            </a>
+            <a href="tel:+380678758074" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 067 875 80 74
+            </a>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>Email</h4>
+          <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer class="corp-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h3>КОРПОРАЦІЯ <span>ПРОФІ</span></h3>
+      <p data-i18n="footer_tagline">"Розуміємо відповідальність — діємо професійно."</p>
+      <p style="margin-top:8px;font-size:0.75rem;color:var(--muted2)">Київ · з 1992 року</p>
+    </div>
+    <nav class="footer-nav">
+      <h4>Навігація</h4>
+      <a href="index.html">Головна</a>
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="../index.html" style="color:var(--orange)">PROFIPOWER (Польща)</a>
+    </nav>
+    <div class="footer-contacts">
+      <h4>Контакти</h4>
+      <a href="tel:+380442860121">+38 044 286 01 21</a>
+      <a href="tel:+380667163108">+38 066 716 31 08</a>
+      <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+      <p style="margin-top:6px">proficorp.com.ua</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span data-i18n="footer_copy">© 2015–2024 Корпорація Профі. Всі права захищено.</span>
+  </div>
+</footer>
+
+<script src="js/corp.js"></script>
+</body>
+</html>

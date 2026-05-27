@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Корпорація Профі — Виробництво, Навчання, Кваліфікація</title>
+  <meta name="description" content="Корпорація Профі — виробництво металоконструкцій, тренувальний та кваліфікаційний центр зварювальників і слюсарів. Київ, з 1992 року."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/corp.css"/>
+</head>
+<body>
+
+<!-- ── NAVBAR desktop ──────────────────────────────────── -->
+<nav class="corp-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="36" height="36" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z"
+          fill="currentColor"/>
+      </svg>
+      <div class="corp-logo-text">
+        <span class="logo-main">КОРПОРАЦІЯ <span class="logo-accent">ПРОФІ</span></span>
+        <span class="logo-sub" data-i18n="logo_sub">з 1992 року</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contacts" class="btn-cta-nav" data-i18n="nav_cta">Зв'яжіться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── NAVBAR mobile ───────────────────────────────────── -->
+<nav class="corp-nav" style="display:none" id="mobile-nav-wrap">
+  <div class="mobile-nav-top">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="28" height="28" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <span class="logo-main" style="font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.05em">КОРПОРАЦІЯ <span class="logo-accent" style="color:var(--blue-lt)">ПРОФІ</span></span>
+    </a>
+    <button id="menu-btn"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+    <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+    <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+    <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+    <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-lang="ua">UA</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pl">PL</button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // show correct nav based on screen width
+  (function(){
+    const mn = document.getElementById('mobile-nav-wrap');
+    const dn = document.querySelector('nav.corp-nav:not(#mobile-nav-wrap)');
+    function check(){ const m = window.innerWidth<=900; mn.style.display=m?'block':'none'; dn.style.display=m?'none':'block'; }
+    check(); window.addEventListener('resize', check);
+  })();
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+<section class="corp-hero" id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <p class="hero-eyebrow fade-in" data-i18n="hero_eyebrow">Корпорація Профі · Київ · з 1992</p>
+        <h1 class="hero-title fade-in" data-i18n="hero_title">ВИРОБНИЦТВО. НАВЧАННЯ. КВАЛІФІКАЦІЯ.</h1>
+        <p class="hero-desc fade-in" data-i18n="hero_sub">Від виготовлення металоконструкцій до підготовки та сертифікації зварювальників і слюсарів. Розуміємо відповідальність — діємо професійно.</p>
+        <div class="hero-btns fade-in">
+          <a href="vyrobnytstvo.html" class="btn-primary" data-i18n="hero_cta">Дізнатися більше</a>
+          <a href="#contacts" class="btn-ghost" data-i18n="hero_cta2">Контакти</a>
+        </div>
+        <div class="hero-stats fade-in">
+          <div class="hero-stat"><span class="num" data-i18n="hero_s1">з 1992 р.</span><span class="lbl" data-i18n="hero_l1">Досвід роботи</span></div>
+          <div class="hero-stat"><span class="num" data-i18n="hero_s2">3 центри</span><span class="lbl" data-i18n="hero_l2">У Києві</span></div>
+          <div class="hero-stat"><span class="num" data-i18n="hero_s3">ISO 9606</span><span class="lbl" data-i18n="hero_l3">Акредитація</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="hero-logo-big" viewBox="0 0 100 95" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z"
+            fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SUBSIDIARIES
+══════════════════════════════════════════════════════ -->
+<section id="subsidiaries" style="padding:50px 0">
+  <div class="container">
+    <div class="section-label fade-in" data-i18n="subs_label">Склад корпорації</div>
+    <h2 class="section-heading fade-in" data-i18n="subs_title">ДО СКЛАДУ КОРПОРАЦІЇ ВХОДЯТЬ</h2>
+
+    <div class="subs-grid">
+
+      <div class="sub-card fade-in">
+        <div class="sub-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div class="sub-name">ТОВ «<span data-i18n="sub1_name">УкрПрофіГруп</span>»</div>
+        <div class="sub-desc" data-i18n="sub1_desc">Виробництво металоконструкцій та слюсарно-зварювальні послуги</div>
+      </div>
+
+      <div class="sub-card fade-in">
+        <div class="sub-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M13 2L4 14h7l-2 8 11-12h-7l2-8z"/>
+          </svg>
+        </div>
+        <div class="sub-name">ТОВ «<span data-i18n="sub2_name">Профі Велдінг</span>»</div>
+        <div class="sub-desc" data-i18n="sub2_desc">Тренувальний та кваліфікаційний центр зварювальників</div>
+      </div>
+
+      <div class="sub-card fade-in" style="border-color:rgba(240,120,32,0.3)">
+        <div class="sub-icon" style="background:rgba(240,120,32,0.1);border-color:rgba(240,120,32,0.25);color:#f07820">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <div class="sub-name">ТОВ «<span data-i18n="sub3_name">Профіпавер</span>»</div>
+        <div class="sub-desc" data-i18n="sub3_desc">Навчання та працевлаштування в Польщі</div>
+      </div>
+
+      <div class="sub-card fade-in">
+        <div class="sub-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+          </svg>
+        </div>
+        <div class="sub-name">ТОВ «<span data-i18n="sub4_name">Профі Інжиніринг</span>»</div>
+        <div class="sub-desc" data-i18n="sub4_desc">Інженерні рішення та технічний консалтинг</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     DIRECTIONS
+══════════════════════════════════════════════════════ -->
+<section id="directions">
+  <div class="container">
+    <div class="section-label fade-in" data-i18n="dir_label">Напрямки діяльності</div>
+    <h2 class="section-heading fade-in" data-i18n="dir_title">ЩО МИ РОБИМО</h2>
+
+    <div class="dir-grid">
+
+      <a href="vyrobnytstvo.html" class="dir-card dir-card--featured fade-in">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <path d="M6 8h.01M6 12h.01M10 8h8M10 12h5"/>
+          </svg>
+        </div>
+        <span class="dir-num" data-i18n="dir1_num">01</span>
+        <h3 class="dir-title" data-i18n="dir1_title">Виробництво</h3>
+        <p class="dir-desc" data-i18n="dir1_desc">Виготовлення зварних металоконструкцій, ЧПУ-фрезерування, лазерне зварювання. Досвід 30+ років.</p>
+        <span class="dir-link" data-i18n="dir1_link">Детальніше →</span>
+      </a>
+
+      <a href="trening.html" class="dir-card fade-in">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <span class="dir-num" data-i18n="dir2_num">02</span>
+        <h3 class="dir-title" data-i18n="dir2_title">Тренувальний центр</h3>
+        <p class="dir-desc" data-i18n="dir2_desc">Підготовка електрозварників та слюсарів із використанням симуляторів Soldamatic та аналізаторів нестабільності дуги.</p>
+        <span class="dir-link" data-i18n="dir2_link">Детальніше →</span>
+      </a>
+
+      <a href="qualification.html" class="dir-card fade-in">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+        </div>
+        <span class="dir-num" data-i18n="dir3_num">03</span>
+        <h3 class="dir-title" data-i18n="dir3_title">Кваліфікаційний центр</h3>
+        <p class="dir-desc" data-i18n="dir3_desc">Акредитований центр присвоєння та підтвердження кваліфікацій. Рішення НКА №18 від 20.06.2024.</p>
+        <span class="dir-link" data-i18n="dir3_link">Детальніше →</span>
+      </a>
+
+      <a href="materials.html" class="dir-card fade-in">
+        <div class="dir-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+          </svg>
+        </div>
+        <span class="dir-num" data-i18n="dir4_num">04</span>
+        <h3 class="dir-title" data-i18n="dir4_title">Навчальні матеріали</h3>
+        <p class="dir-desc" data-i18n="dir4_desc">Навчальні посібники з MAG 135, TIG 141, підготовки слюсарів та читання технічних креслень.</p>
+        <span class="dir-link" data-i18n="dir4_link">Детальніше →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROFIPOWER LINK
+══════════════════════════════════════════════════════ -->
+<section style="padding:40px 0">
+  <div class="container">
+    <div class="profipower-link-block fade-in">
+      <div>
+        <h3 data-i18n="pp_title">PROFIPOWER — Навчання та робота в Польщі</h3>
+        <p data-i18n="pp_desc">Школа зварювальників, курси малярів, слюсарів та підготовка до вхідного контролю. Офіційне працевлаштування.</p>
+      </div>
+      <a href="../index.html" data-i18n="pp_link">Перейти на PROFIPOWER →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACTS
+══════════════════════════════════════════════════════ -->
+<section id="contacts">
+  <div class="container">
+    <div class="section-label fade-in" data-i18n="contact_label">Зв'язатися</div>
+    <h2 class="section-heading fade-in" data-i18n="contact_title">КОНТАКТИ</h2>
+
+    <div class="contact-grid">
+      <form class="contact-form fade-in" id="corp-contact-form">
+        <input type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я"/>
+        <input type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp"/>
+        <select>
+          <option value="" data-i18n="form_topic">Тема звернення</option>
+          <option value="prod" data-i18n="form_t1">Виробництво / замовлення</option>
+          <option value="weld" data-i18n="form_t2">Навчання зварювальників</option>
+          <option value="lock" data-i18n="form_t3">Навчання слюсарів</option>
+          <option value="qual" data-i18n="form_t4">Кваліфікаційний центр</option>
+          <option value="mat" data-i18n="form_t5">Навчальні матеріали</option>
+          <option value="other" data-i18n="form_t6">Інше</option>
+        </select>
+        <button type="submit" class="btn-primary" data-i18n="form_submit">Надіслати</button>
+        <p class="form-sent" data-i18n="form_sent">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+      </form>
+
+      <div class="contact-info-col fade-in">
+
+        <div class="info-card">
+          <h4 data-i18n="office1_tag">Головний офіс</h4>
+          <p data-i18n="office1_addr">вул. Омеляновича-Павленка, 14/12, Київ, 01010</p>
+        </div>
+
+        <div class="info-card">
+          <h4 data-i18n="office2_tag">Тренувальний та кваліфікаційний центр</h4>
+          <p data-i18n="office2_addr">Харківське шосе, 15, Київ, 02090</p>
+        </div>
+
+        <div class="info-card">
+          <h4 data-i18n="office3_tag">Виробництво</h4>
+          <p data-i18n="office3_addr">вул. Ремонтна, 6, Київ, 02090</p>
+        </div>
+
+        <div class="info-card">
+          <h4>Телефони</h4>
+          <div class="phone-block">
+            <a href="tel:+380442860121" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 044 286 01 21
+            </a>
+            <a href="tel:+380667163108" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 066 716 31 08
+            </a>
+            <a href="tel:+380678758074" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 067 875 80 74
+            </a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4>Email</h4>
+          <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer class="corp-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h3>КОРПОРАЦІЯ <span>ПРОФІ</span></h3>
+      <p data-i18n="footer_tagline">"Розуміємо відповідальність — діємо професійно."</p>
+      <p style="margin-top:8px;font-size:0.75rem;color:var(--muted2)">Київ · з 1992 року</p>
+    </div>
+    <nav class="footer-nav">
+      <h4>Навігація</h4>
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="../index.html" style="color:var(--orange)">PROFIPOWER (Польща)</a>
+    </nav>
+    <div class="footer-contacts">
+      <h4>Контакти</h4>
+      <a href="tel:+380442860121">+38 044 286 01 21</a>
+      <a href="tel:+380667163108">+38 066 716 31 08</a>
+      <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+      <p style="margin-top:6px">proficorp.com.ua</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span data-i18n="footer_copy">© 2015–2024 Корпорація Профі. Всі права захищено.</span>
+  </div>
+</footer>
+
+<script src="js/corp.js"></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Підготовка слюсарів для роботи в Польщі. Курс слюсаря-монтажника: читання креслень, монтаж металоконструкцій. Офіційне працевлаштування. PROFIPOWER.">
+  <title>Підготовка слюсарів | PROFIPOWER</title>
+  <style>
+    .back-bar {
+      background: rgba(240,120,32,0.08);
+      border-bottom: 1px solid rgba(240,120,32,0.15);
+      padding: 7px 0; text-align: center;
+    }
+    .back-bar a {
+      color: var(--orange); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s;
+    }
+    .back-bar a:hover { opacity: 0.75; }
+    .phone-block { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+    .phone-btn {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(240,120,32,0.08); border: 1px solid rgba(240,120,32,0.25);
+      border-radius: 10px; padding: 10px 14px; text-decoration: none;
+      color: var(--orange); font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.03em; transition: background 0.2s, border-color 0.2s;
+    }
+    .phone-btn:hover { background: rgba(240,120,32,0.18); border-color: var(--orange); }
+    .sub-hero { padding: 80px 0 60px; position: relative; overflow: hidden; }
+    .sub-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 15% 60%, rgba(240,120,32,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .sub-breadcrumb {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .sub-breadcrumb a { color: var(--orange); text-decoration: none; }
+    .sub-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .sub-eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--orange); }
+    .sub-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.05; letter-spacing: 0.04em; color: #fff; margin-bottom: 18px;
+    }
+    .sub-title span { color: var(--orange); }
+    .sub-desc { font-size: 1rem; color: var(--gray); line-height: 1.7; max-width: 620px; margin-bottom: 32px; }
+    .sub-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-orange {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: #fff; font-size: 0.88rem; font-weight: 700;
+      padding: 13px 26px; border-radius: 10px; letter-spacing: 0.04em;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .btn-orange:hover { background: var(--orange-2); }
+    .btn-outline-o {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; border: 1px solid rgba(240,120,32,0.4);
+      color: var(--orange); font-size: 0.88rem; font-weight: 600;
+      padding: 13px 26px; border-radius: 10px; letter-spacing: 0.04em;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .btn-outline-o:hover { border-color: var(--orange); background: rgba(240,120,32,0.08); }
+    .stats-strip {
+      display: flex; background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; margin-bottom: 48px;
+    }
+    .stat-box { flex: 1; padding: 24px 20px; text-align: center; border-right: 1px solid var(--border); }
+    .stat-box:last-child { border-right: none; }
+    .stat-box .num { font-family: 'Anton', sans-serif; font-size: 1.8rem; color: var(--orange); display: block; }
+    .stat-box .lbl { font-size: 0.68rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; }
+    .prog-block {
+      background: var(--card); border: 1px solid rgba(240,120,32,0.25);
+      border-radius: 18px; padding: 36px; margin-bottom: 24px;
+    }
+    .prog-tag {
+      display: inline-block; background: rgba(240,120,32,0.12);
+      border: 1px solid rgba(240,120,32,0.3); border-radius: 20px;
+      padding: 4px 14px; font-size: 0.68rem; font-weight: 700;
+      color: var(--orange); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .prog-block h2 { font-family: 'Anton', sans-serif; font-size: 1.5rem; letter-spacing: 0.04em; color: #fff; margin-bottom: 10px; }
+    .prog-block p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; margin-bottom: 14px; }
+    .prog-meta { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .prog-meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .prog-meta-val { font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--orange); }
+    .prog-meta-key { font-size: 0.65rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+    .curriculum { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .curriculum li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.88rem; color: var(--gray-2); line-height: 1.45;
+      padding: 10px 14px;
+      background: rgba(240,120,32,0.04); border: 1px solid rgba(240,120,32,0.1); border-radius: 8px;
+    }
+    .curriculum li::before { content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .content-col h3 { font-family: 'Anton', sans-serif; font-size: 1.3rem; letter-spacing: 0.04em; color: #fff; margin-bottom: 14px; }
+    .content-col p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; margin-bottom: 12px; }
+    .benefit-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .benefit-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--gray-2); line-height: 1.4; }
+    .benefit-list li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .steps { display: flex; flex-direction: column; gap: 12px; }
+    .step { display: flex; gap: 16px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .step-n { font-family: 'Anton', sans-serif; font-size: 1.4rem; color: var(--orange); opacity: 0.45; flex-shrink: 0; line-height: 1; }
+    .step h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .step p { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .contact-form { display: flex; flex-direction: column; gap: 13px; }
+    .contact-form input, .contact-form select {
+      background: var(--card); border: 1px solid var(--border); color: #fff;
+      font-size: 0.88rem; padding: 12px 16px; border-radius: 10px;
+      outline: none; transition: border-color 0.2s; font-family: inherit; width: 100%;
+    }
+    .contact-form input:focus, .contact-form select:focus { border-color: var(--orange); }
+    .contact-form select option { background: var(--card); }
+    .contact-form .form-sent { color: var(--orange); font-size: 0.9rem; text-align: center; display: none; padding-top: 8px; }
+    .info-col { display: flex; flex-direction: column; gap: 16px; }
+    .info-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .info-card h4 { font-family: 'Anton', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+    .info-card p, .info-card a { font-size: 0.85rem; color: var(--gray); display: block; line-height: 1.6; text-decoration: none; }
+    .info-card a:hover { color: var(--orange); }
+    .corp-link-block {
+      background: linear-gradient(135deg, rgba(30,95,240,0.08) 0%, rgba(30,95,240,0.03) 100%);
+      border: 1px solid rgba(30,95,240,0.2); border-radius: 14px; padding: 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .corp-link-block h3 { font-family: 'Anton', sans-serif; font-size: 1rem; letter-spacing: 0.04em; color: #60a5fa; }
+    .corp-link-block p { font-size: 0.82rem; color: var(--gray); margin-top: 4px; }
+    .corp-link-block a {
+      background: rgba(30,95,240,0.15); border: 1px solid rgba(59,130,246,0.3);
+      color: #60a5fa; padding: 9px 18px; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 700; white-space: nowrap; transition: background 0.2s;
+    }
+    .corp-link-block a:hover { background: rgba(30,95,240,0.25); }
+    @media (max-width: 768px) {
+      .two-col, .contact-grid { grid-template-columns: 1fr; }
+      .stats-strip { flex-wrap: wrap; }
+      .stat-box { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-box:last-child { border-bottom: none; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+  <div class="back-bar"><a href="index.html">← PROFIPOWER</a></div>
+
+  <!-- ════ NAVBAR ════ -->
+  <header id="navbar">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo-link">
+        <div class="nav-logo">
+          <svg class="logo-icon" width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+            <span class="logo-sub">Підготовка слюсарів</span>
+          </div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#program">Програма</a>
+        <a href="#process">Кроки</a>
+        <a href="#contact">Контакти</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+        </div>
+        <a href="#contact" class="btn-cta">Записатися</a>
+      </div>
+    </nav>
+    <div class="mobile-nav-top">
+      <a href="index.html" class="nav-logo-link">
+        <div class="nav-logo nav-logo--sm">
+          <svg class="logo-icon" width="30" height="30" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.10)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+        </div>
+      </a>
+      <button id="menu-btn"><span></span><span></span><span></span></button>
+    </div>
+    <div id="mobile-menu">
+      <a href="#program">Програма</a>
+      <a href="#process">Кроки</a>
+      <a href="#contact">Контакти</a>
+      <div class="mobile-lang">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contact" class="btn-cta mobile-cta">Записатися</a>
+    </div>
+  </header>
+
+  <!-- ════ HERO ════ -->
+  <section class="sub-hero">
+    <div class="container">
+      <div class="sub-breadcrumb fade-in">
+        <a href="index.html">PROFIPOWER</a><span>›</span><span>Підготовка слюсарів</span>
+      </div>
+      <div class="sub-eyebrow fade-in">Навчання · Польща · Офіційна робота</div>
+      <h1 class="sub-title fade-in">ПІДГОТОВКА<br/><span>СЛЮСАРЯ-МОНТАЖНИКА</span></h1>
+      <p class="sub-desc fade-in">Курс підготовки слюсаря-монтажника для роботи на заводах Польщі. Читання технічних креслень, монтаж металоконструкцій, ручна обробка металу. Навчаємо з нуля — офіційне працевлаштування після.</p>
+      <div class="sub-btns fade-in">
+        <a href="#contact" class="btn-orange">Записатися</a>
+        <a href="#program" class="btn-outline-o">Програма курсу</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ STATS ════ -->
+  <section style="padding:20px 0 60px">
+    <div class="container">
+      <div class="stats-strip fade-in">
+        <div class="stat-box"><span class="num">від 35</span><span class="lbl">zł/год. оплата</span></div>
+        <div class="stat-box"><span class="num">2–3</span><span class="lbl">Тижні навчання</span></div>
+        <div class="stat-box"><span class="num">100%</span><span class="lbl">Офіційне оформлення</span></div>
+        <div class="stat-box"><span class="num">0 zł</span><span class="lbl">Вартість підбору</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ PROGRAM ════ -->
+  <section id="program">
+    <div class="container">
+      <div class="section-label fade-in">Програма навчання</div>
+      <h2 class="section-heading fade-in">ЩО ВИ ВИВЧИТЕ</h2>
+
+      <div class="prog-block fade-in">
+        <span class="prog-tag">Слюсар-монтажник · Польща</span>
+        <h2>Слюсарно-монтажна підготовка</h2>
+        <p>Комплексний курс підготовки слюсаря-монтажника: від читання технічних креслень до монтажу металоконструкцій і контролю якості зборки.</p>
+        <div class="prog-meta">
+          <div class="prog-meta-item"><span class="prog-meta-val">2–3 тижні</span><span class="prog-meta-key">Тривалість</span></div>
+          <div class="prog-meta-item"><span class="prog-meta-val">від 35 zł/год.</span><span class="prog-meta-key">Оплата праці</span></div>
+          <div class="prog-meta-item"><span class="prog-meta-val">Офіційний договір</span><span class="prog-meta-key">Форма зайнятості</span></div>
+        </div>
+        <ul class="curriculum">
+          <li>Читання технічних креслень та складальних схем (ГОСТ, ISO)</li>
+          <li>Вимірювальний інструмент — штангенциркуль, мікрометр, рівень</li>
+          <li>Свердління, нарізання різьби, розгортання отворів</li>
+          <li>Гнуття, рихтування, правка металевих деталей</li>
+          <li>Складання рознімних і нерознімних з'єднань (болти, штифти, зварка)</li>
+          <li>Монтаж металоконструкцій на виробничому об'єкті</li>
+          <li>Контроль геометрії та якості зборки</li>
+          <li>Охорона праці та безпека — вимоги польських заводів</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ WHO + BENEFITS ════ -->
+  <section>
+    <div class="container">
+      <div class="two-col">
+        <div class="content-col fade-in">
+          <div class="section-label">Для кого</div>
+          <h3>ХТО МОЖЕ ЗАПИСАТИСЯ</h3>
+          <p>Курс підходить для тих, хто хоче офіційно працювати в Польщі слюсарем. Досвід — бажаний, але не обов'язковий.</p>
+          <ul class="benefit-list" style="margin-top:8px">
+            <li>Базові технічні навички або бажання навчитися</li>
+            <li>Вік від 18 років</li>
+            <li>Готовність до фізичної роботи у виробничих умовах</li>
+            <li>Наявність польської візи або дозволу на перебування</li>
+          </ul>
+        </div>
+        <div class="content-col fade-in">
+          <div class="section-label">Умови праці</div>
+          <h3>РОБОТА В ПОЛЬЩІ</h3>
+          <ul class="benefit-list">
+            <li>Офіційне працевлаштування — umowa o pracę або umowa zlecenie</li>
+            <li>Оплата від 35 zł/год. та вище залежно від позиції</li>
+            <li>Сплата всіх податків роботодавцем</li>
+            <li>Допомога з пошуком житла</li>
+            <li>Медичне страхування NFZ</li>
+            <li>Підтримка та супровід після виходу на роботу</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ PROCESS ════ -->
+  <section id="process">
+    <div class="container">
+      <div class="section-label fade-in">Як починається робота</div>
+      <h2 class="section-heading fade-in">КРОКИ ДО РОБОТИ В ПОЛЬЩІ</h2>
+      <div class="steps fade-in">
+        <div class="step"><span class="step-n">01</span><div><h4>Подати заявку</h4><p>Заповніть форму або зателефонуйте. Розповідаємо деталі, уточнюємо ваші навички та очікування.</p></div></div>
+        <div class="step"><span class="step-n">02</span><div><h4>Навчання в Україні</h4><p>Курс у нашому навчальному центрі в Київі — теорія та практика слюсарної справи. Допомагаємо з оформленням документів для роботи в Польщі.</p></div></div>
+        <div class="step"><span class="step-n">03</span><div><h4>Переїзд та адаптація</h4><p>Допомагаємо з оформленням документів та забезпечуємо житлом за потреби. Організаційний супровід при переїзді.</p></div></div>
+        <div class="step"><span class="step-n">04</span><div><h4>Вхідний контроль та медогляд</h4><p>Супровід під час проходження вхідного контролю на заводі, організація медогляду та підтримка протягом першого місяця.</p></div></div>
+        <div class="step"><span class="step-n">05</span><div><h4>Офіційна робота</h4><p>Підписання договору та початок роботи. Залишаємось на зв'язку і підтримуємо вас після виходу на завод.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ CORP PROMO ════ -->
+  <section style="padding:40px 0">
+    <div class="container">
+      <div class="corp-link-block fade-in">
+        <div>
+          <h3>КОРПОРАЦІЯ ПРОФІ — Кваліфікаційний центр в Україні</h3>
+          <p>Хочете підтвердити кваліфікацію слюсаря офіційно? Акредитований кваліфікаційний центр у Київі — Рішення НКА № 18.</p>
+        </div>
+        <a href="corp/qualification.html">Кваліфікаційний центр →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ CONTACTS ════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label fade-in">Зв'язатися</div>
+      <h2 class="section-heading fade-in">ЗАПИСАТИСЯ НА КУРС</h2>
+      <div class="contact-grid">
+        <form class="contact-form fade-in" id="locksmith-form">
+          <input type="text" placeholder="Ваше ім'я"/>
+          <input type="tel" placeholder="Телефон / WhatsApp"/>
+          <select>
+            <option value="">Маєте досвід слюсарної справи?</option>
+            <option value="yes">Так, є досвід</option>
+            <option value="no">Ні, починаю з нуля</option>
+            <option value="other">Маю суміжний досвід</option>
+          </select>
+          <button type="submit" class="btn-orange" style="width:100%;justify-content:center">Записатися</button>
+          <p class="form-sent">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+        </form>
+        <div class="info-col fade-in">
+          <div class="info-card"><h4>Навчальний центр</h4><p>Харківське шосе, 15, Київ, 02090</p></div>
+          <div class="info-card">
+            <h4>Телефони</h4>
+            <div class="phone-block">
+              <a href="tel:+48504648898" class="phone-btn"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>+48 504 648 898</a>
+              <a href="tel:+48571523244" class="phone-btn"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>+48 571 523 244</a>
+              <a href="tel:+380674637017" class="phone-btn"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>+38 067 463 70 17</a>
+            </div>
+          </div>
+          <div class="info-card"><h4>Email</h4><a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="32" height="32" viewBox="0 0 38 38" fill="none">
+            <circle cx="19" cy="19" r="17.5" stroke="#f07820" stroke-width="1.5" fill="rgba(240,120,32,0.1)"/>
+            <path d="M22 8L13 21H20L15 31L29 18H22L25 8Z" fill="#f07820"/>
+          </svg>
+          <span class="logo-main">PROFI<span class="logo-accent">POWER</span></span>
+        </div>
+        <p class="footer-tagline">"Навчаємо. Працевлаштовуємо. Підтримуємо."</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Навчання</h4>
+        <a href="school.html">Школа зварювальників</a>
+        <a href="painters.html">Курс малярів</a>
+        <a href="locksmith-pl.html">Підготовка слюсарів</a>
+        <a href="entry-control.html">Вхідний контроль</a>
+      </nav>
+      <div class="footer-contacts">
+        <h4>Контакти</h4>
+        <a href="tel:+48504648898">+48 504 648 898</a>
+        <a href="tel:+48571523244">+48 571 523 244</a>
+        <a href="tel:+380674637017">+38 067 463 70 17</a>
+        <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2015–2024 PROFIPOWER / Корпорація Профі. Всі права захищено.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const form = document.getElementById('locksmith-form');
+    if (form) { form.addEventListener('submit', e => { e.preventDefault(); const s = form.querySelector('.form-sent'); if(s){ s.style.display='block'; form.reset(); } }); }
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

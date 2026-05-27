@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Тренувальний центр зварювальників — Корпорація Профі</title>
+  <meta name="description" content="Тренувальний центр Профі Велдінг — підготовка електрозварників та слюсарів. Симулятори Soldamatic, аналізатор нестабільності дуги. Київ."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/corp.css"/>
+</head>
+<body>
+
+<!-- ── Back bar ──────────────────────────────────────────── -->
+<div class="back-bar">
+  <a href="index.html">← Корпорація Профі</a>
+</div>
+
+<!-- ── NAVBAR desktop ──────────────────────────────────── -->
+<nav class="corp-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="36" height="36" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <div class="corp-logo-text">
+        <span class="logo-main">КОРПОРАЦІЯ <span class="logo-accent">ПРОФІ</span></span>
+        <span class="logo-sub" data-i18n="logo_sub">з 1992 року</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" class="active" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contacts" class="btn-cta-nav" data-i18n="nav_cta">Зв'яжіться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── NAVBAR mobile ───────────────────────────────────── -->
+<nav class="corp-nav" style="display:none" id="mobile-nav-wrap">
+  <div class="mobile-nav-top">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="28" height="28" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <span class="logo-main" style="font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.05em">КОРПОРАЦІЯ <span class="logo-accent" style="color:var(--blue-lt)">ПРОФІ</span></span>
+    </a>
+    <button id="menu-btn"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+    <a href="trening.html">Тренувальний центр</a>
+    <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+    <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+    <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-lang="ua">UA</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pl">PL</button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    const mn = document.getElementById('mobile-nav-wrap');
+    const dn = document.querySelector('nav.corp-nav:not(#mobile-nav-wrap)');
+    function check(){ const m=window.innerWidth<=900; mn.style.display=m?'block':'none'; dn.style.display=m?'none':'block'; }
+    check(); window.addEventListener('resize',check);
+  })();
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE HERO
+══════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-breadcrumb fade-in">
+        <a href="index.html">Корпорація Профі</a>
+        <span>›</span>
+        <span>Тренувальний центр</span>
+      </div>
+      <div class="section-label fade-in">ТОВ «Профі Велдінг»</div>
+      <h1 class="page-title fade-in">ТРЕНУВАЛЬНИЙ<br/><span>ЦЕНТР</span></h1>
+      <p class="page-desc fade-in">Підготовка електрозварників та слюсарів із застосуванням сучасних VR-симуляторів Soldamatic та аналізаторів нестабільності дуги. Харківське шосе, 15, Київ.</p>
+      <div class="hero-btns fade-in">
+        <a href="#contacts" class="btn-primary">Записатися</a>
+        <a href="#programs" class="btn-ghost">Програми</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     STATS
+══════════════════════════════════════════════════════ -->
+<section style="padding:30px 0">
+  <div class="container">
+    <div class="stats-row fade-in">
+      <div class="stat-item">
+        <span class="num">Soldamatic</span>
+        <span class="lbl">VR-симулятор</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">2</span>
+        <span class="lbl">Програми навчання</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">2–3</span>
+        <span class="lbl">Тижні навчання</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">ISO 9606</span>
+        <span class="lbl">Підготовка до іспиту</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     EQUIPMENT
+══════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-label fade-in">Обладнання</div>
+    <h2 class="section-heading fade-in">СУЧАСНЕ ОБЛАДНАННЯ</h2>
+    <p class="section-sub fade-in">Центр оснащений промисловими зварювальними апаратами та навчальними тренажерами світового рівня.</p>
+
+    <div class="two-col-grid">
+      <div class="fade-in">
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-item-icon" style="width:40px;height:40px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div>
+              <h4>Soldamatic VR Welding Simulator</h4>
+              <p>Симулятор зварювання доповненої реальності — відпрацювання техніки без витрат матеріалів і ризиків. Реальний зворотний зв'язок: кут, швидкість, відстань дуги.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon" style="width:40px;height:40px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h7l-2 8 11-12h-7l2-8z"/></svg>
+            </div>
+            <div>
+              <h4>Аналізатор нестабільності дуги</h4>
+              <p>Прилад для аналізу якості зварювального процесу — виявляє нестабільність дуги, фіксує параметри і дає рекомендації щодо корекції техніки.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon" style="width:40px;height:40px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <h4>Промислові зварювальні апарати</h4>
+              <p>Апарати для MAG/MIG (135/131), TIG (141), MMA (111) — ті самі марки та параметри, що використовуються на виробництвах у Польщі та Україні.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card service-card--featured fade-in" style="padding:28px">
+        <div class="section-label">Чому Soldamatic?</div>
+        <h3 style="font-family:'Anton',sans-serif;font-size:1.2rem;letter-spacing:0.03em;margin-bottom:8px">ПЕРЕВАГА VR-НАВЧАННЯ</h3>
+        <ul class="check-list">
+          <li>Миттєвий зворотний зв'язок про техніку зварювання</li>
+          <li>Безпечне відпрацювання без витрат металу та газу</li>
+          <li>Аналіз помилок із точністю до параметрів дуги</li>
+          <li>Прискорення набуття практичних навичок у 3–5 разів</li>
+          <li>Об'єктивна оцінка прогресу курсанта</li>
+          <li>Підготовка до роботи на будь-яких промислових апаратах</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROGRAMS
+══════════════════════════════════════════════════════ -->
+<section id="programs">
+  <div class="container">
+    <div class="section-label fade-in">Програми навчання</div>
+    <h2 class="section-heading fade-in">ЩО МИ ВИКЛАДАЄМО</h2>
+
+    <div class="two-col-grid" style="gap:24px">
+
+      <!-- Welders -->
+      <div class="prog-card prog-card--featured fade-in">
+        <div class="prog-badge">Основна програма</div>
+        <h3>Електрозварник</h3>
+        <p>Повний курс підготовки електрозварника — від теорії до практичного зварювання на промисловому обладнанні. Підготовка до кваліфікаційного іспиту ISO 9606.</p>
+        <ul class="prog-list">
+          <li>Теорія зварювання та матеріалознавство</li>
+          <li>Охорона праці та безпека зварювання</li>
+          <li>Практика на симуляторі Soldamatic</li>
+          <li>Практичне зварювання MAG 135 / TIG 141</li>
+          <li>Читання технічних креслень</li>
+          <li>Контроль якості зварних з'єднань</li>
+        </ul>
+        <div class="prog-duration">
+          <span class="prog-time">2–3 тижні</span>
+          <span class="prog-result">· Документ про навчання</span>
+        </div>
+        <a href="qualification.html" class="btn-primary" style="margin-top:8px;font-size:0.82rem">Кваліфікаційний іспит →</a>
+      </div>
+
+      <!-- Locksmiths -->
+      <div class="prog-card fade-in">
+        <div class="prog-badge">Додаткова програма</div>
+        <h3>Слюсар-монтажник</h3>
+        <p>Підготовка слюсарів-монтажників для роботи на промислових підприємствах. Читання креслень, монтаж металоконструкцій, контроль якості.</p>
+        <ul class="prog-list">
+          <li>Читання технічних креслень та схем</li>
+          <li>Інструментальна та складальна справа</li>
+          <li>Монтаж металоконструкцій</li>
+          <li>Різання, свердління, гнуття металу</li>
+          <li>Охорона праці та безпека</li>
+          <li>Практичні вправи з монтажу</li>
+        </ul>
+        <div class="prog-duration">
+          <span class="prog-time">2–3 тижні</span>
+          <span class="prog-result">· Документ про навчання</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     TRAINING STAGES
+══════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-label fade-in">Як проходить навчання</div>
+    <h2 class="section-heading fade-in">ЕТАПИ ПІДГОТОВКИ</h2>
+
+    <div class="steps-list">
+      <div class="step-item fade-in">
+        <span class="step-num">01</span>
+        <div class="step-content">
+          <h4>Теоретична підготовка</h4>
+          <p>Матеріалознавство, фізика зварювання, стандарти якості (ISO 9606, EN 287), охорона праці. Технічне читання креслень.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">02</span>
+        <div class="step-content">
+          <h4>VR-симулятор Soldamatic</h4>
+          <p>Відпрацювання базових рухів та техніки зварювання в симульованому середовищі. Аналізатор відстежує кут, швидкість і стабільність дуги.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">03</span>
+        <div class="step-content">
+          <h4>Практичне зварювання</h4>
+          <p>Зварювання зразків на промисловому обладнанні — MAG 135, TIG 141 (за програмою курсу). Контроль якості зварних з'єднань.</p>
+        </div>
+      </div>
+      <div class="step-item fade-in">
+        <span class="step-num">04</span>
+        <div class="step-content">
+          <h4>Підсумкова атестація</h4>
+          <p>Практичний тест — зварювання зразка за завданням. Видача документа про проходження навчання. За потреби — направлення на кваліфікаційний іспит.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROFIPOWER CTA
+══════════════════════════════════════════════════════ -->
+<section style="padding:40px 0">
+  <div class="container">
+    <div class="profipower-link-block fade-in">
+      <div>
+        <h3>PROFIPOWER — Школа зварювальників для роботи в Польщі</h3>
+        <p>Навчились — маємо для вас офіційне працевлаштування. Зварники, маляри, слюсарі — підготовка та вхідний контроль.</p>
+      </div>
+      <a href="../index.html">Перейти на PROFIPOWER →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACTS
+══════════════════════════════════════════════════════ -->
+<section id="contacts">
+  <div class="container">
+    <div class="section-label fade-in" data-i18n="contact_label">Зв'язатися</div>
+    <h2 class="section-heading fade-in" data-i18n="contact_title">КОНТАКТИ</h2>
+
+    <div class="contact-grid">
+      <form class="contact-form fade-in" id="corp-contact-form">
+        <input type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я"/>
+        <input type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp"/>
+        <select>
+          <option value="">Тема звернення</option>
+          <option value="weld">Навчання зварювальників</option>
+          <option value="lock">Навчання слюсарів</option>
+          <option value="corp">Корпоративне навчання</option>
+          <option value="other">Інше</option>
+        </select>
+        <button type="submit" class="btn-primary" data-i18n="form_submit">Надіслати</button>
+        <p class="form-sent" data-i18n="form_sent">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+      </form>
+
+      <div class="contact-info-col fade-in">
+        <div class="info-card">
+          <h4 data-i18n="office2_tag">Тренувальний та кваліфікаційний центр</h4>
+          <p data-i18n="office2_addr">Харківське шосе, 15, Київ, 02090</p>
+        </div>
+        <div class="info-card">
+          <h4>Телефони</h4>
+          <div class="phone-block">
+            <a href="tel:+380442860121" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 044 286 01 21
+            </a>
+            <a href="tel:+380667163108" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 066 716 31 08
+            </a>
+            <a href="tel:+380678758074" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 067 875 80 74
+            </a>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>Email</h4>
+          <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer class="corp-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h3>КОРПОРАЦІЯ <span>ПРОФІ</span></h3>
+      <p data-i18n="footer_tagline">"Розуміємо відповідальність — діємо професійно."</p>
+      <p style="margin-top:8px;font-size:0.75rem;color:var(--muted2)">Київ · з 1992 року</p>
+    </div>
+    <nav class="footer-nav">
+      <h4>Навігація</h4>
+      <a href="index.html">Головна</a>
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="../index.html" style="color:var(--orange)">PROFIPOWER (Польща)</a>
+    </nav>
+    <div class="footer-contacts">
+      <h4>Контакти</h4>
+      <a href="tel:+380442860121">+38 044 286 01 21</a>
+      <a href="tel:+380667163108">+38 066 716 31 08</a>
+      <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+      <p style="margin-top:6px">proficorp.com.ua</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span data-i18n="footer_copy">© 2015–2024 Корпорація Профі. Всі права захищено.</span>
+  </div>
+</footer>
+
+<script src="js/corp.js"></script>
+</body>
+</html>

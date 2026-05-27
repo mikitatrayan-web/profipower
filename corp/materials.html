@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Навчальні матеріали — Корпорація Профі</title>
+  <meta name="description" content="Навчальні посібники з MAG 135, TIG 141, підготовки слюсарів та читання технічних креслень. Замовити у Корпорації Профі."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/corp.css"/>
+</head>
+<body>
+
+<!-- ── Back bar ──────────────────────────────────────────── -->
+<div class="back-bar">
+  <a href="index.html">← Корпорація Профі</a>
+</div>
+
+<!-- ── NAVBAR desktop ──────────────────────────────────── -->
+<nav class="corp-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="36" height="36" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <div class="corp-logo-text">
+        <span class="logo-main">КОРПОРАЦІЯ <span class="logo-accent">ПРОФІ</span></span>
+        <span class="logo-sub" data-i18n="logo_sub">з 1992 року</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" class="active" data-i18n="nav_materials">Матеріали</a>
+      <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+      <a href="#contacts" class="btn-cta-nav" data-i18n="nav_cta">Зв'яжіться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── NAVBAR mobile ───────────────────────────────────── -->
+<nav class="corp-nav" style="display:none" id="mobile-nav-wrap">
+  <div class="mobile-nav-top">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="corp-logo-icon" width="28" height="28" viewBox="0 0 100 95" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 2L2 93H98L50 2ZM50 24L18 85H82L50 24Z" fill="currentColor"/>
+      </svg>
+      <span class="logo-main" style="font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.05em">КОРПОРАЦІЯ <span class="logo-accent" style="color:var(--blue-lt)">ПРОФІ</span></span>
+    </a>
+    <button id="menu-btn"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+    <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+    <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+    <a href="materials.html">Матеріали</a>
+    <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-lang="ua">UA</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pl">PL</button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    const mn = document.getElementById('mobile-nav-wrap');
+    const dn = document.querySelector('nav.corp-nav:not(#mobile-nav-wrap)');
+    function check(){ const m=window.innerWidth<=900; mn.style.display=m?'block':'none'; dn.style.display=m?'none':'block'; }
+    check(); window.addEventListener('resize',check);
+  })();
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE HERO
+══════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-breadcrumb fade-in">
+        <a href="index.html">Корпорація Профі</a>
+        <span>›</span>
+        <span>Навчальні матеріали</span>
+      </div>
+      <div class="section-label fade-in">Корпорація Профі · Видавнича діяльність</div>
+      <h1 class="page-title fade-in">НАВЧАЛЬНІ<br/><span>МАТЕРІАЛИ</span></h1>
+      <p class="page-desc fade-in">Практичні посібники для підготовки зварювальників і слюсарів — розроблені власними фахівцями на основі 30-річного досвіду навчання. Теорія, практика, підготовка до іспитів.</p>
+      <div class="hero-btns fade-in">
+        <a href="#contacts" class="btn-primary">Замовити</a>
+        <a href="#books" class="btn-ghost">Каталог</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     BOOKS GRID
+══════════════════════════════════════════════════════ -->
+<section id="books">
+  <div class="container">
+    <div class="section-label fade-in">Каталог</div>
+    <h2 class="section-heading fade-in">НАШІ ПОСІБНИКИ</h2>
+    <p class="section-sub fade-in">Кожен посібник розроблений практикуючими інструкторами та відповідає вимогам сучасних промислових стандартів.</p>
+
+    <div class="books-grid">
+
+      <div class="book-card book-card--featured fade-in">
+        <span class="book-num">ПОСІБНИК 01</span>
+        <h3>Зварювання MAG 135</h3>
+        <p>Повний навчальний посібник з напівавтоматичного зварювання в захисному газі (MAG, процес 135 за ISO). Теорія, параметри, положення зварювання, контроль якості.</p>
+        <ul class="prog-list" style="margin-top:4px">
+          <li>Основи MIG/MAG зварювання — фізика процесу</li>
+          <li>Обладнання, витратні матеріали, налаштування</li>
+          <li>Положення зварювання PA, PB, PC, PF</li>
+          <li>Зварювання сталі, нержавіючої сталі, алюмінію</li>
+          <li>Типові дефекти та методи контролю</li>
+          <li>Підготовка до іспиту ISO 9606-1</li>
+        </ul>
+        <div class="book-meta" style="margin-top:8px">
+          <span class="book-tag">MAG 135</span>
+          <span class="book-tag">ISO 9606-1</span>
+          <span class="book-tag">UA мова</span>
+        </div>
+      </div>
+
+      <div class="book-card book-card--featured fade-in">
+        <span class="book-num">ПОСІБНИК 02</span>
+        <h3>Зварювання TIG 141</h3>
+        <p>Навчальний посібник з аргонодугового зварювання (TIG, процес 141 за ISO). Охоплює зварювання нержавіючої сталі, алюмінію та титану для відповідальних конструкцій.</p>
+        <ul class="prog-list" style="margin-top:4px">
+          <li>Принцип роботи TIG-процесу, дуга та захисне середовище</li>
+          <li>Вибір вольфрамових електродів та присадкових дротів</li>
+          <li>Підготовка зразків та налаштування апарата</li>
+          <li>Техніка зварювання листів, труб, кутових з'єднань</li>
+          <li>Зварювання нержавіючої сталі 304/316</li>
+          <li>Підготовка до іспиту ISO 9606-1 (процес 141)</li>
+        </ul>
+        <div class="book-meta" style="margin-top:8px">
+          <span class="book-tag">TIG 141</span>
+          <span class="book-tag">ISO 9606-1</span>
+          <span class="book-tag">UA мова</span>
+        </div>
+      </div>
+
+      <div class="book-card fade-in">
+        <span class="book-num">ПОСІБНИК 03</span>
+        <h3>Підготовка слюсарів-монтажників</h3>
+        <p>Комплексний посібник для підготовки слюсарів-монтажників до роботи на промислових підприємствах. Теорія та практика слюсарної справи.</p>
+        <ul class="prog-list" style="margin-top:4px">
+          <li>Інструментальна справа та вимірювальний контроль</li>
+          <li>Свердління, нарізання різьби, рознімні з'єднання</li>
+          <li>Зачищення, шліфування, полірування поверхонь</li>
+          <li>Складання металоконструкцій — кріплення, вузли</li>
+          <li>Охорона праці та безпека виробництва</li>
+        </ul>
+        <div class="book-meta" style="margin-top:8px">
+          <span class="book-tag">Слюсарна справа</span>
+          <span class="book-tag">Монтаж</span>
+          <span class="book-tag">UA мова</span>
+        </div>
+      </div>
+
+      <div class="book-card fade-in">
+        <span class="book-num">ПОСІБНИК 04</span>
+        <h3>Читання технічних креслень</h3>
+        <p>Практичний посібник з читання та інтерпретації технічних креслень для зварювальників і слюсарів. Від базових позначень до складних вузлових креслень.</p>
+        <ul class="prog-list" style="margin-top:4px">
+          <li>Системи проєкцій, позначення видів та перерізів</li>
+          <li>Умовні позначення зварних з'єднань (ГОСТ, ISO)</li>
+          <li>Читання складальних і деталювальних креслень</li>
+          <li>Допуски, посадки, шорсткість поверхні</li>
+          <li>Практичні завдання та контрольні тести</li>
+        </ul>
+        <div class="book-meta" style="margin-top:8px">
+          <span class="book-tag">Технічні креслення</span>
+          <span class="book-tag">ГОСТ · ISO</span>
+          <span class="book-tag">UA мова</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     HOW TO ORDER
+══════════════════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-label fade-in">Як замовити</div>
+    <h2 class="section-heading fade-in">ОТРИМАТИ МАТЕРІАЛИ</h2>
+
+    <div class="two-col-grid">
+      <div class="steps-list fade-in">
+        <div class="step-item">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <h4>Оберіть посібник</h4>
+            <p>Зв'яжіться з нами та вкажіть, який саме посібник вас цікавить — один або кілька одразу.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <h4>Узгодьте деталі</h4>
+            <p>Ми підберемо оптимальний формат — друкований або електронний. Для навчальних центрів — оптові умови.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <h4>Отримайте матеріали</h4>
+            <p>Самовивіз з офісу (вул. Омеляновича-Павленка, 14/12) або доставка по Україні Новою Поштою.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card service-card--featured fade-in" style="padding:28px">
+        <div class="section-label">Для підприємств та центрів</div>
+        <h3 style="font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:0.03em;margin-bottom:10px">КОРПОРАТИВНЕ ЗАМОВЛЕННЯ</h3>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:16px">Забезпечуємо навчальні центри, підприємства та професійні школи повним комплектом матеріалів.</p>
+        <ul class="check-list">
+          <li>Спеціальні умови для замовлень від 10+ примірників</li>
+          <li>Можливість брендування матеріалів під ваш центр</li>
+          <li>Консультація щодо підбору під програму навчання</li>
+          <li>Доставка по всій Україні</li>
+        </ul>
+        <a href="#contacts" class="btn-primary" style="margin-top:16px;font-size:0.82rem">Отримати комерційну пропозицію</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PROFIPOWER CTA
+══════════════════════════════════════════════════════ -->
+<section style="padding:40px 0">
+  <div class="container">
+    <div class="profipower-link-block fade-in">
+      <div>
+        <h3>PROFIPOWER — Школа зварювальників для роботи в Польщі</h3>
+        <p>Готуємо зварювальників та слюсарів до роботи в Польщі — теорія, практика, вхідний контроль, офіційне працевлаштування.</p>
+      </div>
+      <a href="../index.html">Перейти на PROFIPOWER →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACTS
+══════════════════════════════════════════════════════ -->
+<section id="contacts">
+  <div class="container">
+    <div class="section-label fade-in" data-i18n="contact_label">Зв'язатися</div>
+    <h2 class="section-heading fade-in" data-i18n="contact_title">КОНТАКТИ</h2>
+
+    <div class="contact-grid">
+      <form class="contact-form fade-in" id="corp-contact-form">
+        <input type="text" data-i18n-placeholder="form_name" placeholder="Ваше ім'я"/>
+        <input type="tel" data-i18n-placeholder="form_phone" placeholder="Телефон / WhatsApp"/>
+        <select>
+          <option value="">Який посібник цікавить?</option>
+          <option value="mag">MAG 135 — зварювання</option>
+          <option value="tig">TIG 141 — зварювання</option>
+          <option value="lock">Підготовка слюсарів</option>
+          <option value="draw">Читання креслень</option>
+          <option value="all">Весь комплект</option>
+          <option value="corp">Корпоративне замовлення</option>
+        </select>
+        <button type="submit" class="btn-primary" data-i18n="form_submit">Надіслати</button>
+        <p class="form-sent" data-i18n="form_sent">Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+      </form>
+
+      <div class="contact-info-col fade-in">
+        <div class="info-card">
+          <h4 data-i18n="office1_tag">Головний офіс</h4>
+          <p data-i18n="office1_addr">вул. Омеляновича-Павленка, 14/12, Київ, 01010</p>
+        </div>
+        <div class="info-card">
+          <h4>Телефони</h4>
+          <div class="phone-block">
+            <a href="tel:+380442860121" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 044 286 01 21
+            </a>
+            <a href="tel:+380667163108" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 066 716 31 08
+            </a>
+            <a href="tel:+380678758074" class="phone-btn">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#3b82f6" stroke-width="1.5"/></svg>
+              +38 067 875 80 74
+            </a>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>Email</h4>
+          <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer class="corp-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h3>КОРПОРАЦІЯ <span>ПРОФІ</span></h3>
+      <p data-i18n="footer_tagline">"Розуміємо відповідальність — діємо професійно."</p>
+      <p style="margin-top:8px;font-size:0.75rem;color:var(--muted2)">Київ · з 1992 року</p>
+    </div>
+    <nav class="footer-nav">
+      <h4>Навігація</h4>
+      <a href="index.html">Головна</a>
+      <a href="vyrobnytstvo.html" data-i18n="nav_prod">Виробництво</a>
+      <a href="trening.html" data-i18n="nav_train">Тренувальний центр</a>
+      <a href="qualification.html" data-i18n="nav_qual">Кваліфікаційний центр</a>
+      <a href="materials.html" data-i18n="nav_materials">Матеріали</a>
+      <a href="../index.html" style="color:var(--orange)">PROFIPOWER (Польща)</a>
+    </nav>
+    <div class="footer-contacts">
+      <h4>Контакти</h4>
+      <a href="tel:+380442860121">+38 044 286 01 21</a>
+      <a href="tel:+380667163108">+38 066 716 31 08</a>
+      <a href="mailto:info@proficorp.com.ua">info@proficorp.com.ua</a>
+      <p style="margin-top:6px">proficorp.com.ua</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span data-i18n="footer_copy">© 2015–2024 Корпорація Профі. Всі права захищено.</span>
+  </div>
+</footer>
+
+<script src="js/corp.js"></script>
+</body>
+</html>
