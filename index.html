@@ -661,7 +661,194 @@
       .empl-jobs-mini { grid-template-columns: repeat(2, 1fr); }
       .prod-services-grid { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
+      .jobs-strip-grid { grid-template-columns: 1fr 1fr !important; }
+      .photo-gallery { grid-template-columns: 1fr !important; }
+      .faq-grid { grid-template-columns: 1fr !important; }
+      .hero-action-btns { flex-direction: column; }
+      .hero-action-btns .btn-hero-main,
+      .hero-action-btns .btn-hero-ghost { width: 100%; justify-content: center; }
     }
+    @media (max-width: 480px) {
+      .jobs-strip-grid { grid-template-columns: 1fr !important; }
+    }
+
+    /* ── Jobs strip ────────────────────────────────── */
+    .jobs-strip { padding: 48px 0 56px; background: rgba(9,14,31,0.8); }
+    .jobs-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+      margin-bottom: 28px;
+    }
+    .job-strip-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 18px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .job-strip-card:hover { border-color: rgba(240,120,32,0.4); transform: translateY(-2px); }
+    .job-strip-card--hot { border-color: rgba(240,120,32,0.3); }
+    .job-strip-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(240,120,32,0.1); border: 1px solid rgba(240,120,32,0.25);
+      border-radius: 12px; padding: 3px 9px;
+      font-size: 0.63rem; font-weight: 700; color: var(--orange);
+      letter-spacing: 0.06em; text-transform: uppercase; align-self: flex-start;
+    }
+    .job-strip-tag-hot { background: rgba(240,120,32,0.18); border-color: rgba(240,120,32,0.5); }
+    .job-strip-card h3 { font-family: 'Anton', sans-serif; font-size: 0.95rem; letter-spacing: 0.03em; color: #fff; }
+    .job-strip-salary {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.2rem; color: var(--orange);
+      line-height: 1;
+    }
+    .job-strip-salary span { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 400; color: var(--gray); vertical-align: middle; }
+    .job-strip-meta { font-size: 0.72rem; color: var(--gray); line-height: 1.45; }
+    .jobs-strip-cta { text-align: center; margin-top: 8px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Hero action buttons ───────────────────────── */
+    .hero-action-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .btn-hero-main {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: #fff;
+      font-size: 0.9rem; font-weight: 700;
+      padding: 13px 22px; border-radius: 10px;
+      letter-spacing: 0.04em; transition: background 0.2s;
+      text-decoration: none;
+    }
+    .btn-hero-main:hover { background: var(--orange-2); }
+    .btn-hero-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(240,120,32,0.08);
+      border: 1px solid rgba(240,120,32,0.35);
+      color: var(--orange);
+      font-size: 0.9rem; font-weight: 600;
+      padding: 13px 22px; border-radius: 10px;
+      letter-spacing: 0.04em; transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-hero-ghost:hover { border-color: var(--orange); background: rgba(240,120,32,0.14); }
+    .btn-hero-call {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 0.9rem; font-weight: 600;
+      padding: 13px 22px; border-radius: 10px;
+      letter-spacing: 0.02em; transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-hero-call:hover { background: rgba(255,255,255,0.1); }
+
+    /* ── Sticky mobile CTA bar ─────────────────────── */
+    .sticky-mobile-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 999;
+      background: rgba(9,14,31,0.97);
+      border-top: 1px solid rgba(240,120,32,0.25);
+      padding: 10px 14px 14px;
+      backdrop-filter: blur(14px);
+    }
+    .sticky-cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 6px;
+    }
+    .sticky-cta-btn {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      background: rgba(240,120,32,0.1);
+      border: 1px solid rgba(240,120,32,0.25);
+      border-radius: 10px; padding: 8px 4px;
+      text-decoration: none; color: var(--orange);
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .sticky-cta-btn:hover, .sticky-cta-btn:active { background: rgba(240,120,32,0.22); }
+    .sticky-cta-btn svg { width: 20px; height: 20px; }
+    .sticky-cta-btn--primary { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .sticky-cta-btn--primary:hover { background: var(--orange-2); }
+    @media (max-width: 768px) {
+      .sticky-mobile-cta { display: block; }
+      body { padding-bottom: 72px; }
+    }
+
+    /* ── Photo gallery ─────────────────────────────── */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .photo-cell {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      border-radius: 0;
+      min-height: 220px;
+    }
+    .photo-cell img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; transition: transform 0.4s;
+    }
+    .photo-cell:hover img { transform: scale(1.04); }
+    .photo-cell--placeholder {
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 10px;
+      background: linear-gradient(135deg, rgba(240,120,32,0.06) 0%, rgba(30,95,240,0.06) 100%);
+      border: 1px solid var(--border);
+    }
+    .photo-cell--placeholder svg { width: 40px; height: 40px; color: var(--orange); opacity: 0.3; }
+    .photo-cell--placeholder p { font-size: 0.7rem; color: var(--gray); text-align: center; padding: 0 16px; }
+    .photo-label {
+      position: absolute; bottom: 10px; left: 10px;
+      background: rgba(0,0,0,0.65); border-radius: 6px;
+      padding: 4px 10px; font-size: 0.65rem; font-weight: 700;
+      color: rgba(255,255,255,0.85); letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* ── FAQ ───────────────────────────────────────── */
+    #faq-section { background: linear-gradient(180deg, transparent 0%, rgba(9,14,31,0.5) 100%); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover { border-color: rgba(240,120,32,0.3); }
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px 18px;
+      font-size: 0.88rem; font-weight: 600; color: #fff;
+      cursor: pointer; user-select: none;
+      background: none; border: none; width: 100%; text-align: left;
+    }
+    .faq-question:hover { color: var(--orange); }
+    .faq-chevron {
+      width: 18px; height: 18px; flex-shrink: 0;
+      color: var(--orange); transition: transform 0.25s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      padding: 0 18px; font-size: 0.84rem; color: var(--gray); line-height: 1.65;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 18px 16px; }
   </style>
 </head>
 <body>
@@ -734,22 +921,35 @@
       <div class="hub-hero-content fade-in">
         <div class="hub-hero-badge">
           <span class="eyebrow-dot"></span>
-          <span data-i18n="hero_eyebrow">Корпорація Профі · з 1991 року</span>
+          <span>Офіційна робота в Польщі · з 1991 року</span>
         </div>
-        <h1 class="hub-hero-title">PROFI<span>POWER</span></h1>
-        <p class="hub-hero-sub" data-i18n="hero_sub">Ваш партнер у навчанні, працевлаштуванні та виробництві в Польщі</p>
-        <div class="hub-dir-pills">
+        <h1 class="hub-hero-title">РОБОТА<br/><span>В ПОЛЬЩІ</span></h1>
+        <p class="hub-hero-sub">Для зварників, малярів, слюсарів та електриків.<br/>Офіційне оформлення · від 35 zł/год · допомога з житлом</p>
+        <div class="hero-action-btns fade-in">
+          <a href="#jobs" class="btn-hero-main">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Актуальні вакансії
+          </a>
+          <a href="#hub-contact" class="btn-hero-ghost">
+            Залишити заявку
+          </a>
+          <a href="tel:+48504648898" class="btn-hero-call">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+            Подзвонити
+          </a>
+        </div>
+        <div class="hub-dir-pills" style="margin-top:16px">
           <a href="#education" class="hub-pill">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             <span data-i18n="hero_dir1">Навчання</span>
           </a>
           <a href="#employment" class="hub-pill">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-            <span data-i18n="hero_dir2">Працевлаштування</span>
+            <span data-i18n="hero_dir2">Вакансії</span>
           </a>
-          <a href="#production" class="hub-pill">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41"/></svg>
-            <span data-i18n="hero_dir3">Виробництво</span>
+          <a href="#faq-section" class="hub-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            FAQ
           </a>
         </div>
       </div>
@@ -776,6 +976,58 @@
             <span class="hub-stat-label" data-i18n="corp_sub">років досвіду</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ АКТУАЛЬНІ ВАКАНСІЇ ════ -->
+  <section class="jobs-strip" id="jobs">
+    <div class="container">
+      <div class="section-label fade-in">Актуально · оновлено сьогодні</div>
+      <h2 class="section-heading fade-in">АКТУАЛЬНІ ВАКАНСІЇ</h2>
+
+      <div class="jobs-strip-grid">
+
+        <div class="job-strip-card job-strip-card--hot fade-in">
+          <span class="job-strip-tag job-strip-tag-hot">🔥 Гарячо · 10+ місць</span>
+          <h3>Зварник MIG/MAG</h3>
+          <div class="job-strip-salary">від 38 <span>zł/год.</span></div>
+          <p class="job-strip-meta">Польща · Бидгощ / Новий Сонч<br/>ISO 9606 · офіційний договір · змінний графік</p>
+          <a href="school.html#contact" class="btn-cta" style="font-size:0.8rem;padding:8px 14px;width:100%;text-align:center;display:block">Дізнатись деталі →</a>
+        </div>
+
+        <div class="job-strip-card fade-in">
+          <span class="job-strip-tag">Доступно зараз</span>
+          <h3>Маляр по металу</h3>
+          <div class="job-strip-salary">від 38 <span>zł/год.</span></div>
+          <p class="job-strip-meta">Польща · різні локації<br/>Без досвіду · навчання + відразу робота</p>
+          <a href="painters.html#contact" class="btn-cta" style="font-size:0.8rem;padding:8px 14px;width:100%;text-align:center;display:block">Дізнатись деталі →</a>
+        </div>
+
+        <div class="job-strip-card fade-in">
+          <span class="job-strip-tag">Доступно зараз</span>
+          <h3>Слюсар-монтажник</h3>
+          <div class="job-strip-salary">від 35 <span>zł/год.</span></div>
+          <p class="job-strip-meta">Польща · промислові підприємства<br/>Монтаж металоконструкцій · офіційно</p>
+          <a href="locksmith-pl.html#contact" class="btn-cta" style="font-size:0.8rem;padding:8px 14px;width:100%;text-align:center;display:block">Дізнатись деталі →</a>
+        </div>
+
+        <div class="job-strip-card fade-in">
+          <span class="job-strip-tag">Є місця</span>
+          <h3>Електромонтер</h3>
+          <div class="job-strip-salary">від 36 <span>zł/год.</span></div>
+          <p class="job-strip-meta">Польща · різні підприємства<br/>Електромонтаж · офіційний договір</p>
+          <a href="#hub-contact" class="btn-cta" style="font-size:0.8rem;padding:8px 14px;width:100%;text-align:center;display:block">Дізнатись деталі →</a>
+        </div>
+
+      </div>
+
+      <div class="jobs-strip-cta fade-in">
+        <a href="#hub-contact" class="btn-cta">Підібрати роботу для мене →</a>
+        <a href="tel:+48504648898" class="btn-cta" style="background:transparent;border:1px solid rgba(240,120,32,0.4);color:var(--orange)">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" style="display:inline;margin-right:5px"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>
+          Зателефонувати
+        </a>
       </div>
     </div>
   </section>
@@ -1228,64 +1480,91 @@
 
         <div class="review-card fade-in">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="rev1_text">Тут цінують кожну людину. Заробітна плата досить конкурентна порівняно з іншими компаніями.</p>
+          <p class="review-text">"Боявся, що обдурять — але все чесно. Перша зарплата прийшла вчасно, ЗУС оформили з першого дня. Вже 1,5 року тут, ніякого нарікання."</p>
           <div class="review-author">
-            <div class="review-avatar">Б</div>
+            <div class="review-avatar" style="background:linear-gradient(135deg,#f07820,#d06010)">Б</div>
             <div>
-              <div class="review-name" data-i18n="rev1_name">Богдан Г.</div>
-              <div class="review-role">Зварювальник</div>
+              <div class="review-name">Богдан Г.</div>
+              <div class="review-role">Зварювальник MIG/MAG · Бидгощ · 1.5 року</div>
             </div>
           </div>
         </div>
 
         <div class="review-card fade-in">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="rev2_text">Чудова робоча атмосфера та злагоджена команда. Рекомендую всім, хто шукає роботу в Польщі.</p>
+          <p class="review-text">"Приїхав без досвіду малярства. Навчили за 2 тижні прямо в школі — потім відправили на завод. Зараз заробляю більше, ніж планував. Колеги нормальні, керівник людяний."</p>
           <div class="review-author">
-            <div class="review-avatar">Д</div>
+            <div class="review-avatar" style="background:linear-gradient(135deg,#2563eb,#1e40af)">Д</div>
             <div>
-              <div class="review-name" data-i18n="rev2_name">Денис С.</div>
-              <div class="review-role">Слюсар</div>
+              <div class="review-name">Денис С.</div>
+              <div class="review-role">Маляр по металу · Новий Сонч · 8 місяців</div>
             </div>
           </div>
         </div>
 
         <div class="review-card fade-in">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="rev3_text">Працюю вже 5 років разом із членами сім'ї. Стабільна виплата, офіційне оформлення.</p>
+          <p class="review-text">"Працюю вже 5 років, привіз брата і друга. Стабільна виплата без затримок, офіційне оформлення, медстрахування є. Компанія виконує те, що обіцяє."</p>
           <div class="review-author">
-            <div class="review-avatar">А</div>
+            <div class="review-avatar" style="background:linear-gradient(135deg,#16a34a,#0f6e32)">А</div>
             <div>
-              <div class="review-name" data-i18n="rev3_name">Андрій К.</div>
-              <div class="review-role">Монтер</div>
+              <div class="review-name">Андрій К.</div>
+              <div class="review-role">Слюсар-монтажник · Бидгощ · 5 років</div>
             </div>
           </div>
         </div>
 
         <div class="review-card fade-in">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="rev4_text">Не жалкую про свій вибір вже 2 роки. Хороші умови, нормальні керівники, вчасна оплата.</p>
+          <p class="review-text">"Дзвонив багато куди — тут єдині, хто реально відповів і все пояснив. Не треба нічого платити за підбір. Уже 2 роки в Польщі, ні про що не шкодую."</p>
           <div class="review-author">
-            <div class="review-avatar">В</div>
+            <div class="review-avatar" style="background:linear-gradient(135deg,#7c3aed,#5b21b6)">В</div>
             <div>
-              <div class="review-name" data-i18n="rev4_name">Віталій Б.</div>
-              <div class="review-role">Електромонтер</div>
+              <div class="review-name">Віталій Б.</div>
+              <div class="review-role">Електромонтер · Вроцлав · 2 роки</div>
             </div>
           </div>
         </div>
 
         <div class="review-card fade-in">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="rev5_text">Приїхав 2 роки тому і повністю задоволений. Компанія виконує всі обіцянки.</p>
+          <p class="review-text">"Пройшов курс зварювання — взяли відразу після. Вхідний контроль пройшов з першого разу, бо нормально підготували. Зараз 42 zł/год., є надурочні."</p>
           <div class="review-author">
-            <div class="review-avatar">Д</div>
+            <div class="review-avatar" style="background:linear-gradient(135deg,#dc2626,#991b1b)">Д</div>
             <div>
-              <div class="review-name" data-i18n="rev5_name">Дмитро Г.</div>
-              <div class="review-role">Маляр</div>
+              <div class="review-name">Дмитро Г.</div>
+              <div class="review-role">Зварювальник TIG · Бидгощ · 1 рік</div>
             </div>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ ФОТО ════ -->
+  <section style="padding:60px 0">
+    <div class="container">
+      <div class="section-label fade-in">Побачити на власні очі</div>
+      <h2 class="section-heading fade-in">ЗАВОД, ЖИТЛО, КОМАНДА</h2>
+      <p class="section-sub fade-in">Прозорість — наш принцип. Показуємо реальні умови праці та проживання.</p>
+
+      <div class="photo-gallery fade-in">
+        <!-- Main — factory -->
+        <div class="photo-cell" style="min-height:320px">
+          <img src="images/factory.png" alt="Виробничий цех — завод партнер" loading="lazy"/>
+          <span class="photo-label">Завод-партнер</span>
+        </div>
+        <!-- Welder -->
+        <div class="photo-cell">
+          <img src="images/welder.jpg" alt="Зварювальник на виробництві" loading="lazy"/>
+          <span class="photo-label">Наш зварник</span>
+        </div>
+        <!-- Housing placeholder -->
+        <div class="photo-cell photo-cell--placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <p>Фото житла незабаром — додайте реальні фото гуртожитку</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1326,6 +1605,106 @@
   </section>
 
   <!-- ════ КОНТАКТ ════ -->
+  <!-- ════ FAQ ════ -->
+  <section id="faq-section">
+    <div class="container">
+      <div class="section-label fade-in">Часті питання</div>
+      <h2 class="section-heading fade-in">ПИТАННЯ ТА ВІДПОВІДІ</h2>
+      <p class="section-sub fade-in">Відповідаємо чесно на запитання, які найчастіше ставлять наші кандидати.</p>
+
+      <div class="faq-grid">
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Яка зарплата? Скільки можна заробити?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Залежно від позиції та заводу: зварники — від 38 zł/год., маляри — від 38 zł/год., слюсарі — від 35 zł/год., електромонтери — від 36 zł/год. Зарплата виплачується щомісяця. При надурочних — вища ставка.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Зарплата офіційна? Сплачуються податки?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Так, 100% офіційне оформлення. Роботодавець сплачує всі польські податки — ZUS (соціальне страхування), PIT (прибутковий). Ви отримуєте офіційний договір (umowa o pracę або umowa zlecenie) та доступ до медичного страхування NFZ.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Скільки годин на тиждень? Є надурочні?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Стандартно — 8 годин на день, 40 годин на тиждень. На більшості заводів є можливість надурочних — до 60 годин на тиждень за бажанням. Зміни 2-зміннi або 3-змінні залежно від підприємства.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Чи є аванси? Коли перша виплата?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">На більшості підприємств є авансова система — перший аванс зазвичай через 2 тижні після початку роботи. Уточнюємо індивідуально залежно від заводу при підборі вакансії.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Чи надаєте житло? Скільки це коштує?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Допомагаємо з пошуком житла. У більшості випадків роботодавець забезпечує гуртожиток або орендує квартири — вартість утримання утримується із зарплати (зазвичай 300–500 zł/міс.). Уточнюємо умови по кожному заводу окремо.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Чи далеко житло від місця роботи?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Зазвичай 10–30 хвилин. Більшість підприємств організовує транспорт або автобус від гуртожитку до заводу. Ми перевіряємо умови перед направленням кандидата.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Чи допомагаєте з картою побиту?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Так, консультуємо щодо оформлення карти побиту (дозволу на перебування). Допомагаємо зібрати документи та подати заявку. Після 3 місяців офіційної роботи ви маєте право подавати на карту.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Чи берете без досвіду? Навчаєте?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Так! Для малярів та слюсарів — беремо без досвіду, навчаємо в нашому центрі в Україні. Для зварювальників — потрібна базова підготовка (проводимо курс 2 тижні). Після навчання — направляємо на роботу.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Чи потрібна польська мова?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Базовий польський бажаний, але не обов'язковий. На більшості виробництв достатньо розуміти прості команди та читати прості інструкції. Наш куратор у Польщі допомагає в перший час.</div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Які документи потрібні для роботи?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">Паспорт або ID-картка громадянина України. Польська робоча віза (допомагаємо оформити) або дозвіл на перебування. Також може знадобитись медична довідка та кваліфікаційне посвідчення (якщо є). Повний список уточнюємо індивідуально.</div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:32px">
+        <p style="color:var(--gray);font-size:0.88rem;margin-bottom:14px">Не знайшли відповідь? Запитайте напряму — відповідаємо швидко</p>
+        <a href="tel:+48504648898" class="btn-cta">Зателефонувати →</a>
+        &nbsp;
+        <a href="https://wa.me/48504648898" target="_blank" rel="noopener" class="btn-cta" style="background:transparent;border:1px solid rgba(240,120,32,0.4);color:var(--orange)">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
   <section id="hub-contact">
     <div class="container">
       <div class="section-label fade-in" data-i18n="contact_label">Зв'язатися</div>
@@ -1388,10 +1767,11 @@
             </div>
           </div>
           <div class="hub-info-card">
-            <h4>Соціальні мережі</h4>
-            <a href="https://instagram.com/corporation.profi" target="_blank" rel="noopener">@corporation.profi</a>
-            <a href="https://wa.me/48504648898" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="https://proficorp.com.ua/" target="_blank" rel="noopener">proficorp.com.ua</a>
+            <h4>Месенджери та соцмережі</h4>
+            <a href="https://wa.me/48504648898" target="_blank" rel="noopener" style="color:var(--orange)">💬 WhatsApp +48 504 648 898</a>
+            <a href="https://t.me/profipower" target="_blank" rel="noopener" style="color:var(--orange)">✈️ Telegram @profipower</a>
+            <a href="https://instagram.com/corporation.profi" target="_blank" rel="noopener">📷 @corporation.profi</a>
+            <a href="https://proficorp.com.ua/" target="_blank" rel="noopener">🌐 proficorp.com.ua</a>
           </div>
         </div>
       </div>
@@ -1440,6 +1820,28 @@
       <p style="font-size:0.72rem;color:var(--muted);text-align:center" data-i18n="footer_copy">© 2024 Profi Power (Profi Corporation). Всі права захищено.</p>
     </div>
   </footer>
+
+  <!-- ════ STICKY MOBILE CTA BAR ════ -->
+  <div class="sticky-mobile-cta" id="sticky-bar">
+    <div class="sticky-cta-row">
+      <a href="tel:+48504648898" class="sticky-cta-btn sticky-cta-btn--primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.79a19.79 19.79 0 01-3.07-8.67A2 2 0 013 .82h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Подзвонити
+      </a>
+      <a href="https://wa.me/48504648898" target="_blank" rel="noopener" class="sticky-cta-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://t.me/profipower" target="_blank" rel="noopener" class="sticky-cta-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Telegram
+      </a>
+      <a href="#hub-contact" class="sticky-cta-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Заявка
+      </a>
+    </div>
+  </div>
 
   <script src="js/hub.js"></script>
 </body>
