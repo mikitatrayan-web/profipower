@@ -26,6 +26,19 @@
       transition: opacity 0.2s;
     }
     .back-bar a:hover { opacity: 0.75; }
+
+    /* Direction promo blocks */
+    .school-dir-promo { padding: 60px 0; background: rgba(240,120,32,0.03); border-top: 1px solid rgba(240,120,32,0.1); }
+    .school-dir-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 2rem; }
+    .school-dir-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s, transform 0.2s; }
+    .school-dir-card:hover { border-color: rgba(240,120,32,0.35); transform: translateY(-2px); }
+    .school-dir-card h3 { font-family: 'Anton', sans-serif; font-size: 1.15rem; color: var(--orange); letter-spacing: 0.05em; margin: 0; }
+    .school-dir-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin: 0; }
+    .school-dir-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+    .school-dir-card ul li { font-size: 0.72rem; background: rgba(240,120,32,0.1); border: 1px solid rgba(240,120,32,0.2); border-radius: 20px; padding: 3px 10px; color: var(--orange); }
+    .school-dir-link { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: var(--orange); text-decoration: none; letter-spacing: 0.05em; transition: gap 0.2s; }
+    .school-dir-link:hover { gap: 10px; }
+    @media (max-width: 640px) { .school-dir-grid { grid-template-columns: 1fr; } }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -331,7 +344,7 @@
       </div>
       <div class="sban-div"></div>
       <div class="sban-item fade-in">
-        <span class="sban-num">3</span>
+        <span class="sban-num">2</span>
         <span class="sban-label" data-i18n="sban_weeks">тижні — від нуля до роботи</span>
       </div>
       <div class="sban-div"></div>
@@ -583,6 +596,42 @@
         </ul>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ════ НАПРЯМКИ PROFIPOWER ════ -->
+  <section class="school-dir-promo">
+    <div class="container">
+      <div class="section-label fade-in">PROFIPOWER</div>
+      <h2 class="section-heading fade-in" style="font-size:1.6rem;">ТАКОЖ ДОПОМАГАЄМО З</h2>
+      <div class="school-dir-grid">
+
+        <div class="school-dir-card fade-in">
+          <h3>ПРАЦЕВЛАШТУВАННЯ В ПОЛЬЩІ</h3>
+          <p>Офіційна робота на заводах Польщі після навчання. Повний супровід від заявки до першого дня на виробництві.</p>
+          <ul>
+            <li>Офіційний договір</li>
+            <li>Сплата всіх податків</li>
+            <li>Житло за необхідності</li>
+            <li>Інструмент від фірми</li>
+            <li>Вчасна виплата</li>
+          </ul>
+          <a href="index.html#employment" class="school-dir-link">Детальніше →</a>
+        </div>
+
+        <div class="school-dir-card fade-in">
+          <h3>ВИРОБНИЦТВО МЕТАЛОКОНСТРУКЦІЙ</h3>
+          <p>Власне виробництво в Бидгощі — лазерна різка, ЧПУ-фрезерування, зварювання та фарбування металоконструкцій.</p>
+          <ul>
+            <li>Точність 0,02 мм</li>
+            <li>Сталь · Нержавійка · Алюміній</li>
+            <li>Терміни 1–10 днів</li>
+            <li>ISO-якість</li>
+          </ul>
+          <a href="index.html#production" class="school-dir-link">Детальніше →</a>
+        </div>
+
+      </div>
     </div>
   </section>
 
