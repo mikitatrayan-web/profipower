@@ -13,7 +13,9 @@
  *   ANTHROPIC_API_KEY         (optional) — enables "Improve with AI" + smart titles
  */
 
-const IMPROVE_MODEL = "claude-sonnet-4-6";
+import { waitUntil } from "@vercel/functions";
+
+const IMPROVE_MODEL = "claude-haiku-4-5-20251001";
 const TITLE_MODEL = "claude-haiku-4-5-20251001";
 const ANTHROPIC_IMAGE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp"];
 
@@ -138,9 +140,11 @@ async function submit({ text, category, pageUrl, image, screenshotName }) {
   }
 
   const emoji = category === "bug" ? "🐛" : category === "idea" ? "💡" : "❓";
-  const aiTitle = await generateTitle({ text, category });
-  const titleBody = aiTitle || text.slice(0, 60);
-  const cardTitle = emoji + " " + titleBody;
+  // Create the card up front with a quick title so we can confirm success
+  // to the user immediately. The nicer AI title and the (potentially large)
+  // image upload happen in the background via waitUntil — they shouldn't keep
+  // the user waiting on the "Send" button.
+  const quickTitle = emoji + " " + text.slice(0, 60);
 
   const desc = [
     text,
@@ -158,7 +162,7 @@ async function submit({ text, category, pageUrl, image, screenshotName }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         idList: listId,
-        name: cardTitle,
+        name: quickTitle,
         desc: desc,
         pos: "top",
         key: apiKey,
@@ -176,14 +180,41 @@ async function submit({ text, category, pageUrl, image, screenshotName }) {
 
   const card = await res.json();
 
-  if (image && card && card.id) {
+  if (card && card.id) {
+    // Don't await: refine the title and attach the screenshot in the
+    // background. waitUntil keeps the function alive until it settles.
+    waitUntil(
+      enhanceCard({ cardId: card.id, emoji, text, category, image, screenshotName, apiKey, apiToken })
+    );
+  }
+
+  return { status: 200, json: { ok: true } };
+}
+
+// Background work after the card is created: swap the quick title for a
+// concise AI-generated one, then upload the screenshot. Both are best-effort.
+async function enhanceCard({ cardId, emoji, text, category, image, screenshotName, apiKey, apiToken }) {
+  try {
+    const aiTitle = await generateTitle({ text, category });
+    if (aiTitle) {
+      await fetch("https://api.trello.com/1/cards/" + cardId, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: emoji + " " + aiTitle, key: apiKey, token: apiToken }),
+      });
+    }
+  } catch (err) {
+    console.error("Trello title update error:", err);
+  }
+
+  if (image) {
     try {
       const buffer = Buffer.from(image.base64, "base64");
       const form = new FormData();
       form.append("file", new Blob([buffer], { type: image.mime }), screenshotName || "screenshot.png");
       form.append("key", apiKey);
       form.append("token", apiToken);
-      await fetch("https://api.trello.com/1/cards/" + card.id + "/attachments", {
+      await fetch("https://api.trello.com/1/cards/" + cardId + "/attachments", {
         method: "POST",
         body: form,
       });
@@ -192,8 +223,6 @@ async function submit({ text, category, pageUrl, image, screenshotName }) {
       console.error("Trello attachment error:", err);
     }
   }
-
-  return { status: 200, json: { ok: true } };
 }
 
 export default async function handler(req, res) {
@@ -221,6 +250,9 @@ export default async function handler(req, res) {
 
   if (!text || text.length < 3) {
     return res.status(400).json({ error: "Feedback too short" });
+  }
+  if (text.length > 4000) {
+    return res.status(400).json({ error: "Feedback too long" });
   }
 
   const result =

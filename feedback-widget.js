@@ -38,6 +38,8 @@
     { key: "question", emoji: "❓", label: "Питання" },
   ];
 
+  var MAX_LEN = 2000; // max feedback characters (frontend cap)
+
   // ---- state ----
   var open = false;
   var category = "idea";
@@ -77,6 +79,7 @@
     "resize:none;outline:none;box-sizing:border-box;font-family:inherit;color:#111827;background:#fff;}" +
     ".fbw-text:focus{border-color:var(--fbw-accent);box-shadow:0 0 0 1px var(--fbw-accent);}" +
     ".fbw-text:disabled{opacity:.6;}" +
+    ".fbw-limit{font-size:11px;color:#dc2626;line-height:1.3;margin-top:-4px;}" +
     "@media(min-width:640px){.fbw-text{font-size:14px;}}" +
     ".fbw-row{display:flex;align-items:center;justify-content:space-between;gap:8px;}" +
     ".fbw-link{background:none;border:none;cursor:pointer;font-size:12px;display:inline-flex;align-items:center;gap:5px;padding:0;font-family:inherit;}" +
@@ -138,7 +141,7 @@
   root.appendChild(fab);
 
   // ---- modal refs (created on first open) ----
-  var overlay, modal, textEl, fileEl, previewWrap, sendBtn, improveBtn, dropEl, catBtns;
+  var overlay, modal, textEl, fileEl, previewWrap, sendBtn, improveBtn, dropEl, catBtns, limitEl;
   var built = false;
 
   function buildModal() {
@@ -173,6 +176,7 @@
       '<div class="fbw-body">' +
       '<div class="fbw-cats">' + catHtml + "</div>" +
       '<textarea class="fbw-text" placeholder="Розкажіть, що думаєте..."></textarea>' +
+      '<div class="fbw-limit" style="display:none"></div>' +
       '<div class="fbw-row">' +
       '<button type="button" class="fbw-link fbw-attach">📎 Додати фото</button>' +
       improveHtml +
@@ -186,6 +190,7 @@
     modal.querySelector(".fbw-head span").textContent = cfg.title;
 
     textEl = modal.querySelector(".fbw-text");
+    limitEl = modal.querySelector(".fbw-limit");
     fileEl = modal.querySelector(".fbw-file");
     previewWrap = modal.querySelector(".fbw-prev-wrap");
     sendBtn = modal.querySelector(".fbw-send");
@@ -221,6 +226,7 @@
         undoText = null;
         renderImproveBtn();
       }
+      updateLimit();
       refreshButtons();
     });
 
@@ -284,6 +290,7 @@
     if (!built) buildModal();
     overlay.style.display = "block";
     modal.style.display = "block";
+    updateLimit();
     refreshButtons();
     renderImproveBtn();
     setTimeout(function () {
@@ -300,19 +307,74 @@
     fab.style.display = "flex";
   }
 
+  function compressImage(file) {
+    // Downscale large screenshots client-side so the upload stays fast.
+    // Falls back to the original file on any error (or if it wouldn't help).
+    return new Promise(function (resolve) {
+      if (!file || file.type.indexOf("image/") !== 0 || file.type === "image/gif") {
+        resolve(file);
+        return;
+      }
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        try {
+          var MAX = 1600;
+          var w = img.naturalWidth || img.width;
+          var h = img.naturalHeight || img.height;
+          var scale = Math.min(1, MAX / Math.max(w, h));
+          var cw = Math.max(1, Math.round(w * scale));
+          var ch = Math.max(1, Math.round(h * scale));
+          var canvas = document.createElement("canvas");
+          canvas.width = cw;
+          canvas.height = ch;
+          canvas.getContext("2d").drawImage(img, 0, 0, cw, ch);
+          URL.revokeObjectURL(url);
+          canvas.toBlob(
+            function (blob) {
+              if (!blob || blob.size >= file.size) {
+                resolve(file); // no size win — keep the original
+                return;
+              }
+              var base = (file.name || "screenshot").replace(/\.[^.]+$/, "");
+              try {
+                resolve(new File([blob], base + ".jpg", { type: "image/jpeg" }));
+              } catch (e) {
+                blob.name = base + ".jpg";
+                resolve(blob);
+              }
+            },
+            "image/jpeg",
+            0.82
+          );
+        } catch (e) {
+          URL.revokeObjectURL(url);
+          resolve(file);
+        }
+      };
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        resolve(file);
+      };
+      img.src = url;
+    });
+  }
+
   function handleFile(file) {
     if (!file) {
       clearScreenshot();
       return;
     }
-    if (file.size > 4 * 1024 * 1024) {
-      toast("Файл завеликий (макс. 4 МБ)", "err");
-      return;
-    }
-    if (previewUrl) URL.revokeObjectURL(previewUrl);
-    screenshotFile = file;
-    previewUrl = URL.createObjectURL(file);
-    renderPreview();
+    compressImage(file).then(function (out) {
+      if (out.size > 4 * 1024 * 1024) {
+        toast("Файл завеликий (макс. 4 МБ)", "err");
+        return;
+      }
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      screenshotFile = out;
+      previewUrl = URL.createObjectURL(out);
+      renderPreview();
+    });
   }
 
   function clearScreenshot() {
@@ -368,10 +430,22 @@
     }
   }
 
+  function updateLimit() {
+    if (!limitEl) return;
+    var len = textEl.value.length;
+    if (len > MAX_LEN) {
+      limitEl.textContent = "Забагато тексту: " + len + " / " + MAX_LEN + " символів";
+      limitEl.style.display = "block";
+    } else {
+      limitEl.style.display = "none";
+    }
+  }
+
   function refreshButtons() {
-    if (sendBtn) sendBtn.disabled = sending || !textEl.value.trim();
+    var over = textEl && textEl.value.length > MAX_LEN;
+    if (sendBtn) sendBtn.disabled = sending || !textEl.value.trim() || over;
     if (improveBtn)
-      improveBtn.disabled = improving || textEl.value.trim().length < 10;
+      improveBtn.disabled = improving || textEl.value.trim().length < 10 || over;
   }
 
   function fileToDataUrl(file) {
@@ -403,6 +477,10 @@
 
   async function improve() {
     if (improving || textEl.value.trim().length < 10) return;
+    if (textEl.value.length > MAX_LEN) {
+      toast("Забагато тексту (макс. " + MAX_LEN + " символів)", "err");
+      return;
+    }
     improving = true;
     improveBtn.textContent = "Покращую...";
     refreshButtons();
@@ -434,6 +512,10 @@
 
   async function submit() {
     if (sending || !textEl.value.trim()) return;
+    if (textEl.value.length > MAX_LEN) {
+      toast("Забагато тексту (макс. " + MAX_LEN + " символів)", "err");
+      return;
+    }
     sending = true;
     sendBtn.textContent = "Надсилаю...";
     refreshButtons();

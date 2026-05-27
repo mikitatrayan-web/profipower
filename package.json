@@ -1,0 +1,10 @@
+{
+  "name": "profipower",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ProfiPower static site + feedback-widget Vercel serverless function",
+  "dependencies": {
+    "@vercel/functions": "^3.6.0"
+  }
+}
