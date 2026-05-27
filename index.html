@@ -625,6 +625,16 @@
     .hub-info-card h4 { font-family: 'Anton', sans-serif; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; color: var(--orange); }
     .hub-info-card p, .hub-info-card a { font-size: 0.85rem; color: var(--muted); text-decoration: none; display: block; line-height: 1.6; }
     .hub-info-card a:hover { color: var(--orange); }
+    .phone-block { display: flex; flex-direction: column; gap: 8px; }
+    .phone-btn {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(240,120,32,0.08); border: 1px solid rgba(240,120,32,0.25);
+      border-radius: 10px; padding: 10px 14px; text-decoration: none;
+      color: var(--orange) !important; font-size: 1rem !important;
+      font-weight: 700; letter-spacing: 0.03em; transition: background 0.2s, border-color 0.2s;
+    }
+    .phone-btn:hover { background: rgba(240,120,32,0.18) !important; border-color: var(--orange) !important; color: var(--orange) !important; }
+    .phone-btn svg { flex-shrink: 0; opacity: 0.85; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -1351,23 +1361,31 @@
           <div class="hub-info-card">
             <h4>Головний офіс</h4>
             <p>Poznańska 27/1, 85-129 Bydgoszcz, Polska</p>
-            <a href="tel:+48504648898">+48 504 648 898</a>
-            <a href="tel:+48571523244">+48 571 523 244</a>
-            <a href="tel:+380674637017">+380 674 637 017</a>
           </div>
           <div class="hub-info-card">
             <h4>Школа зварювання</h4>
             <p>ul. Witebska 1B, 85-759 Bydgoszcz, Polska</p>
-            <a href="tel:+48504648898">+48 504 648 898</a>
-            <a href="tel:+48571523244">+48 571 523 244</a>
-            <a href="tel:+380674637017">+380 674 637 017</a>
           </div>
           <div class="hub-info-card">
             <h4>Філіал</h4>
             <p>Zielona 27, 33-300 Nowy Sącz, Polska</p>
-            <a href="tel:+48504648898">+48 504 648 898</a>
-            <a href="tel:+48571523244">+48 571 523 244</a>
-            <a href="tel:+380674637017">+380 674 637 017</a>
+          </div>
+          <div class="hub-info-card">
+            <h4>Телефони</h4>
+            <div class="phone-block">
+              <a href="tel:+48504648898" class="phone-btn">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>
+                +48 504 648 898
+              </a>
+              <a href="tel:+48571523244" class="phone-btn">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>
+                +48 571 523 244
+              </a>
+              <a href="tel:+380674637017" class="phone-btn">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5.5A1.5 1.5 0 013.5 4h.91c.59 0 1.09.5 1.29 1.07l.78 2.35c.2.57.04 1.2-.4 1.6l-.85.73c.94 1.85 2.97 3.88 4.82 4.82l.73-.85c.4-.44 1.03-.6 1.6-.4l2.35.78c.57.2 1.07.7 1.07 1.3v.91A1.5 1.5 0 0114.5 18C7.6 18 2 12.4 2 5.5z" stroke="#f07820" stroke-width="1.5"/></svg>
+                +380 674 637 017
+              </a>
+            </div>
           </div>
           <div class="hub-info-card">
             <h4>Соціальні мережі</h4>
