@@ -83,6 +83,8 @@ const TRANSLATIONS = {
     why5_desc:        '15+ заводів-партнерів у Польщі. Ми не просто навчаємо — ми безпосередньо допомагаємо з першим місцем роботи.',
     why6_title:       'Підтримка українською',
     why6_desc:        'Говоримо українською, польською та англійською. Допоможемо з документами та адаптацією в Польщі.',
+    why7_title:       'Soldamatic — симулятор зварювання',
+    why7_desc:        'Навчання на VR-тренажері Soldamatic. Відпрацьовуємо техніку без витрат матеріалів — з моментальним зворотнім зв\'язком та аналізом помилок.',
 
     sban_students:    'випускників пройшли навчання',
     sban_weeks:       'тижні — від нуля до роботи',
@@ -323,6 +325,8 @@ const TRANSLATIONS = {
     why5_desc:        '15+ partner factories in Poland. We don\'t just teach — we directly help you get your first job.',
     why6_title:       'Ukrainian language support',
     why6_desc:        'We speak Ukrainian, Polish and English. We\'ll help with documents and adaptation in Poland.',
+    why7_title:       'Soldamatic Welding Simulator',
+    why7_desc:        'VR welding simulator training. We practise technique without material costs — with instant feedback and error analysis.',
 
     sban_students:    'graduates completed training',
     sban_weeks:       'weeks — from zero to work',
@@ -566,6 +570,8 @@ const TRANSLATIONS = {
     why5_desc:        '15+ fabryk partnerskich w Polsce. Nie tylko uczymy — bezpośrednio pomagamy ze znalezieniem pierwszego miejsca pracy.',
     why6_title:       'Wsparcie w języku ukraińskim',
     why6_desc:        'Mówimy po ukraińsku, polsku i angielsku. Pomożemy z dokumentami i adaptacją w Polsce.',
+    why7_title:       'Soldamatic — symulator spawania',
+    why7_desc:        'Szkolenie na symulatorze VR Soldamatic. Ćwiczymy technikę bez zużycia materiałów — z natychmiastową informacją zwrotną i analizą błędów.',
 
     sban_students:    'absolwentów odbyło szkolenie',
     sban_weeks:       'tygodnie — od zera do pracy',

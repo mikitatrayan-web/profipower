@@ -738,6 +738,7 @@ section { padding: var(--gap-section) 0; }
 }
 .why-card:hover { background: #131f3b; }
 .why-card--featured { border-left: 3px solid var(--green); }
+.why-card--smart { border-left: 3px solid var(--orange); }
 
 .why-icon {
   width: 46px; height: 46px;
