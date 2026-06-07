@@ -87,7 +87,8 @@ section { padding: var(--gap-section) 0; }
   color: #fff;
   margin-bottom: 1.1rem;
 }
-.section-desc {
+.section-desc,
+.section-sub {
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--gray-2);
@@ -1412,7 +1413,19 @@ section { padding: var(--gap-section) 0; }
 @media (max-width: 640px) {
   /* Typography scale */
   .section-heading { font-size: clamp(1.65rem, 8vw, 2.4rem); }
-  .section-desc { font-size: 0.95rem; margin-bottom: 2.5rem; }
+  .section-desc,
+  .section-sub { font-size: 0.95rem; margin-bottom: 2.5rem; }
+
+  /* Hero KPI bar — 2×2 grid on mobile */
+  .hub-hero-kpi { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; margin-top: 20px; padding-top: 16px; }
+
+  /* Call button: no left margin when stacked */
+  .btn-hero-call { margin-left: 0; }
+
+  /* Questions CTA — full-width stacked buttons */
+  .questions-cta { padding: 28px 20px; }
+  .questions-cta-btns { width: 100%; flex-direction: column; }
+  .questions-cta-btns .btn-cta { width: 100%; justify-content: center; }
 
   /* Programs */
   .prog-card { padding: 1.5rem; }

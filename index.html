@@ -50,7 +50,7 @@
     }
     .hub-hero-title {
       font-family: 'Anton', sans-serif;
-      font-size: clamp(4rem, 12vw, 8rem);
+      font-size: clamp(2.8rem, 9vw, 8rem);
       letter-spacing: 0.04em;
       line-height: 0.9;
       color: #fff;
@@ -710,6 +710,9 @@
       .school-featured { grid-template-columns: 1fr; }
       .school-feat-right { flex-direction: row; flex-wrap: wrap; }
       .edu-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .edu-grid { grid-template-columns: repeat(2, 1fr); }
       .empl-stats-row { grid-template-columns: repeat(2, 1fr); }
       .empl-body { grid-template-columns: 1fr; }
       .empl-jobs-mini { grid-template-columns: repeat(2, 1fr); }
@@ -720,11 +723,11 @@
       .hub-contact-inner { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
-      .hub-hero-inner { flex-direction: column; padding: 72px 0 60px; }
+      .hub-hero-inner { flex-direction: column; padding: 64px 0 48px; }
       .hub-trust-panel { max-width: 100%; }
       .hub-stat-row { flex-direction: row; flex-wrap: wrap; }
       .school-featured { padding: 32px 22px; }
-      .school-feat-stats { gap: 20px; }
+      .school-feat-stats { gap: 16px; flex-wrap: wrap; }
       .edu-grid { grid-template-columns: 1fr; }
       .empl-jobs-mini { grid-template-columns: repeat(2, 1fr); }
       .prod-services-grid { grid-template-columns: 1fr; }
